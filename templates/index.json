@@ -1,11 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "hero_section_yXNMQJ": {
+      "type": "hero-section",
+      "name": "Hero Section",
+      "settings": {
+        "image": "shopify://shop_images/1FF.png",
+        "upper_title": "Elevate Your Skincare Ritual",
+        "heading": "Nature’s Secret to General Well-being",
+        "subtitle": "Experience the transformative power of nature.",
+        "button_text": "Shop Now",
+        "button_link": "",
+        "show_info_block": true,
+        "info_block_image": "shopify://shop_images/2herosection.png",
+        "info_block_main_text": "100%",
+        "info_block_sub_text": "Pure & Organic"
+      }
+    },
     "section-hero": {
       "type": "section-hero",
       "settings": {
         "headline": "Headline",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque.",
-        "button-url": "\/",
+        "button-url": "/",
         "button-text": "Button"
       }
     },
@@ -22,7 +47,7 @@
       "settings": {
         "headline": "Headline",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque.",
-        "button-url": "\/",
+        "button-url": "/",
         "button-text": "Button"
       }
     },
@@ -31,18 +56,15 @@
       "blocks": {
         "image-1": {
           "type": "image",
-          "settings": {
-          }
+          "settings": {}
         },
         "image-2": {
           "type": "image",
-          "settings": {
-          }
+          "settings": {}
         },
         "image-3": {
           "type": "image",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -97,6 +119,7 @@
     }
   },
   "order": [
+    "hero_section_yXNMQJ",
     "section-hero",
     "section-collection",
     "section-banner",
