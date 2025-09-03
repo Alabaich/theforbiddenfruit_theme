@@ -9,6 +9,8 @@
     <link rel="preload" href="{{ 'bundle.css' | asset_url }}" as="style">
     <link rel="preload" href="{{ 'bundle.js' | asset_url }}" as="script">
 
+    {{ 'theme_styles.css' | asset_url | stylesheet_tag }}
+
     <title>{{ page_title | escape }}</title>
 
     {% if page_description %}

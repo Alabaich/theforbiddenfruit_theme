@@ -1,0 +1,192 @@
+<style>
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    text-align: center;
+  }
+
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 100px;
+    text-align: left;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  .hero-content-left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 50%;
+  }
+
+  .info-block {
+    display: flex;
+    padding: 10px 16px;
+    align-items: center;
+    gap: 20px;
+    border-radius: 12px;
+    background: var(--color-white);
+    width: fit-content;
+    margin-left: auto;
+    height: fit-content;
+  }
+
+  .info-block-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+  }
+
+  .info-block-text-large {
+    color: var(--color-dark);
+    font-family: var(--font-onest);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -1.68px;
+    text-transform: capitalize;
+  }
+
+  .info-block-text-small {
+    color: var(--color-dark);
+    font-family: var(--font-onest);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.32px;
+  }
+
+  .whiteButton {
+    width: fit-content;
+  }
+
+  .info-block img {
+    width: 70px;
+    height: auto;
+  }
+</style>
+
+<div class="hero-section">
+  <img
+    src="{{ section.settings.image | img_url: '1920x1080', crop: 'center' }}"
+    class="hero-image"
+    alt="{{ section.settings.heading | escape }}">
+  <div class="hero-content">
+    <div class="hero-content-left">
+      {% if section.settings.upper_title != blank %}
+        <p class="upperTitle">{{ section.settings.upper_title }}</p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h1>{{ section.settings.heading }}</h1>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="upperTitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="whiteButton">
+          <span>{{ section.settings.button_text }}</span>
+        </a>
+      {% endif %}
+    </div>
+
+    {% if section.settings.show_info_block %}
+      <div class="info-block">
+        {% if section.settings.info_block_image != blank %}
+          <img src="{{ section.settings.info_block_image | img_url: '70x70' }}" alt="Info block icon">
+        {% endif %}
+        <div class="info-block-text-container">
+          {% if section.settings.info_block_main_text != blank %}
+            <span class="info-block-text-large">{{ section.settings.info_block_main_text }}</span>
+          {% endif %}
+          {% if section.settings.info_block_sub_text != blank %}
+            <span class="info-block-text-small">{{ section.settings.info_block_sub_text }}</span>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hero Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "upper_title",
+        "label": "Upper Title"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Hero Heading"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }, {
+        "type": "header",
+        "content": "Info Block Settings"
+      }, {
+        "type": "checkbox",
+        "id": "show_info_block",
+        "label": "Show Info Block",
+        "default": true
+      }, {
+        "type": "image_picker",
+        "id": "info_block_image",
+        "label": "Info Block Image"
+      }, {
+        "type": "text",
+        "id": "info_block_main_text",
+        "label": "Info Block Main Text"
+      }, {
+        "type": "text",
+        "id": "info_block_sub_text",
+        "label": "Info Block Sub Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Section",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

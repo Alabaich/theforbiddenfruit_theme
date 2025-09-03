@@ -1,0 +1,172 @@
+<style>
+  .reviews-slider-section {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+    mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+  .reviews-container {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
+  .reviews-container-track {
+    display: flex;
+    animation: marquee 40s linear infinite;
+    width: max-content;
+  }
+  .reviews-container-inner {
+    display: flex;
+  }
+  .review-block {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+  }
+  .review-text-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    white-space: nowrap;
+  }
+  .review-text-dark {
+    color: #2C2D2C;
+    font-family: "Manrope"
+    , sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .review-text-gray {
+    color: #616161;
+    font-family: "Manrope"
+    , sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .review-separator {
+    color: #616161;
+    font-family: "Manrope"
+    , sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 20px;
+  }
+  .rating-info-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    white-space: nowrap;
+  }
+  .trusted-customers-text {
+    font-size: 16px;
+    font-family: "Manrope"
+    , sans-serif;
+    color: #616161;
+    text-decoration: underline;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .reviews-container-track {
+      animation-duration: 30s;
+    }
+    .review-separator {
+      padding: 0 10px;
+    }
+    .review-text-wrapper,
+    .rating-info-wrapper {
+      padding: 0 10px;
+    }
+  }
+</style>
+
+<div class="reviews-slider-section">
+  <div class="reviews-container">
+    <div class="reviews-container-track">
+      {% for i in (1..2) %}
+        <div class="reviews-container-inner">
+          {% for block in section.blocks %}
+            {% if forloop.index0 > 0 %}
+              <span class="review-separator">•</span>
+            {% endif %}
+            {% if block.type == 'review' %}
+              <div class="review-block">
+                <div class="review-text-wrapper">
+                  {% if block.settings.main_text != blank %}
+                    <span class="review-text-gray">{{ block.settings.main_text }}</span>
+                  {% endif %}
+                  {% if block.settings.sub_text != blank %}
+                    <span class="review-text-dark">{{ block.settings.sub_text }}</span>
+                  {% endif %}
+                </div>
+              </div>
+            {% elsif block.type == 'rating_info' %}
+              <div class="review-block">
+                <div class="rating-info-wrapper">
+                  <svg
+                    width="120"
+                    height="25"
+                    viewBox="0 0 120 25"
+                    fill="none">
+                    <path d="M7.32538 19.4229L8.56538 14.1099L4.44238 10.5379L9.87338 10.0679L12.0004 5.05688L14.1274 10.0669L19.5574 10.5369L15.4344 14.1089L16.6754 19.4219L12.0004 16.6019L7.32538 19.4229Z" fill="black" />
+                    <path d="M31.3254 19.4229L32.5654 14.1099L28.4424 10.5379L33.8734 10.0679L36.0004 5.05688L38.1274 10.0669L43.5574 10.5369L39.4344 14.1089L40.6754 19.4219L36.0004 16.6019L31.3254 19.4229Z" fill="black" />
+                    <path d="M55.3254 19.4229L56.5654 14.1099L52.4424 10.5379L57.8734 10.0679L60.0004 5.05688L62.1274 10.0669L67.5574 10.5369L63.4344 14.1089L64.6754 19.4219L60.0004 16.6019L55.3254 19.4229Z" fill="black" />
+                    <path d="M79.3254 19.4229L80.5654 14.1099L76.4424 10.5379L81.8734 10.0679L84.0004 5.05688L86.1274 10.0669L91.5574 10.5369L87.4344 14.1089L88.6754 19.4219L84.0004 16.6019L79.3254 19.4229Z" fill="black" />
+                    <path d="M109.45 14.1089V16L111.15 17.3499L110.325 13.7499L113.1 11.3499L109.45 11.0249V12.5V14.1089ZM103.325 19.4229L104.565 14.1099L100.442 10.5379L105.873 10.0679L108 5.05688L110.127 10.0669L115.557 10.5369L111.434 14.1089L112.675 19.4219L108 16.6019L103.325 19.4229Z" fill="black" />
+                  </svg>
+                  <span class="trusted-customers-text">1488 trusted customers</span>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Small Reviews Slider",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "rating_info",
+        "name": "Rating Info",
+        "limit": 1
+      }, {
+        "type": "review",
+        "name": "Review Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "main_text",
+            "label": "Main Text",
+            "default": "Main text"
+          }, {
+            "type": "text",
+            "id": "sub_text",
+            "label": "Sub Text",
+            "default": "Sub text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Small Reviews Slider",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

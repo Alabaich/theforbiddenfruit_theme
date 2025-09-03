@@ -1,0 +1,91 @@
+/*
+ * Base styles for typography and buttons.
+ *
+ * Use these styles to maintain consistency across the theme.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Onest:wght@500&display=swap");
+
+:root {
+  /* Colors */
+  --color-white: #fff;
+  --color-dark: #2c2d2c;
+  --color-gray-light: #eaeaea;
+  --color-gray-dark: #616161;
+
+  /* Fonts */
+  --font-manrope: "Manrope", sans-serif;
+  --font-onest: "Onest", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+h1 {
+  color: var(--color-white);
+  font-family: var(--font-manrope);
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 600;
+  margin: 0;
+}
+
+.upperTitle {
+  color: var(--color-gray-light);
+  font-family: var(--font-manrope);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--color-gray-dark);
+  text-align: center;
+  font-family: var(--font-manrope);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.whiteButton {
+  display: flex;
+  padding: 12px 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-dark);
+  border-radius: 10px;
+  text-decoration: none;
+}
+.whiteButton:hover {
+  background-color: transparent;
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+  transition: all 0.3s;
+}
+
+.whiteButton span {
+  color: var(--color-dark);
+  font-family: var(--font-onest);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.whiteButton:hover span {
+  transition: all 0.3s;
+  color: var(--color-white);
+}
+
+body.min-h-screen {
+  margin: 0 !important;
+}
