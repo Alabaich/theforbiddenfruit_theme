@@ -89,3 +89,20 @@ h1 {
 body.min-h-screen {
   margin: 0 !important;
 }
+
+.pageWidth {
+  width: 100%;
+  padding: 15px;
+}
+
+@media (min-width: 768px) {
+  .pageWidth {
+    padding: 25px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .pageWidth {
+    padding: 25px 10%;
+  }
+}
