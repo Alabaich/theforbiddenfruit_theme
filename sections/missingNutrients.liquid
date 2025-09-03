@@ -3,47 +3,65 @@
     position: relative;
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
+    gap: 50px;
+  }
+
+  .mn-hero-heading {
+    padding: 0 10%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px;
+  }
+
+  .mn-hero-heading h1 {
+    color: #2c2d2c;
+    font-family: 'Manrope'
+    , sans-serif;
+    margin: 0;
+  }
+
+  .mn-hero-heading .subtitle {
+    font-family: 'Manrope'
+    , sans-serif;
+    margin: 0;
   }
 
   .mn-hero-content {
     position: relative;
     z-index: 1;
-    max-width: 800px;
-    padding: 40px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-  }
-
-  .mn-hero-content h1 {
-    color: #2c2d2c;
-    font-family: 'Manrope'
-    , sans-serif;
-  }
-
-  .mn-hero-content .subtitle {
-    font-family: 'Manrope'
-    , sans-serif;
+    gap: 50px;
   }
 
   .mn-custom-blocks {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 35px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
 
   .mn-custom-block {
     display: flex;
     align-items: center;
     gap: 15px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   .mn-custom-block svg {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     flex-shrink: 0;
   }
 
@@ -68,10 +86,37 @@
   .mn-custom-text u {
     text-decoration: underline;
   }
+
+  .mn-bottom-text {
+    color: #616161;
+    font-family: 'Onest'
+    , sans-serif;
+    font-size: 20px;
+    text-transform: capitalize;
+    text-align: left;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 768px) {
+    .mn-custom-blocks {
+      padding: 0 15px;
+      gap: 25px;
+    }
+
+    .mn-custom-text {
+      font-size: 14px;
+    }
+
+    .mn-bottom-text {
+      font-size: 20px;
+      padding: 0 15px;
+    }
+  }
 </style>
 
 <div class="mn-hero-section pageWidth">
-  <div class="mn-hero-content">
+  <div class="mn-hero-heading">
     {% if section.settings.heading != blank %}
       <h1>{{ section.settings.heading }}</h1>
     {% endif %}
@@ -79,7 +124,9 @@
     {% if section.settings.subtitle != blank %}
       <p class="subtitle">{{ section.settings.subtitle }}</p>
     {% endif %}
+  </div>
 
+  <div class="mn-hero-content">
     {% if section.blocks.size > 0 %}
       <div class="mn-custom-blocks">
         {% for block in section.blocks %}
@@ -92,6 +139,12 @@
             {% endif %}
           </div>
         {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.bottom_text != blank %}
+      <div class="mn-bottom-text">
+        {{ section.settings.bottom_text }}
       </div>
     {% endif %}
   </div>
@@ -111,6 +164,11 @@
         "id": "subtitle",
         "label": "Subtitle",
         "default": "Your subtitle text here"
+      }, {
+        "type": "richtext",
+        "id": "bottom_text",
+        "label": "Bottom Text",
+        "default": "<p>The standard modern diet, heavy in refined grains (white bread, pasta), processed meats, sugar, and unhealthy fats, is systematically stripped of the compounds listed above.</p>"
       }
     ],
     "blocks": [
@@ -136,6 +194,10 @@
       {
         "name": "Missing Nutrients",
         "category": "Custom",
+        "settings": {
+          "heading": "Main Title",
+          "subtitle": "Your subtitle text here"
+        },
         "blocks": [
           {
             "type": "custom_block"
