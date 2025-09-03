@@ -25,15 +25,6 @@
         "info_block_sub_text": "Pure & Organic"
       }
     },
-    "section-hero": {
-      "type": "section-hero",
-      "settings": {
-        "headline": "Headline",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque.",
-        "button-url": "/",
-        "button-text": "Button"
-      }
-    },
     "section-collection": {
       "type": "section-collection",
       "settings": {
@@ -120,7 +111,6 @@
   },
   "order": [
     "hero_section_yXNMQJ",
-    "section-hero",
     "section-collection",
     "section-banner",
     "section-image-row",
