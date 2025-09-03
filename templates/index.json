@@ -1,107 +1,71 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "section-hero": {
-      "type": "section-hero",
+    "hero_section_yXNMQJ": {
+      "type": "hero-section",
+      "name": "Hero Section",
       "settings": {
-        "headline": "Headline",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque.",
-        "button-url": "\/",
-        "button-text": "Button"
+        "image": "shopify://shop_images/1FF.png",
+        "upper_title": "Elevate Your Skincare Ritual",
+        "heading": "Nature’s Secret to General Well-being",
+        "subtitle": "Experience the transformative power of nature.",
+        "button_text": "Shop Now",
+        "button_link": "",
+        "show_info_block": true,
+        "info_block_image": "shopify://shop_images/2herosection.png",
+        "info_block_main_text": "100%",
+        "info_block_sub_text": "Pure & Organic"
       }
     },
-    "section-collection": {
-      "type": "section-collection",
-      "settings": {
-        "headline": "Selected products",
-        "collection_featured": "",
-        "collection_products_limit": "4"
-      }
-    },
-    "section-banner": {
-      "type": "section-banner",
-      "settings": {
-        "headline": "Headline",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque.",
-        "button-url": "\/",
-        "button-text": "Button"
-      }
-    },
-    "section-image-row": {
-      "type": "section-image-row",
+    "small_reviews_slider_cnDQAW": {
+      "type": "smallReviewsSlider",
       "blocks": {
-        "image-1": {
-          "type": "image",
+        "rating_info_z7PHwF": {
+          "type": "rating_info",
+          "settings": {}
+        },
+        "review_fCjzc7": {
+          "type": "review",
           "settings": {
+            "main_text": "Amanda K",
+            "sub_text": "“Miracle Smoothie”"
           }
         },
-        "image-2": {
-          "type": "image",
+        "review_qAeXnM": {
+          "type": "review",
           "settings": {
+            "main_text": "Alison M",
+            "sub_text": "“Game Changer For Your Energy And Health”"
           }
         },
-        "image-3": {
-          "type": "image",
+        "review_iXRhpf": {
+          "type": "review",
           "settings": {
+            "main_text": "Ines K.",
+            "sub_text": "“The Product Changed My Life”"
           }
         }
       },
       "block_order": [
-        "image-1",
-        "image-2",
-        "image-3"
+        "rating_info_z7PHwF",
+        "review_fCjzc7",
+        "review_qAeXnM",
+        "review_iXRhpf"
       ],
-      "settings": {
-        "headline": "Our store"
-      }
-    },
-    "section-quotes": {
-      "type": "section-quotes",
-      "blocks": {
-        "quote-1": {
-          "type": "quote",
-          "settings": {
-            "quote-text": "Add customer reviews and testimonials to showcase your store’s happy customers.",
-            "quote-author": "Author's name"
-          }
-        },
-        "quote-2": {
-          "type": "quote",
-          "settings": {
-            "quote-text": "Add customer reviews and testimonials to showcase your store’s happy customers.",
-            "quote-author": "Author's name"
-          }
-        },
-        "quote-3": {
-          "type": "quote",
-          "settings": {
-            "quote-text": "Add customer reviews and testimonials to showcase your store’s happy customers.",
-            "quote-author": "Author's name"
-          }
-        }
-      },
-      "block_order": [
-        "quote-1",
-        "quote-2",
-        "quote-3"
-      ],
-      "settings": {
-        "headline": "What others say about us"
-      }
-    },
-    "section-newsletter": {
-      "type": "section-newsletter",
-      "settings": {
-        "headline": "Our newsletter",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque."
-      }
+      "name": "Small Reviews Slider",
+      "settings": {}
     }
   },
   "order": [
-    "section-hero",
-    "section-collection",
-    "section-banner",
-    "section-image-row",
-    "section-quotes",
-    "section-newsletter"
+    "hero_section_yXNMQJ",
+    "small_reviews_slider_cnDQAW"
   ]
 }
