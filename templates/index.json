@@ -189,6 +189,69 @@
         "button_text": "About Us",
         "button_link": "shopify://pages/faq"
       }
+    },
+    "reviews_jJVg3Y": {
+      "type": "reviews",
+      "blocks": {
+        "review_nMetRy": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Amazing product! I highly recommend it to everyone.",
+            "author": "John Doe",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_FaiMcY": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "\"Cool\"",
+            "author": "John Doe",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_DXi6DU": {
+          "type": "review",
+          "settings": {
+            "review_type": "video",
+            "quote": "Amazing product! I highly recommend it to everyone.",
+            "author": "John Doe",
+            "video_url": "https://www.youtube.com/watch?v=-V4jiPcNUjg",
+            "video_thumbnail": "shopify://shop_images/reviewthumbnail.png"
+          }
+        },
+        "review_RETt9B": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Amazing product! I highly recommend it to everyone.",
+            "author": "John Doe",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_xUEg8q": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Great quality and fast shipping. Will buy again!",
+            "author": "Jane Smith",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        }
+      },
+      "block_order": [
+        "review_nMetRy",
+        "review_FaiMcY",
+        "review_DXi6DU",
+        "review_RETt9B",
+        "review_xUEg8q"
+      ],
+      "name": "Reviews",
+      "settings": {
+        "heading": "Customer Reviews",
+        "subtitle": "See what our customers are saying about us"
+      }
     }
   },
   "order": [
@@ -199,6 +262,7 @@
     "home_collections_kwVQfD",
     "missing_nutrients_ePDBjM",
     "selected_products_cGUiGH",
-    "switch_side_image_NE4Ma3"
+    "switch_side_image_NE4Ma3",
+    "reviews_jJVg3Y"
   ]
 }
