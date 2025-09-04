@@ -179,7 +179,7 @@
   .post-meta {
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: space-between;
     font-family: 'Onest'
     , sans-serif;
     font-size: 14px;
@@ -231,7 +231,7 @@
 
     .main-post-content {
       padding: 30px;
-      gap: 30px;
+      gap: 15px;
     }
 
     .main-post-title {
@@ -258,7 +258,7 @@
 
   @media (max-width: 768px) {
     .main-post-content {
-      padding: 25px;
+      padding: 15px;
     }
 
     .main-post-title {
@@ -298,7 +298,10 @@
 
     .read-time {
       position: static;
-      margin-top: 5px;
+    }
+
+    .main-post-image img {
+      border-radius: 10px;
     }
   }
 </style>

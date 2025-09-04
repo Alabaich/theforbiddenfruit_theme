@@ -137,6 +137,8 @@
     .comparison-meals-content {
       flex-direction: column;
       gap: 40px;
+      max-width: 100%;
+      width: 80%;
     }
 
     .comparison-meals-number-x {
@@ -150,7 +152,7 @@
     }
 
     .comparison-meals-small-x {
-      font-size: 20px;
+      font-size: 24px;
     }
   }
 
@@ -160,7 +162,7 @@
     }
 
     .comparison-meals-small-x {
-      font-size: 13px;
+      font-size: 24px;
     }
 
     .comparison-meals-progress-title {
@@ -169,6 +171,94 @@
 
     .comparison-meals-content {
       gap: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .comparison-meals-section {
+      gap: 30px;
+      padding: 15px 0;
+    }
+
+    .comparison-meals-heading {
+      gap: 15px;
+    }
+
+    .comparison-meals-text {
+      font-size: 18px;
+      letter-spacing: -0.18px;
+      padding: 0 15px;
+    }
+
+    .comparison-meals-content {
+      flex-direction: column;
+      gap: 30px;
+      padding: 0 15px;
+    }
+
+    .comparison-meals-number-x {
+      flex-direction: row;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .comparison-meals-big-number {
+      font-size: 80px;
+      line-height: 0.8;
+    }
+
+    .comparison-meals-small-x {
+      font-size: 24px;
+    }
+
+    .comparison-meals-progress {
+      gap: 25px;
+      width: 100%;
+    }
+
+    .comparison-meals-progress-item {
+      gap: 12px;
+    }
+
+    .comparison-meals-progress-title {
+      font-size: 18px;
+      letter-spacing: -0.18px;
+      text-align: center;
+    }
+
+    .comparison-meals-progress-bar {
+      height: 18px;
+    }
+
+    .comparison-meals-bottom-text {
+      font-size: 16px;
+      padding: 0 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .comparison-meals-big-number {
+      font-size: 60px;
+    }
+
+    .comparison-meals-small-x {
+      font-size: 24px;
+    }
+
+    .comparison-meals-progress-title {
+      font-size: 16px;
+    }
+
+    .comparison-meals-progress-bar {
+      height: 15px;
+    }
+
+    .comparison-meals-text {
+      font-size: 16px;
+    }
+
+    .comparison-meals-bottom-text {
+      font-size: 14px;
     }
   }
 </style>

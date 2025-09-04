@@ -126,7 +126,7 @@
     .collection-card {
       padding: 30px;
       gap: 20px;
-      min-height: 250px;
+      min-height: 150px;
     }
 
     .collections-background {
@@ -142,7 +142,7 @@
     .collection-card {
       padding: 25px;
       gap: 15px;
-      min-height: 200px;
+      min-height: 150px;
     }
 
     .collection-title {
@@ -156,6 +156,32 @@
 
     .collections-background {
       padding: 40px 15px;
+    }
+  }
+
+  @media (max-width: 769px) {
+    .collections-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .collection-card {
+      padding: 20px;
+      gap: 15px;
+      min-height: 180px;
+    }
+
+    .collection-title {
+      font-size: 18px;
+    }
+
+    .collection-button {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+
+    .collections-background {
+      padding: 30px 15px;
     }
   }
 </style>
