@@ -151,3 +151,55 @@ body.min-h-screen {
     padding: 25px 10%;
   }
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .upperTitle {
+    font-size: 14px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .whiteButton span {
+    font-size: 14px;
+  }
+
+  a.greenButton span {
+    font-size: 14px;
+  }
+
+  .greenButton span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  .upperTitle {
+    font-size: 12px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .whiteButton span {
+    font-size: 12px;
+  }
+
+  a.greenButton span {
+    font-size: 12px;
+  }
+
+  .greenButton span {
+    font-size: 12px;
+  }
+}
