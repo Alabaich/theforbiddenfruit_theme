@@ -1,0 +1,358 @@
+<style>
+  .sustainability-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    padding: 50px 20px;
+  }
+
+  .sustainability-heading {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .sustainability-content {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .sustainability-main-image {
+    width: 900px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+  }
+
+  .sustainability-card {
+    position: absolute;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 10;
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .sustainability-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .sustainability-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #3c6e4e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .sustainability-card-icon svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+  }
+
+  .sustainability-card-text {
+    color: #000;
+    font-family: Onest;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
+  .card-1 {
+    top: 15%;
+    left: 5%;
+  }
+
+  .card-2 {
+    bottom: 25%;
+    left: 10%;
+  }
+
+  .card-3 {
+    top: 25%;
+    right: 5%;
+  }
+
+  .card-4 {
+    bottom: 13%;
+    right: 10%;
+  }
+
+  @media (max-width: 768px) {
+    .sustainability-heading h1 {
+      font-size: 2rem;
+    }
+
+    .sustainability-content {
+      height: 500px;
+    }
+
+    .sustainability-main-image {
+      width: 250px;
+    }
+
+    .sustainability-card {
+      padding: 12px;
+    }
+
+    .sustainability-card-text {
+      font-size: 12px;
+    }
+
+    /* Adjust card positions for mobile */
+    .card-1 {
+      top: 20%;
+      left: 5%;
+    }
+
+    .card-2 {
+      bottom: 20%;
+      left: 5%;
+    }
+
+    .card-3 {
+      top: 20%;
+      right: 5%;
+    }
+
+    .card-4 {
+      bottom: 20%;
+      right: 5%;
+    }
+  }
+</style>
+
+<section class="sustainability-section pageWidth">
+  <div class="sustainability-heading">
+    {% if section.settings.heading != blank %}
+      <h1>{{ section.settings.heading }}</h1>
+    {% endif %}
+
+    {% if section.settings.subtitle != blank %}
+      <p class="subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+  </div>
+
+  <div class="sustainability-content" id="parallax-container">
+    <!-- Main Image -->
+    <div class="sustainability-image-container">
+      {% if section.settings.main_image != blank %}
+        <img
+          src="{{ section.settings.main_image | img_url: '400x' }}"
+          alt="{{ section.settings.main_image.alt | escape }}"
+          class="sustainability-main-image"
+          width="{{ section.settings.main_image.width }}"
+          height="{{ section.settings.main_image.height }}"
+          loading="lazy"
+          id="main-image">
+      {% else %}
+        <img
+          src="https://placehold.co/400x600/b0d771/000?text=Smoothie"
+          alt="Placeholder image for a green smoothie glass"
+          class="sustainability-main-image"
+          id="main-image">
+      {% endif %}
+    </div>
+
+    <!-- Cards -->
+    <div class="sustainability-card card-1" data-depth="0.03">
+      <div class="sustainability-card-icon">
+        <svg
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
+        </svg>
+      </div>
+      <p class="sustainability-card-text">Sustainable & Ethical Sourcing</p>
+    </div>
+
+    <div class="sustainability-card card-2" data-depth="0.02">
+      <div class="sustainability-card-icon">
+        <svg
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+      </div>
+      <p class="sustainability-card-text">Eco-Friendly Packaging</p>
+    </div>
+
+    <div class="sustainability-card card-3" data-depth="0.03">
+      <div class="sustainability-card-icon">
+        <svg
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+      <p class="sustainability-card-text">Carbon Neutral Delivery</p>
+    </div>
+
+    <div class="sustainability-card card-4" data-depth="0.02">
+      <div class="sustainability-card-icon">
+        <svg
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      </div>
+      <p class="sustainability-card-text">Supporting Local Communities</p>
+    </div>
+  </div>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('parallax-container');
+    const mainImage = document.getElementById('main-image');
+    const cards = document.querySelectorAll('.sustainability-card');
+    
+    if (!container) return;
+    
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+      );
+    }
+    
+    function updateParallax() {
+      if (!isElementInViewport(container)) return;
+      
+      const { top, height } = container.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      
+      const scrollPosition = 1 - Math.max(0, Math.min(1, top / viewportHeight));
+      const scrollPercent = (scrollPosition - 0.5) * 2;
+      
+      if (mainImage) {
+        mainImage.style.transform = `translateY(${scrollPercent * 20}px)`;
+      }
+      
+      cards.forEach(card => {
+        const depth = parseFloat(card.getAttribute('data-depth')) || 0.02;
+        const moveY = scrollPercent * (depth * 100);
+        card.style.transform = `translateY(${moveY}px)`;
+        
+        if (isElementInViewport(card)) {
+          card.classList.add('visible');
+        }
+      });
+    }
+    
+    // УБРАТЬ проверку видимости контейнера для mousemove
+    document.addEventListener('mousemove', function(e) {
+      // Проверяем, видна ли секция, но не проверяем позицию курсора
+      if (!isElementInViewport(container)) return;
+      
+      const { left, top, width, height } = container.getBoundingClientRect();
+      const x = (e.clientX - left) / width - 0.5;
+      const y = (e.clientY - top) / height - 0.5;
+      
+      if (mainImage) {
+        mainImage.style.transform = `translate(${x * 15}px, ${y * 15}px)`;
+      }
+      
+      cards.forEach(card => {
+        const depth = parseFloat(card.getAttribute('data-depth')) || 0.02;
+        const moveX = x * (depth * 100);
+        const moveY = y * (depth * 100);
+        card.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      });
+    });
+    
+    // Слушаем mouseleave на всем документе, а не только на контейнере
+    document.addEventListener('mouseleave', function() {
+      if (mainImage) {
+        mainImage.style.transform = 'translate(0, 0)';
+      }
+      
+      cards.forEach(card => {
+        card.style.transform = 'translate(0, 0)';
+      });
+    });
+    
+    window.addEventListener('scroll', updateParallax);
+    window.addEventListener('resize', updateParallax);
+    updateParallax();
+      });
+  </script>
+
+</section>
+
+{% schema %}
+  {
+    "name": "Sustainability",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Our Sustainability Commitment"
+      }, {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Discover how we're making a positive impact on the environment"
+      }, {
+        "type": "image_picker",
+        "id": "main_image",
+        "label": "Main Product Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Sustainability",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

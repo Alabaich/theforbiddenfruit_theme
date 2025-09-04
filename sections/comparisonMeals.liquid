@@ -1,0 +1,269 @@
+<style>
+  .comparison-meals-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .comparison-meals-heading {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .comparison-meals-heading .subtitle {
+    text-align: center;
+    margin: 0;
+  }
+
+  .comparison-meals-text {
+    color: #2c2d2c;
+    text-align: center;
+    font-family: 'Onest'
+    , sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.24px;
+    text-transform: capitalize;
+    max-width: 1000px;
+    margin: 0;
+  }
+
+  .comparison-meals-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .comparison-meals-number-x {
+    display: flex;
+    align-items: end;
+    gap: 10px;
+  }
+
+  .comparison-meals-big-number {
+    font-family: 'Onest'
+    , sans-serif;
+    font-size: 270px;
+    font-weight: 400;
+    color: #115C11;
+    line-height: 0.7;
+  }
+
+  .comparison-meals-small-x {
+    font-family: 'Onest'
+    , sans-serif;
+    font-size: 52px;
+    font-weight: 400;
+    color: #115C11;
+    line-height: 1;
+  }
+
+  .comparison-meals-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+  }
+
+  .comparison-meals-progress-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .comparison-meals-progress-title {
+    color: #2c2d2c;
+    text-align: left;
+    font-family: 'Onest'
+    , sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.24px;
+    text-transform: capitalize;
+    margin: 0;
+  }
+
+  .comparison-meals-progress-bar {
+    width: 100%;
+    height: 22px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .comparison-meals-progress-fill {
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .comparison-meals-progress-fill-gray {
+    background: #E0E3E0;
+    width: 20%;
+  }
+
+  .comparison-meals-progress-fill-green {
+    background: #115C11;
+    width: 90%;
+  }
+
+  .comparison-meals-bottom-text {
+    color: #616161;
+    font-family: 'Onest'
+    , sans-serif;
+    font-size: 20px;
+    text-transform: capitalize;
+    text-align: left;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 968px) {
+    .comparison-meals-content {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .comparison-meals-number-x {
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .comparison-meals-big-number {
+      font-size: 120px;
+    }
+
+    .comparison-meals-small-x {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .comparison-meals-big-number {
+      font-size: 80px;
+    }
+
+    .comparison-meals-small-x {
+      font-size: 13px;
+    }
+
+    .comparison-meals-progress-title {
+      font-size: 20px;
+    }
+
+    .comparison-meals-content {
+      gap: 30px;
+    }
+  }
+</style>
+
+<section class="comparison-meals-section pageWidth">
+  <div class="comparison-meals-heading">
+    {% if section.settings.heading != blank %}
+      <h1>{{ section.settings.heading }}</h1>
+    {% endif %}
+
+    {% if section.settings.subtitle != blank %}
+      <p class="subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+  </div>
+
+  {% if section.settings.description != blank %}
+    <p class="comparison-meals-text">{{ section.settings.description }}</p>
+  {% endif %}
+
+  <div class="comparison-meals-content">
+    <div class="comparison-meals-number-x">
+      <div class="comparison-meals-big-number">6</div>
+      <div class="comparison-meals-small-x">X</div>
+    </div>
+
+    <div class="comparison-meals-progress">
+      <div class="comparison-meals-progress-item">
+        {% if section.settings.title_1 != blank %}
+          <h3 class="comparison-meals-progress-title">{{ section.settings.title_1 }}</h3>
+        {% endif %}
+        <div class="comparison-meals-progress-bar">
+          <div class="comparison-meals-progress-fill comparison-meals-progress-fill-gray"></div>
+        </div>
+      </div>
+
+      <div class="comparison-meals-progress-item">
+        {% if section.settings.title_2 != blank %}
+          <h3 class="comparison-meals-progress-title">{{ section.settings.title_2 }}</h3>
+        {% endif %}
+        <div class="comparison-meals-progress-bar">
+          <div class="comparison-meals-progress-fill comparison-meals-progress-fill-green"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if section.settings.bottom_text != blank %}
+    <div class="comparison-meals-bottom-text">
+      {{ section.settings.bottom_text }}
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+  {
+    "name": "Comparison Meals",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Meal Comparison"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Compare our meal options and find the perfect fit for you"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description Text",
+        "default": "Choose the perfect meal plan that fits your lifestyle and dietary needs"
+      },
+      {
+        "type": "text",
+        "id": "title_1",
+        "label": "First Progress Title",
+        "default": "Regular meals"
+      }, {
+        "type": "text",
+        "id": "title_2",
+        "label": "Second Progress Title",
+        "default": "Our meals"
+      }, {
+        "type": "richtext",
+        "id": "bottom_text",
+        "label": "Bottom Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Comparison Meals",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

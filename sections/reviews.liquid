@@ -1,0 +1,399 @@
+<style>
+  .reviews-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .reviews-heading {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .reviews-heading .subtitle {
+    text-align: center;
+    margin: 0;
+  }
+
+  .reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 100%;
+  }
+
+  .review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+    border-radius: 25px;
+    background: #F3F3EC;
+    align-items: center;
+    min-height: 340px;
+    justify-content: center;
+    position: relative;
+  }
+
+  .review-card.video-review {
+    padding: 0;
+  }
+
+  .review-rating {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .review-quote {
+    color: #2C2D2C;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    text-transform: capitalize;
+  }
+
+  .review-author {
+    font-family: 'Onest', sans-serif;
+    color: #2C2D2C;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.24px;
+    text-transform: capitalize;
+  }
+
+  .review-verified {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #717171;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.24px;
+    text-transform: capitalize;
+  }
+
+  .review-video-preview {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .review-video-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .play-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .review-video-preview:hover .play-icon {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: white;
+  }
+
+  .review-video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .review-video-modal iframe {
+    width: 80%;
+    height: 80%;
+    max-width: 900px;
+    border: none;
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    .reviews-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .review-card {
+      padding: 20px;
+      min-height: 250px;
+    }
+    
+    .review-card.video-review {
+      padding: 0;
+    }
+    
+    .review-video-preview {
+      height: 150px;
+    }
+    
+    .play-icon {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .review-video-modal iframe {
+      width: 95%;
+      height: 50%;
+    }
+  }
+</style>
+
+<section class="reviews-section pageWidth">
+  <div class="reviews-heading">
+    {% if section.settings.heading != blank %}
+      <h1>{{ section.settings.heading }}</h1>
+    {% endif %}
+
+    {% if section.settings.subtitle != blank %}
+      <p class="subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+  </div>
+
+  <div class="reviews-container">
+    {% for block in section.blocks limit: 5 %}
+      {% if block.settings.review_type == 'video' %}
+        <div class="review-card video-review" {{ block.shopify_attributes }}>
+          <div class="review-video-preview" 
+               style="background-image: url('{{ block.settings.video_thumbnail | img_url: '400x' }}')"
+               data-video-url="{{ block.settings.video_url }}">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24" fill="#115C11">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <div class="review-card" {{ block.shopify_attributes }}>
+          <div class="review-rating">
+            <svg width="120" height="25" viewBox="0 0 120 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.32538 19.4539L8.56538 14.1409L4.44238 10.5689L9.87338 10.0989L12.0004 5.08789L14.1274 10.0979L19.5574 10.5679L15.4344 14.1399L16.6754 19.4529L12.0004 16.6329L7.32538 19.4539Z" fill="#2C2D2C"/>
+              <path d="M31.3254 19.4539L32.5654 14.1409L28.4424 10.5689L33.8734 10.0989L36.0004 5.08789L38.1274 10.0979L43.5574 10.5679L39.4344 14.1399L40.6754 19.4529L36.0004 16.6329L31.3254 19.4539Z" fill="#2C2D2C"/>
+              <path d="M55.3254 19.4539L56.5654 14.1409L52.4424 10.5689L57.8734 10.0989L60.0004 5.08789L62.1274 10.0979L67.5574 10.5679L63.4344 14.1399L64.6754 19.4529L60.0004 16.6329L55.3254 19.4539Z" fill="#2C2D2C"/>
+              <path d="M79.3254 19.4539L80.5654 14.1409L76.4424 10.5689L81.8734 10.0989L84.0004 5.08789L86.1274 10.0979L91.5574 10.5679L87.4344 14.1399L88.6754 19.4529L84.0004 16.6329L79.3254 19.4539Z" fill="#2C2D2C"/>
+              <path d="M109.45 14.1399V16.031L111.15 17.3809L110.325 13.7809L113.1 11.3809L109.45 11.0559V12.531V14.1399ZM103.325 19.4539L104.565 14.1409L100.442 10.5689L105.873 10.0989L108 5.08789L110.127 10.0979L115.557 10.5679L111.434 14.1399L112.675 19.4529L108 16.6329L103.325 19.4539Z" fill="#2C2D2C"/>
+            </svg>
+          </div>
+
+          <p class="review-quote">{{ block.settings.quote }}</p>
+
+          <div class="review-author">{{ block.settings.author }}</div>
+          <div class="review-verified">
+            Verified buyer
+            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 9.03125L9.58333 11.1146L9.16667 10.6979C8.83333 10.3646 8.33333 10.3646 8 10.6979C7.66667 11.0313 7.66667 11.5313 8 11.8646L9.16667 13.0313C9.33333 13.1979 9.5 13.2813 9.75 13.2813H9.83333C10.0833 13.2813 10.3333 13.1146 10.4167 12.9479L12.4167 9.94792C12.6667 9.53125 12.5833 9.03125 12.1667 8.78125C11.75 8.53125 11.25 8.61458 11 9.03125Z" fill="#717171"/>
+              <path d="M17.3337 8.19824C17.0003 7.86491 16.8337 7.44824 16.8337 7.03158C16.8337 5.19824 15.3337 3.69824 13.5003 3.69824C13.0837 3.69824 12.667 3.53158 12.3337 3.19824C11.0003 1.86491 8.91699 1.86491 7.58366 3.19824C7.33366 3.53158 6.91699 3.69824 6.50033 3.69824C4.66699 3.69824 3.16699 5.19824 3.16699 7.03158C3.16699 7.44824 3.00033 7.86491 2.66699 8.19824C1.33366 9.53158 1.33366 11.6149 2.66699 12.9482C3.00033 13.2816 3.16699 13.6982 3.16699 14.1149C3.16699 15.9482 4.66699 17.4482 6.50033 17.4482C6.91699 17.4482 7.33366 17.6149 7.66699 17.9482C8.33366 18.5316 9.16699 18.8649 10.0003 18.8649C10.8337 18.8649 11.7503 18.5316 12.3337 17.8649C12.667 17.5316 13.0837 17.3649 13.5003 17.3649C15.3337 17.3649 16.8337 15.8649 16.8337 14.0316C16.8337 13.6149 17.0003 13.1982 17.2503 12.8649C18.667 11.6149 18.667 9.44824 17.3337 8.19824ZM16.167 11.6982C15.5003 12.3649 15.167 13.1982 15.167 14.0316C15.167 14.9482 14.417 15.6982 13.5003 15.6982C12.5837 15.6982 11.7503 16.0316 11.167 16.6982C10.5003 17.3649 9.41699 17.3649 8.83366 16.6982C8.16699 16.0316 7.33366 15.6982 6.50033 15.6982C5.58366 15.6982 4.83366 14.9482 4.83366 14.0316C4.83366 13.1149 4.50033 12.2816 3.83366 11.6982C3.16699 11.0316 3.16699 10.0316 3.83366 9.36491C4.50033 8.69824 4.83366 7.86491 4.83366 7.03158C4.83366 6.11491 5.58366 5.36491 6.50033 5.36491C7.41699 5.36491 8.25033 5.03158 8.83366 4.36491C9.16699 4.03158 9.58366 3.86491 10.0003 3.86491C10.417 3.86491 10.8337 4.03158 11.167 4.36491C11.8337 5.03158 12.667 5.36491 13.5003 5.36491C14.417 5.36491 15.167 6.11491 15.167 7.03158C15.167 7.94824 15.5003 8.78158 16.167 9.36491C16.8337 10.0316 16.8337 11.0316 16.167 11.6982Z" fill="#717171"/>
+            </svg>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<div class="review-video-modal" id="videoModal">
+  <button class="close-modal">&times;</button>
+  <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const videoPreviews = document.querySelectorAll('.review-video-preview');
+  const videoModal = document.getElementById('videoModal');
+  const videoFrame = document.getElementById('videoFrame');
+  const closeModal = document.querySelector('.close-modal');
+  
+  // Функция для преобразования URL YouTube в embed-формат
+  function convertToEmbedUrl(url) {
+    if (url.includes('youtube.com/watch?v=')) {
+      const videoId = url.split('v=')[1];
+      const ampersandPosition = videoId.indexOf('&');
+      if (ampersandPosition !== -1) {
+        return 'https://www.youtube.com/embed/' + videoId.substring(0, ampersandPosition);
+      }
+      return 'https://www.youtube.com/embed/' + videoId;
+    }
+    return url;
+  }
+  
+  videoPreviews.forEach(preview => {
+    preview.addEventListener('click', function() {
+      let videoUrl = this.getAttribute('data-video-url');
+      if (videoUrl) {
+        // Преобразуем URL в embed-формат
+        videoUrl = convertToEmbedUrl(videoUrl);
+        videoFrame.src = videoUrl;
+        videoModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+  
+  closeModal.addEventListener('click', function() {
+    videoModal.style.display = 'none';
+    videoFrame.src = '';
+    document.body.style.overflow = 'auto';
+  });
+  
+  videoModal.addEventListener('click', function(e) {
+    if (e.target === videoModal) {
+      videoModal.style.display = 'none';
+      videoFrame.src = '';
+      document.body.style.overflow = 'auto';
+    }
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Customer Reviews"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "See what our customers are saying about us"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "select",
+          "id": "review_type",
+          "label": "Review Type",
+          "options": [
+            {
+              "value": "text",
+              "label": "Text Review"
+            },
+            {
+              "value": "video",
+              "label": "Video Review"
+            }
+          ],
+          "default": "text"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Review Quote",
+          "default": "Amazing product! I highly recommend it to everyone."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "label": "Video URL",
+          "accept": ["youtube", "vimeo"],
+          "default": "https://www.youtube.com/watch?v=abcdefghijk"
+        },
+        {
+          "type": "image_picker",
+          "id": "video_thumbnail",
+          "label": "Video Thumbnail",
+          "info": "Select an image for video preview"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Amazing product! I highly recommend it to everyone.",
+            "author": "John Doe"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Great quality and fast shipping. Will buy again!",
+            "author": "Jane Smith"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
