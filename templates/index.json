@@ -176,6 +176,19 @@
         "show_tag": true,
         "button_text": "Shop Now"
       }
+    },
+    "switch_side_image_NE4Ma3": {
+      "type": "switchSideImage",
+      "name": "Switch Side Image",
+      "settings": {
+        "image": "shopify://shop_images/homepage.png",
+        "reverse_layout": true,
+        "upper_title": "Trusted by the Tawira People",
+        "title": "Find Out More About The Forbidden Fruit",
+        "subtitle": "Your journey to stronger hair, radiant skin, and natural vitality starts here.",
+        "button_text": "About Us",
+        "button_link": "shopify://pages/faq"
+      }
     }
   },
   "order": [
@@ -185,6 +198,7 @@
     "comparison_meals_PTebGU",
     "home_collections_kwVQfD",
     "missing_nutrients_ePDBjM",
-    "selected_products_cGUiGH"
+    "selected_products_cGUiGH",
+    "switch_side_image_NE4Ma3"
   ]
 }
