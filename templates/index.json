@@ -265,6 +265,17 @@
         "button_text": "About Us",
         "button_link": "shopify://collections/bestsellers"
       }
+    },
+    "blog_posts_home_page_RAyAfQ": {
+      "type": "blogPostsHomePage",
+      "name": "Blog Posts Homepage",
+      "settings": {
+        "heading": "Explore More About Supplements",
+        "subtitle": "The Forbidden Fruit is inspired by the wisdom of native cultures who believed nature holds the key to true transformation.",
+        "blog": "news",
+        "button_text": "Go To Blog",
+        "button_link": "shopify://blogs/news"
+      }
     }
   },
   "order": [
@@ -277,6 +288,7 @@
     "selected_products_cGUiGH",
     "switch_side_image_NE4Ma3",
     "reviews_jJVg3Y",
-    "switch_side_image_7DfEXb"
+    "switch_side_image_7DfEXb",
+    "blog_posts_home_page_RAyAfQ"
   ]
 }
