@@ -197,7 +197,7 @@
           "type": "review",
           "settings": {
             "review_type": "text",
-            "quote": "Amazing product! I highly recommend it to everyone.",
+            "quote": "\"Amazing product! I highly recommend it to everyone.\"",
             "author": "John Doe",
             "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
           }
@@ -221,11 +221,11 @@
             "video_thumbnail": "shopify://shop_images/reviewthumbnail.png"
           }
         },
-        "review_RETt9B": {
+        "review_GeK9ie": {
           "type": "review",
           "settings": {
             "review_type": "text",
-            "quote": "Amazing product! I highly recommend it to everyone.",
+            "quote": "\"Amazing product! I highly recommend it to everyone.\"",
             "author": "John Doe",
             "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
           }
@@ -234,7 +234,7 @@
           "type": "review",
           "settings": {
             "review_type": "text",
-            "quote": "Great quality and fast shipping. Will buy again!",
+            "quote": "\"Great quality and fast shipping. Will buy again!\"",
             "author": "Jane Smith",
             "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
           }
@@ -244,13 +244,26 @@
         "review_nMetRy",
         "review_FaiMcY",
         "review_DXi6DU",
-        "review_RETt9B",
+        "review_GeK9ie",
         "review_xUEg8q"
       ],
       "name": "Reviews",
       "settings": {
         "heading": "Customer Reviews",
         "subtitle": "See what our customers are saying about us"
+      }
+    },
+    "switch_side_image_7DfEXb": {
+      "type": "switchSideImage",
+      "name": "Switch Side Image",
+      "settings": {
+        "image": "shopify://shop_images/homepage.png",
+        "reverse_layout": false,
+        "upper_title": "Trusted by the Tawira People",
+        "title": "Experience Nature’s Forbidden Gift",
+        "subtitle": "Your journey to stronger hair, radiant skin, and natural vitality starts here.",
+        "button_text": "About Us",
+        "button_link": "shopify://collections/bestsellers"
       }
     }
   },
@@ -263,6 +276,7 @@
     "missing_nutrients_ePDBjM",
     "selected_products_cGUiGH",
     "switch_side_image_NE4Ma3",
-    "reviews_jJVg3Y"
+    "reviews_jJVg3Y",
+    "switch_side_image_7DfEXb"
   ]
 }
