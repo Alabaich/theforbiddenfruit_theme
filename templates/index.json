@@ -62,10 +62,20 @@
       ],
       "name": "Small Reviews Slider",
       "settings": {}
+    },
+    "sustainability_section_WEVCae": {
+      "type": "SustainabilitySection",
+      "name": "Sustainability",
+      "settings": {
+        "heading": "Taste the power of nature.",
+        "subtitle": "The Forbidden Fruit is inspired by the wisdom of native cultures who believed nature holds the key to true transformation.",
+        "main_image": "shopify://shop_images/sustainability.png"
+      }
     }
   },
   "order": [
     "hero_section_yXNMQJ",
-    "small_reviews_slider_cnDQAW"
+    "small_reviews_slider_cnDQAW",
+    "sustainability_section_WEVCae"
   ]
 }
