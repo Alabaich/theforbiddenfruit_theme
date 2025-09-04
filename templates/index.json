@@ -161,6 +161,21 @@
         "subtitle": "Many everyday foods contain some nutrients, but they often lack the broad spectrum of micronutrients essential for optimal health—the kind of comprehensive nourishment our products provide.",
         "bottom_text": "<p>The standard modern diet, heavy in refined grains (white bread, pasta), processed meats, sugar, and unhealthy fats, is systematically stripped of the compounds listed above.</p>"
       }
+    },
+    "selected_products_cGUiGH": {
+      "type": "selectedProducts",
+      "name": "Selected Products",
+      "settings": {
+        "heading": "Explore Our Products",
+        "subtitle": "The Forbidden Fruit is inspired by the wisdom of native cultures who believed nature holds the key to true transformation.",
+        "product_list": [
+          "capadulla-bark",
+          "mullein-flower",
+          "miracle-brew"
+        ],
+        "show_tag": true,
+        "button_text": "Shop Now"
+      }
     }
   },
   "order": [
@@ -169,6 +184,7 @@
     "sustainability_section_WEVCae",
     "comparison_meals_PTebGU",
     "home_collections_kwVQfD",
-    "missing_nutrients_ePDBjM"
+    "missing_nutrients_ePDBjM",
+    "selected_products_cGUiGH"
   ]
 }
