@@ -1,0 +1,353 @@
+<style>
+  .hs-hero-slider {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .hs-hero-slider .heroslider-heading {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .hs-hero-slider .buttonsPart {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hs-hero-slider .heroslider-heading h1 {
+    font-weight: 500;
+  }
+
+  .hs-hero-slider .heroslider-heading .subtitle {
+    text-align: center;
+    margin: 0;
+  }
+
+  .greenButton:hover {
+    background-color: transparent;
+    color: #115c11 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(17, 92, 17, 0.3);
+  }
+
+  .greenButton2 {
+    display: flex;
+    padding: 15px 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    border: 2px solid #115c11;
+    text-decoration: none;
+    width: fit-content;
+    color: #115c11;
+    border-radius: 40px;
+    font-family: var(--font-onest, sans-serif);
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .greenButton2:hover {
+    background-color: #115c11;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(17, 92, 17, 0.3);
+  }
+
+  .hs-hero-slider .splide {
+    width: 100%;
+    order: 3;
+    position: relative;
+  }
+
+  .hs-hero-slider .splide__arrows {
+    display: flex;
+    padding: 0 25px;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    justify-content: space-between;
+    z-index: 2;
+  }
+
+  .hs-hero-slider .splide__arrow {
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 3em !important;
+    height: 3em !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #115C11;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(17, 92, 17, 0.2);
+  }
+
+  .hs-hero-slider .splide__arrow:hover {
+    background: #115C11;
+    transform: scale(1.1);
+  }
+
+  .hs-hero-slider .splide__arrow--prev,
+  .hs-hero-slider .splide__arrow--next {
+    position: static;
+    transform: none;
+  }
+
+  .hs-hero-slider .splide__arrow svg {
+    width: 24px !important;
+    height: 24px !important;
+    fill: none !important;
+    transition: all 0.3s ease;
+  }
+
+  .hs-hero-slider .splide__arrow path {
+    stroke: #115C11;
+    stroke-width: 2;
+    transition: all 0.3s ease;
+  }
+
+  .hs-hero-slider .splide__arrow:hover path {
+    stroke: #ffffff;
+  }
+
+  .hs-hero-slider .splide__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hs-hero-slider .splide__slide img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  .hs-hero-slider .splide__arrow--prev.custom-arrow svg {
+    transform: rotate(180deg);
+  }
+
+  .hs-hero-slider .splide__arrow--prev:not(.custom-arrow),
+  .hs-hero-slider .splide__arrow--next:not(.custom-arrow) {
+    display: none !important;
+  }
+
+  @media (max-width: 768px) {
+    .hs-hero-slider .splide__slide img {
+      height: 300px;
+      max-height: 300px;
+      object-fit: cover;
+    }
+  }
+
+</style>
+
+<div class="hs-hero-slider pageWidth">
+  <div class="hero-slide">
+    <div class="heroslider-heading">
+      {% if section.settings.heading != blank %}
+        <h1>{{ section.settings.heading }}</h1>
+      {% else %}
+        <h1>Main Title</h1>
+      {% endif %}
+
+      {% if section.settings.subtitle != blank %}
+        <p class="subtitle">{{ section.settings.subtitle }}</p>
+      {% else %}
+        <p class="subtitle">Your subtitle text here</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="buttonsPart">
+    <a href="{{ section.settings.button_1_url }}" class="greenButton">
+      <span>
+        {% if section.settings.button_1_text != blank %}
+          {{ section.settings.button_1_text }}
+        {% else %}
+          Button 1
+        {% endif %}
+      </span>
+    </a>
+    <a href="{{ section.settings.button_2_url }}" class="greenButton2">
+      <span>
+        {% if section.settings.button_2_text != blank %}
+          {{ section.settings.button_2_text }}
+        {% else %}
+          Button 2
+        {% endif %}
+      </span>
+    </a>
+  </div>
+
+  <div class="splide">
+    <div class="splide__arrows">
+      <button class="splide__arrow splide__arrow--prev custom-arrow">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9 18L15 12L9 6"
+            stroke="#115C11"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+      <button class="splide__arrow splide__arrow--next custom-arrow">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9 18L15 12L9 6"
+            stroke="#115C11"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for block in section.blocks %}
+          <li class="splide__slide">
+            {% if block.settings.slide_image != blank %}
+              <img src="{{ block.settings.slide_image | img_url: '1200x' }}" alt="{{ block.settings.slide_image.alt }}">
+            {% else %}
+              <div style="background: #f0f0f0; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
+                Slide {{ forloop.index }}
+              </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Splide !== 'undefined') {
+      var splide = new Splide('.splide', {
+        type: 'loop',
+        perPage: 1,
+        autoplay: true,
+        interval: 3000,
+        pauseOnHover: false,
+        arrows: true,
+        pagination: false
+      });
+      
+      var prevArrow = document.querySelector('.splide__arrow--prev.custom-arrow');
+      var nextArrow = document.querySelector('.splide__arrow--next.custom-arrow');
+      
+      if (prevArrow) {
+        prevArrow.addEventListener('click', function() {
+          splide.go('<');
+        });
+      }
+      
+      if (nextArrow) {
+        nextArrow.addEventListener('click', function() {
+          splide.go('>');
+        });
+      }
+      
+      splide.mount();
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Hero Slider",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Main Title"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Your subtitle text here"
+      },
+      {
+        "type": "text",
+        "id": "button_1_text",
+        "label": "Button 1 Text",
+        "default": "Button 1"
+      },
+      {
+        "type": "url",
+        "id": "button_1_url",
+        "label": "Button 1 Link"
+      }, {
+        "type": "text",
+        "id": "button_2_text",
+        "label": "Button 2 Text",
+        "default": "Button 2"
+      }, {
+        "type": "url",
+        "id": "button_2_url",
+        "label": "Button 2 Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "slide_image",
+            "label": "Slide Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Slider",
+        "category": "Hero",
+        "blocks": [
+          {
+            "type": "slide"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

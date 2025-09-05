@@ -117,7 +117,7 @@ a.greenButton span {
 }
 
 .greenButton span {
-  color: var(--color-dark);
+  color: #115c11;
   font-family: var(--font-onest);
   font-size: 16px;
   font-style: normal;
@@ -126,7 +126,7 @@ a.greenButton span {
 
 .greenButton:hover span {
   transition: all 0.3s;
-  color: var(--color-white);
+  color: #115c11;
 }
 
 body.min-h-screen {
@@ -158,23 +158,11 @@ body.min-h-screen {
   }
 
   .upperTitle {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .subtitle {
-    font-size: 14px;
-  }
-
-  .whiteButton span {
-    font-size: 14px;
-  }
-
-  a.greenButton span {
-    font-size: 14px;
-  }
-
-  .greenButton span {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -184,22 +172,10 @@ body.min-h-screen {
   }
 
   .upperTitle {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .subtitle {
-    font-size: 12px;
-  }
-
-  .whiteButton span {
-    font-size: 12px;
-  }
-
-  a.greenButton span {
-    font-size: 12px;
-  }
-
-  .greenButton span {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
