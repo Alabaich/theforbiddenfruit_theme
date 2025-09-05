@@ -1,0 +1,107 @@
+<style>
+  .fa-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 25px;
+  }
+
+  .fa-container .upperBlock {
+    display: flex;
+    gap: 25px;
+  }
+
+  .fa-container .upperBlock .fa-subheading {
+    color: #115C11;
+    font-family: Manrope
+    , sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0;
+  }
+
+  .fa-heading {
+    color: #000;
+    font-family: Manrope
+    , sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0;
+  }
+
+  .fa-container p {
+    color: #616161;
+    font-family: Manrope
+    , sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .fa-container {
+      gap: 15px;
+    }
+  }
+</style>
+
+<div class="fa-container pageWidth">
+  <div class="upperBlock">
+    {% if section.settings.subheading != blank %}
+      <h3 class="fa-subheading">{{ section.settings.subheading }}</h3>
+    {% endif %}
+
+    {% if section.settings.date != blank %}
+      <p class="fa-subheading">{{ section.settings.date }}</p>
+    {% endif %}
+  </div>
+
+
+  {% if section.settings.heading != blank %}
+    <h2 class="fa-heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  {% if section.settings.body_text != blank %}
+    <p class="fa-body-text">{{ section.settings.body_text }}</p>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Featured Article",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Your Subheading Here"
+      }, {
+        "type": "text",
+        "id": "date",
+        "label": "Date",
+        "default": "01/01/2025"
+      }, {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Featured Article Title"
+      }, {
+        "type": "text",
+        "id": "body_text",
+        "label": "Body Text",
+        "default": "<p>Your body text goes here. This is a great place to highlight important information or a special story for your customers.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Article",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}
