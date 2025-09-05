@@ -100,7 +100,11 @@ h1 {
   width: fit-content;
   color: #fff;
   border-radius: 40px;
-  font-family: var(--font-onest);
+  font-family: var(--font-onest, sans-serif);
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
 a.greenButton span {
@@ -119,16 +123,15 @@ a.greenButton span {
 }
 
 .greenButton span {
-  color: var(--color-dark);
+  color: #115c11;
   font-family: var(--font-onest);
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
 }
 
 .greenButton:hover span {
   transition: all 0.3s;
-  color: var(--color-white);
+  color: #115c11;
 }
 
 body.min-h-screen {
