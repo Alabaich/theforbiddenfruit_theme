@@ -223,7 +223,9 @@
     {% endif %}
   </div>
 
-  <div class="sustainability-content" id="parallax-container" style="background-image: url({{ section.settings.bgImage |  img_url: 'original'}}); backround-position: center center;">
+  <div class="sustainability-content" id="parallax-container" style="background-image: url({{ section.settings.bgImage |  img_url: 'original'}}); background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;">
     <!-- Main Image -->
     <div class="sustainability-image-container" >
       {% if section.settings.main_image != blank %}
