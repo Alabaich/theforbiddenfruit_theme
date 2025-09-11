@@ -160,9 +160,68 @@
       padding: 30px 20px;
     }
   }
+
+  .customHeader a {
+    color: #fff !important;
+    font-family: Manrope !important;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .customHeader.pageWidth {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .customHeader a:hover {
+    color: #fff !important;
+    opacity: 0.8;
+  }
+
+  .customHeader .icon-class {
+    color: #fff !important;
+  }
+
+  .customHeader .customHeader__inner .iconsBlock .greenButton {
+    color: #2c2d2c !important;
+    background-color: #fff;
+    border: 2px solid #fff;
+  }
+
+  .customHeader .customHeader__inner .iconsBlock .greenButton:hover {
+    background-color: transparent !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+    transition: all 0.3s;
+  }
+
+  .customHeader .customHeader__inner .iconsBlock path {
+    stroke: #fff !important;
+  }
+
+  .customHeader .customHeader__inner .iconsBlock .greenButton:hover span {
+    color: #2c2d2c !important;
+  }
+
+  @media (min-width: 768px) {
+    .pageWidth {
+      padding: 15px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    .pageWidth {
+      padding: 25px 10%;
+    }
+  }
 </style>
 
-<div class="hero-section">
+<div class="hero-section js-hero-section">
   <img
     src="{{ section.settings.image | img_url: '1920x1080', crop: 'center' }}"
     class="hero-image"
