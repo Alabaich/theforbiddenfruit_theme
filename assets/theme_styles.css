@@ -140,15 +140,27 @@ body.min-h-screen {
   box-sizing: border-box;
 }
 
+.verticalPadding{
+  padding: 50px 15px; 
+}
+
 @media (min-width: 768px) {
   .pageWidth {
     padding: 25px;
+  }
+
+  .verticalPadding{
+    padding: 75px 25px; 
   }
 }
 
 @media (min-width: 1500px) {
   .pageWidth {
     padding: 25px 10%;
+  }
+
+  .verticalPadding{
+    padding: 75px 10%; 
   }
 }
 
