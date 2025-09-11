@@ -52,11 +52,11 @@
         </main>
 
         {% section 'layout-footer' %}
-        {% section 'layout-mobile-navigation' %}
+        {% comment %} {% section 'layout-mobile-navigation' %} {% endcomment %}
 
-        <transition name="slide-mobile-menu">
+        {% comment %} <transition name="slide-mobile-menu">
           {% render 'layout-mobile-menu' %}
-        </transition>
+        </transition> {% endcomment %}
       </div>
     {% endif %}
 

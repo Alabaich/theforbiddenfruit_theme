@@ -160,9 +160,189 @@
       padding: 30px 20px;
     }
   }
+
+  .customHeader a {
+    color: #fff !important;
+    font-family: Manrope !important;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .customHeader.pageWidth {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .customHeader a:hover {
+    color: #fff !important;
+    opacity: 0.8;
+  }
+
+  .customHeader .icon-class {
+    color: #fff !important;
+  }
+
+  .customHeader .customHeader__inner .iconsBlock path {
+    stroke: #fff;
+  }
+
+  .customHeader .customHeader__inner .iconsBlock .greenButton {
+    color: #2c2d2c !important;
+    background-color: #fff;
+    border: 2px solid #fff;
+  }
+
+  .customHeader .customHeader__inner .iconsBlock .greenButton:hover {
+    background-color: transparent !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+    transition: all 0.3s;
+  }
+
+  .customHeader .customHeader__inner .iconsBlock path {
+    stroke: #fff !important;
+  }
+
+  .customHeader .customHeader__inner .iconsBlock .greenButton:hover span {
+    color: #2c2d2c !important;
+  }
+
+  @media (min-width: 768px) {
+    .pageWidth {
+      padding: 15px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    .pageWidth {
+      padding: 25px 10%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .customHeader .customHeader__inner .navBlock .navMenu {
+      display: none !important;
+    }
+
+    .customHeader__inner .iconsBlock {
+      display: none !important;
+    }
+
+    .customHeader__inner {
+      padding: 15px 0;
+    }
+
+    .customHeader__inner .navBlock {
+      gap: 15px;
+    }
+
+    .customHeader__inner .iconsBlock {
+      gap: 15px;
+    }
+
+    .customHeader__inner .iconsBlock .greenButton {
+      display: none;
+    }
+
+    .mobile-icons-and-menu {
+      display: flex !important;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .mobile-icons-and-menu path {
+      stroke: #fff !important;
+    }
+
+    .mobile-menu-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .mobile-menu-button svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 65%;
+      height: 100vh;
+      background: #fff;
+      z-index: 1001;
+      transition: right 0.3s ease;
+      padding: 40px 0 0 20px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+      display: block !important;
+    }
+    .mobile-menu.active {
+      right: 0;
+    }
+
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu-content {
+      margin-top: 50px;
+    }
+
+    .mobile-menu-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mobile-menu-nav a {
+      color: #222222 !important;
+      font-size: 18px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: 40px;
+      left: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .mobile-menu-button path {
+      stroke: #fff;
+    }
+  }
 </style>
 
-<div class="hero-section">
+<div class="hero-section js-hero-section">
   <img
     src="{{ section.settings.image | img_url: '1920x1080', crop: 'center' }}"
     class="hero-image"
