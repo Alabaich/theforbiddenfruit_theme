@@ -225,10 +225,10 @@
 
   <div class="sustainability-content" id="parallax-container">
     <!-- Main Image -->
-    <div class="sustainability-image-container">
+    <div class="sustainability-image-container" style="background-image: url({{ section.settings.bgImage |  img_url: 'original'}});">
       {% if section.settings.main_image != blank %}
         <img
-          src="{{ section.settings.main_image | img_url: '400x' }}"
+          src="{{ section.settings.main_image | img_url: 'original' }}"
           alt="{{ section.settings.main_image.alt | escape }}"
           class="sustainability-main-image"
           width="{{ section.settings.main_image.width }}"
