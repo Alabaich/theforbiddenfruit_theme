@@ -1,0 +1,278 @@
+<style>
+  .faq-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .faq-section .faq-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .faq-section .faq-header .header-text {
+    flex-grow: 1;
+  }
+
+  .faq-section .faq-header h2 {
+    color: #1A1A1A;
+    font-family: Manrope
+    , sans-serif;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -1.04px;
+    margin: 0;
+  }
+
+  .faq-section .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .faq-section .header-actions .divider {
+    color: #1A1A1A;
+    font-weight: 400;
+  }
+
+  .faq-section .header-actions a {
+    color: #1A1A1A;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .faq-section .header-actions a.active {
+    color: #115c11;
+  }
+
+  .faq-section .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .faq-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+
+  .faq-question:hover {
+    background-color: #f1f1f1;
+  }
+
+  .faq-question .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.3s ease-in-out
+    , padding 0.3s ease-in-out;
+    color: #555;
+  }
+
+  .faq-answer p {
+    padding-bottom: 20px;
+    margin: 0;
+  }
+
+  .faq-item.active .faq-question .icon {
+    transform: rotate(90deg);
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 35px 20px;
+  }
+
+  .show-all-answers,
+  .hide-all-answers {
+    font-family: Manrope
+    , sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.36px;
+  }
+
+  @media screen and (max-width: 768px) {
+      .faq-section .faq-header {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 20px;
+      }
+  }
+</style>
+
+<div class="faq-section pageWidth">
+  <div class="faq-header">
+    <div class="header-text">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% else %}
+        <h2>Frequently Asked Questions</h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p>{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+    <div class="header-actions">
+      <a href="#" class="show-all-answers">Show All Answers</a>
+      <span class="divider">|</span>
+      <a href="#" class="hide-all-answers">Hide All Answers</a>
+    </div>
+  </div>
+
+  <div class="faq-container">
+    {% for block in section.blocks %}
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="icon">
+            <svg
+              width="9"
+              height="18"
+              viewBox="0 0 9 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1 1.7085L6.36458 6.91683C6.64969 7.18381 6.87698 7.50631 7.03229 7.86464C7.18771 8.22297 7.26781 8.60954 7.26781 9.00016C7.26781 9.39079 7.18771 9.77704 7.03229 10.1354C6.87698 10.4938 6.64969 10.8165 6.36458 11.0835L1 16.2918"
+                stroke="#2C2D2C"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+          {{ block.settings.question }}
+        </div>
+        <div class="faq-answer">
+          {{ block.settings.answer }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% if section.blocks.size > 0 %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      const showAllButton = document.querySelector('.show-all-answers');
+      const hideAllButton = document.querySelector('.hide-all-answers');
+    
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          faqItems.forEach(otherItem => {
+            otherItem.classList.remove('active');
+          });
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+      
+      if (showAllButton) {
+        showAllButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          faqItems.forEach(item => {
+            item.classList.add('active');
+          });
+          showAllButton.classList.add('active');
+          hideAllButton.classList.remove('active');
+        });
+      }
+    
+      if (hideAllButton) {
+        hideAllButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          faqItems.forEach(item => {
+            item.classList.remove('active');
+          });
+          hideAllButton.classList.add('active');
+          showAllButton.classList.remove('active');
+        });
+      }
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "FAQ Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Frequently Asked Questions"
+      }, {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "info": "Additional text under the heading"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faq_item",
+        "name": "FAQ Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question",
+            "default": "How can I pay for my order?"
+          }, {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer",
+            "default": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "FAQ Section",
+        "category": "Text",
+        "blocks": [
+          {
+            "type": "faq_item"
+          }, {
+            "type": "faq_item"
+          }, {
+            "type": "faq_item"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

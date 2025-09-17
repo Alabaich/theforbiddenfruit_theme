@@ -180,77 +180,83 @@
     </div>
   </div>
 
-  <div class="buttonsPart">
-    <a href="{{ section.settings.button_1_url }}" class="greenButton">
-      <span>
-        {% if section.settings.button_1_text != blank %}
-          {{ section.settings.button_1_text }}
-        {% else %}
-          Button 1
-        {% endif %}
-      </span>
-    </a>
-    <a href="{{ section.settings.button_2_url }}" class="greenButton2">
-      <span>
-        {% if section.settings.button_2_text != blank %}
-          {{ section.settings.button_2_text }}
-        {% else %}
-          Button 2
-        {% endif %}
-      </span>
-    </a>
-  </div>
+  {% assign has_buttons = false %}
+  {% if section.settings.button_1_text != blank and section.settings.button_1_url != blank %}
+    {% assign has_buttons = true %}
+  {% elsif section.settings.button_2_text != blank and section.settings.button_2_url != blank %}
+    {% assign has_buttons = true %}
+  {% endif %}
 
-  <div class="splide">
-    <div class="splide__arrows">
-      <button class="splide__arrow splide__arrow--prev custom-arrow">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M9 18L15 12L9 6"
-            stroke="#115C11"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </button>
-      <button class="splide__arrow splide__arrow--next custom-arrow">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M9 18L15 12L9 6"
-            stroke="#115C11"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </button>
+  {% if has_buttons %}
+    <div class="buttonsPart">
+      {% if section.settings.button_1_text != blank and section.settings.button_1_url != blank %}
+        <a href="{{ section.settings.button_1_url }}" class="greenButton">
+          <span>{{ section.settings.button_1_text }}</span>
+        </a>
+      {% endif %}
+      {% if section.settings.button_2_text != blank and section.settings.button_2_url != blank %}
+        <a href="{{ section.settings.button_2_url }}" class="greenButton2">
+          <span>{{ section.settings.button_2_text }}</span>
+        </a>
+      {% endif %}
     </div>
-    <div class="splide__track">
-      <ul class="splide__list">
-        {% for block in section.blocks %}
-          <li class="splide__slide">
-            {% if block.settings.slide_image != blank %}
-              <img src="{{ block.settings.slide_image | img_url: '1200x' }}" alt="{{ block.settings.slide_image.alt }}">
-            {% else %}
-              <div style="background: #f0f0f0; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
-                Slide {{ forloop.index }}
-              </div>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
+  {% endif %}
+
+
+  {% if section.blocks.size > 0 %}
+    <div class="splide">
+      <div class="splide__arrows">
+        <button class="splide__arrow splide__arrow--prev custom-arrow">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M9 18L15 12L9 6"
+              stroke="#115C11"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <button class="splide__arrow splide__arrow--next custom-arrow">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M9 18L15 12L9 6"
+              stroke="#115C11"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            <li class="splide__slide">
+              {% if block.settings.slide_image != blank %}
+                <img src="{{ block.settings.slide_image | img_url: '1200x' }}" alt="{{ block.settings.slide_image.alt }}">
+              {% else %}
+                <div style="background: #f0f0f0; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
+                  Slide {{ forloop.index }}
+                </div>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
-  </div>
+  {% endif %}
+
 </div>
+
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
@@ -258,32 +264,35 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     if (typeof Splide !== 'undefined') {
-      var splide = new Splide('.splide', {
-        type: 'loop',
-        perPage: 1,
-        autoplay: true,
-        interval: 3000,
-        pauseOnHover: false,
-        arrows: true,
-        pagination: false
-      });
-      
-      var prevArrow = document.querySelector('.splide__arrow--prev.custom-arrow');
-      var nextArrow = document.querySelector('.splide__arrow--next.custom-arrow');
-      
-      if (prevArrow) {
-        prevArrow.addEventListener('click', function() {
-          splide.go('<');
+      const splideElement = document.querySelector('.splide');
+      if (splideElement) {
+        var splide = new Splide('.splide', {
+          type: 'loop',
+          perPage: 1,
+          autoplay: true,
+          interval: 3000,
+          pauseOnHover: false,
+          arrows: true,
+          pagination: false
         });
+        
+        var prevArrow = document.querySelector('.splide__arrow--prev.custom-arrow');
+        var nextArrow = document.querySelector('.splide__arrow--next.custom-arrow');
+        
+        if (prevArrow) {
+          prevArrow.addEventListener('click', function() {
+            splide.go('<');
+          });
+        }
+        
+        if (nextArrow) {
+          nextArrow.addEventListener('click', function() {
+            splide.go('>');
+          });
+        }
+        
+        splide.mount();
       }
-      
-      if (nextArrow) {
-        nextArrow.addEventListener('click', function() {
-          splide.go('>');
-        });
-      }
-      
-      splide.mount();
     }
   });
 </script>
