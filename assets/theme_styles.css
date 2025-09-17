@@ -99,6 +99,7 @@ h1 {
   width: fit-content;
   color: #fff;
   border-radius: 40px;
+  cursor: pointer;
 }
 
 a.greenButton span {

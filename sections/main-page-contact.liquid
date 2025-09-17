@@ -1,111 +1,308 @@
-<div class="container max-w-screen-md">
-  <h1 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-16">
-    {{ 'contact.title' | t }}
-  </h1>
+<style>
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .contact-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .contact-title {
+    color: #1A1A1A;
+    font-family: Manrope;
+    font-size: 52px;
+    font-weight: 400;
+  }
+
+  .contact-subtitle {
+    max-width: 600px;
+    color: #616161;
+    font-family: Manrope;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .contact-form {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+
+  .contact-form-field label {
+    font-size: 0.9em;
+    color: #999;
+  }
+
+  .contact-form-field input[type="text"],
+  .contact-form-field input[type="email"],
+  .contact-form-field textarea {
+    border: none;
+    width: 100%;
+    font-size: 1em;
+    padding: 5px 0;
+    box-sizing: border-box;
+    transition: border-bottom-color 0.3s ease;
+  }
+
+  .contact-form-field input[type="text"]:focus,
+  .contact-form-field input[type="email"]:focus,
+  .contact-form-field textarea:focus {
+    outline: none;
+    border-bottom-color: #000;
+  }
+
+  .contact-submit {
+    display: flex;
+    justify-content: end;
+  }
+
+  .contact-info {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .contact-info.hidden {
+    display: none;
+  }
+
+  .contact-info p {
+    color: #616161;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.4px;
+    text-align: left;
+  }
+
+  .contact-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-details-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .contact-details-icon {
+    flex-shrink: 0;
+  }
+
+  .contact-details-text {
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #2c2d2c;
+  }
+
+  .contact-details-text a {
+    color: #115C11;
+    text-decoration: none;
+  }
+
+  .contact-form .contact-success-message,
+  .contact-form .contact-error-message {
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  .contact-form .contact-success-message {
+    background-color: #dff2d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+  }
+
+  .contact-form .contact-error-message {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+  }
+</style>
+
+<div class="pageWidth contact-container">
+  <div class="contact-header">
+    <h1 class="contact-title">{{ section.settings.title }}</h1>
+    <p class="contact-subtitle">{{ section.settings.subtitle }}</p>
+  </div>
 
   {% form 'contact' %}
-    <div>
+    <div class="contact-form">
       {% if form.posted_successfully? %}
-        {{ 'contact.response' | t }}
+        <p class="contact-success-message">Your message has been sent successfully!</p>
       {% endif %}
 
       {% if form.errors %}
-        {% capture error_text %}
-          {{ form.errors | default_errors }}
-        {% endcapture%}
-
-        {% render 'layout-message',
-          type: 'error'
-          text: error_text
-          class: 'mb-8'
-        %}
+        <p class="contact-error-message">There was an error with your submission.</p>
       {% endif %}
 
-      <div class="flex flex-wrap md:flex-nowrap md:gap-x-6">
-        <div class="w-full md:w-1/2 mb-4 sm:mb-6">
-          <label
-            for="ContactFormName"
-            class="block"
-          >
-            {{ 'form.name' | t }}*
-          </label>
-
-          <input
-            type="text"
-            name="contact[name]"
-            id="ContactFormName"
-            value="{% if form.name %}{{ form.name }}{% endif %}"
-            class="w-full"
-            required
-          >
-        </div>
-
-        <div class="w-full md:w-1/2 mb-4 sm:mb-6">
-          <label
-            for="ContactFormEmail"
-            class="block"
-          >
-            {{ 'form.email' | t }}*
-          </label>
-
-          <input
-            type="email"
-            name="contact[email]"
-            id="ContactFormEmail"
-            value="{% if form.email %}{{ form.email }}{% endif %}"
-            class="w-full"
-            required
-          >
-        </div>
-      </div>
-
-      <div class="mb-4 sm:mb-6">
-        <label
-          for="ContactFormPhone"
-          class="block"
-        >
-          {{ 'form.phone' | t }}
-        </label>
-
+      <div class="contact-form-field">
+        <label for="ContactFormName">Name*</label>
         <input
-          type="tel"
-          name="contact[phone]"
-          id="ContactFormPhone"
-          value="{% if form.phone %}{{ form.phone }}{% endif %}"
-          class="w-full"
-        >
+          type="text"
+          name="contact[name]"
+          id="ContactFormName"
+          required>
       </div>
 
-      <div class="mb-4 sm:mb-6">
-        <label
-          for="ContactFormMessage"
-          class="block"
-        >
-          {{ 'form.message' | t }}*
-        </label>
+      <div class="contact-form-field">
+        <label for="ContactFormEmail">Email Address*</label>
+        <input
+          type="email"
+          name="contact[email]"
+          id="ContactFormEmail"
+          required>
+      </div>
 
+      <div class="contact-form-field">
+        <label for="ContactFormConfirmEmail">Confirm Email Address</label>
+        <input type="email" id="ContactFormConfirmEmail">
+      </div>
+
+      <div class="contact-form-field">
+        <label for="ContactFormMessage">Your Message*</label>
         <textarea
-          rows="10"
           name="contact[body]"
           id="ContactFormMessage"
-          class="w-full"
-          required
-        >
-          {% if form.body %}
-            {{ form.body }}
-          {% endif %}
-        </textarea>
+          rows="10"
+          required></textarea>
       </div>
 
-      <div class="flex flex-wrap justify-between items-center">
-        <button class="button button-primary">
-          {{ 'action.send' | t }}
-        </button>
-
-        <div class="text-sm mt-4 sm:mt-0">
-          *{{ 'form.required' | t }}
-        </div>
+      <div class="contact-submit">
+        <button type="submit" class="contact-button greenButton">Contact Us</button>
       </div>
     </div>
   {% endform %}
+
+  {% if section.settings.show_contact_info %}
+    <div class="contact-info">
+      <p>If you prefer not to fill out the form, feel free to reach out to us via email or call us at the following number:</p>
+      <div class="contact-details">
+        <div class="contact-details-item">
+          <span class="contact-details-icon">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M26.25 6.875C26.25 17.5755 17.5755 26.25 6.875 26.25C6.39222 26.25 5.91357 26.2324 5.43965 26.1976C4.89577 26.1577 4.62382 26.1379 4.37629 25.9954C4.17126 25.8774 3.97683 25.6681 3.87406 25.455C3.75 25.1978 3.75 24.8976 3.75 24.2975V20.7759C3.75 20.2711 3.75 20.0188 3.83306 19.8025C3.90644 19.6114 4.02561 19.4412 4.18012 19.307C4.35504 19.155 4.5922 19.0687 5.06651 18.8962L9.07506 17.4386C9.62691 17.238 9.90284 17.1376 10.1646 17.1546C10.3955 17.1696 10.6176 17.2485 10.8063 17.3822C11.0203 17.5339 11.1714 17.7856 11.4735 18.2893L12.5 20C15.8124 18.4999 18.4976 15.8111 20 12.5L18.2893 11.4735C17.7856 11.1714 17.5339 11.0203 17.3822 10.8063C17.2485 10.6176 17.1696 10.3955 17.1546 10.1646C17.1376 9.90284 17.238 9.62691 17.4386 9.07506L18.8962 5.06651C19.0687 4.5922 19.155 4.35504 19.307 4.18012C19.4412 4.02561 19.6114 3.90644 19.8025 3.83306C20.0188 3.75 20.2711 3.75 20.7759 3.75H24.2975C24.8976 3.75 25.1978 3.75 25.455 3.87406C25.6681 3.97683 25.8774 4.17126 25.9954 4.37629C26.1379 4.62384 26.1577 4.89577 26.1976 5.43966C26.2324 5.91357 26.25 6.39222 26.25 6.875Z"
+                stroke="#115C11"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+          <a href="tel:{{ section.settings.phone_number }}" class="contact-details-text">{{ section.settings.phone_number }}</a>
+        </div>
+        <div class="contact-details-item">
+          <span class="contact-details-icon">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M26.25 10L21.799 12.4728C19.3175 13.8514 18.0768 14.5407 16.7628 14.811C15.5998 15.0501 14.4002 15.0501 13.2372 14.811C11.9233 14.5407 10.6825 13.8514 8.201 12.4728L3.75 10M7.75 23.75H22.25C23.6501 23.75 24.3503 23.75 24.885 23.4775C25.3554 23.2379 25.7379 22.8554 25.9775 22.385C26.25 21.8503 26.25 21.1501 26.25 19.75V10.25C26.25 8.84987 26.25 8.1498 25.9775 7.61503C25.7379 7.14461 25.3554 6.76216 24.885 6.52249C24.3503 6.25 23.6501 6.25 22.25 6.25H7.75C6.34987 6.25 5.6498 6.25 5.11503 6.52249C4.64461 6.76216 4.26216 7.14461 4.02249 7.61503C3.75 8.1498 3.75 8.84986 3.75 10.25V19.75C3.75 21.1501 3.75 21.8503 4.02249 22.385C4.26216 22.8554 4.64461 23.2379 5.11503 23.4775C5.6498 23.75 6.34986 23.75 7.75 23.75Z"
+                stroke="#115C11"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+          <a href="mailto:{{ section.settings.email_address }}" class="contact-details-text">{{ section.settings.email_address }}</a>
+        </div>
+      </div>
+    </div>
+  {% endif %}
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (event) => {
+        const email = document.getElementById('ContactFormEmail').value;
+        const confirmEmail = document.getElementById('ContactFormConfirmEmail').value;
+  
+        if (confirmEmail && email !== confirmEmail) {
+          alert('Email addresses do not match!');
+          event.preventDefault();
+        }
+      });
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Contact Form",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Contact Form"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Get In Touch"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Fresh and juicy exotic fruits delivered directly from the Caribbean Islands and South America. Discover the taste you've been looking for."
+      },
+      {
+        "type": "header",
+        "content": "Contact Information"
+      }, {
+        "type": "checkbox",
+        "id": "show_contact_info",
+        "label": "Show additional contact info",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "phone_number",
+        "label": "Phone Number",
+        "default": "+1-234-567-8"
+      }, {
+        "type": "text",
+        "id": "email_address",
+        "label": "Email Address",
+        "default": "businessEmail@forbiddenFruit.com"
+      }
+    ]
+  }
+{% endschema %}
