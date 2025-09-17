@@ -1,15 +1,609 @@
-<div class="container max-w-screen-md">
-  <h1 class="text-2xl md:text-3xl font-bold text-center mb-6 sm:mb-16">
-    {{ blog.title }}
-  </h1>
+<style>
+  .blog-posts-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
 
-  {% paginate blog.articles by 8 %}
-    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-12">
-      {% for article in blog.articles %}
-        {% render 'layout-blog-article', article: article %}
-      {% endfor %}
+  .blog-posts-heading {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .blog-posts-heading .subtitle {
+    text-align: center;
+    margin: 0;
+  }
+
+  .blog-tags-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #115C11;
+    border-radius: 16px;
+    padding: 8px;
+  }
+
+  .blog-tag {
+    display: inline-flex;
+    padding: 8px 20px;
+    justify-content: center;
+    align-items: center;
+    border: 0 solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    background: transparent;
+    color: white;
+    font-family: 'Manrope'
+    , sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .blog-tag:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .blog-tag.active {
+    background: white;
+    border-color: white;
+    color: #115C11;
+    font-weight: 500;
+  }
+
+  .blog-posts-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .blog-email-signup {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .blog-email-signup h2,
+  .blog-email-signup p {
+    font-family: 'Manrope'
+    , sans-serif;
+  }
+
+  .blog-email-signup h2 {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .blog-email-signup p {
+    margin: 0;
+    color: #616161;
+  }
+
+  .email-form-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .email-form-wrapper input[type="email"] {
+    padding: 12px 50px 12px 18px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .email-form-wrapper button {
+    background: #115C11;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 25px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .blog-card {
+    display: flex;
+    align-items: center;
+    background-color: #F8F8F8;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 0;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .blog-card-content {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .blog-card-image {
+    flex: 1;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .blog-card h3 {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .blog-card p {
+    font-size: 18px;
+    color: #616161;
+  }
+
+  .blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .blog-post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+  }
+
+  .post-image {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .post-image:hover img {
+    transform: scale(1.05);
+  }
+
+  .post-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .post-title {
+    font-family: 'Manrope'
+    , sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    padding-right: 80px;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Onest'
+    , sans-serif;
+    font-size: 14px;
+    color: #616161;
+    position: relative;
+  }
+
+  .post-date {
+    margin: 0;
+  }
+
+  .read-time {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    color: #616161;
+    font-family: 'Onest'
+    , sans-serif;
+    font-size: 14px;
+  }
+
+  .pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .pagination-wrapper a,
+  .pagination-wrapper span {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-family: 'Onest'
+    , sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease;
+  }
+
+  .pagination-wrapper a:hover {
+    background: #f0f0f0;
+  }
+
+  .pagination-wrapper .current {
+    background: #115C11;
+    color: white;
+  }
+
+  @media (max-width: 968px) {
+    .blog-card {
+      flex-direction: column;
+      gap: 0;
+    }
+    .blog-card-image {
+      width: 100%;
+      height: 250px;
+    }
+    .blog-card-content {
+      padding: 30px;
+    }
+    .blog-posts-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .blog-email-signup {
+      padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .email-form-wrapper input[type="email"] {
+      width: 100%;
+    }
+    .blog-tags-filter {
+      padding: 10px;
+    }
+    .blog-posts-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+    .post-image {
+      height: 200px;
+    }
+  }
+</style>
+
+<section class="blog-posts-section">
+  <div class="blog-email-signup">
+    {% form 'customer'
+      , id: 'blog-newsletter-form' %}
+      {% if section.settings.email_heading != blank %}
+        <h2>{{ section.settings.email_heading }}</h2>
+      {% endif %}
+      {% if section.settings.email_subtitle != blank %}
+        <p>{{ section.settings.email_subtitle }}</p>
+      {% endif %}
+      <div class="email-form-wrapper">
+        <input
+          type="email"
+          name="customer[email]"
+          id="Email"
+          placeholder="Your email">
+        <button type="submit">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.9566 5.86259C12.7231 5.62908 12.3569 5.62908 12.1234 5.86259C11.8899 6.0961 11.8899 6.46231 12.1234 6.69582L17.4276 12L12.1234 17.3042C11.8899 17.5377 11.8899 17.9039 12.1234 18.1374C12.3569 18.3709 12.7231 18.3709 12.9566 18.1374L19.1374 11.9566C19.3709 11.7231 19.3709 11.3569 19.1374 11.1234L12.9566 5.86259Z" fill="white" />
+            <path d="M18.5 12.5H4C3.72386 12.5 3.5 12.2761 3.5 12C3.5 11.7239 3.72386 11.5 4 11.5H18.5C18.7761 11.5 19 11.7239 19 12C19 12.2761 18.7761 12.5 18.5 12.5Z" fill="white" />
+          </svg>
+        </button>
+      </div>
+    {% endform %}
+  </div>
+
+  <div class="blog-posts-heading">
+    {% if section.settings.heading != blank %}
+      <h1>{{ section.settings.heading }}</h1>
+    {% endif %}
+
+    {% if section.settings.subtitle != blank %}
+      <p class="subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+
+    <div class="blog-tags-filter">
+      <button class="blog-tag active" data-tag="all">All</button>
+      {% assign blog = blogs[section.settings.blog] %}
+      {% if blog and blog.all_tags.size > 0 %}
+        {% for tag in blog.all_tags limit: 8 %}
+          <button class="blog-tag" data-tag="{{ tag | handleize }}">{{ tag }}</button>
+        {% endfor %}
+      {% endif %}
     </div>
+  </div>
 
-    {% render 'layout-pagination', paginate: paginate %}
-  {% endpaginate %}
-</div>
+  <div class="blog-posts-container">
+    {% assign blog = blogs[section.settings.blog] %}
+
+    {% if blog and blog.articles_count > 0 %}
+      {% paginate blog.articles by 7 %}
+        {% if paginate.current_page == 1 %}
+          {% assign main_post = blog.articles.first %}
+          <article class="blog-card" data-tags="{% for tag in main_post.tags %}{{ tag | handleize }} {% endfor %}">
+            <div class="blog-card-content">
+              <h3>
+                <a href="{{ main_post.url }}" style="color: inherit; text-decoration: none;">
+                  {{ main_post.title }}
+                </a>
+              </h3>
+              <p>{{ main_post.excerpt | strip_html | truncate: 150 }}</p>
+              <a href="{{ main_post.url }}" class="greenButton">
+                Read more
+              </a>
+            </div>
+            <div class="blog-card-image">
+              {% if main_post.image %}
+                <img
+                  src="{{ main_post.image | img_url: '600x400' }}"
+                  alt="{{ main_post.title }}"
+                  loading="lazy">
+              {% else %}
+                <div style="background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center;">
+                  <span>No image</span>
+                </div>
+              {% endif %}
+            </div>
+          </article>
+        {% endif %}
+
+        <div class="blog-posts-grid">
+          {% if paginate.current_page == 1 %}
+            {% for article in blog.articles offset: 1 %}
+              <article class="blog-post-card" data-tags="{% for tag in article.tags %}{{ tag | handleize }} {% endfor %}">
+                <a href="{{ article.url }}" class="post-image">
+                  {% if article.image %}
+                    <img
+                      src="{{ article.image | img_url: '400x250' }}"
+                      alt="{{ article.title }}"
+                      loading="lazy">
+                  {% else %}
+                    <div style="background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
+                      <span>No image</span>
+                    </div>
+                  {% endif %}
+                </a>
+                <div class="post-content">
+                  <h3 class="post-title">
+                    <a href="{{ article.url }}" style="color: inherit; text-decoration: none;">
+                      {{ article.title }}
+                    </a>
+                  </h3>
+                  <div class="post-meta">
+                    <p class="post-date">{{ article.published_at | date: "%B %d, %Y" }}</p>
+                    <p class="read-time">{{ article.content | strip_html | number_of_words | divided_by: 200 | plus: 1 }} min read</p>
+                  </div>
+                </div>
+              </article>
+            {% endfor %}
+          {% else %}
+            {% for article in blog.articles %}
+              <article class="blog-post-card" data-tags="{% for tag in article.tags %}{{ tag | handleize }} {% endfor %}">
+                <a href="{{ article.url }}" class="post-image">
+                  {% if article.image %}
+                    <img
+                      src="{{ article.image | img_url: '400x250' }}"
+                      alt="{{ article.title }}"
+                      loading="lazy">
+                  {% else %}
+                    <div style="background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
+                      <span>No image</span>
+                    </div>
+                  {% endif %}
+                </a>
+                <div class="post-content">
+                  <h3 class="post-title">
+                    <a href="{{ article.url }}" style="color: inherit; text-decoration: none;">
+                      {{ article.title }}
+                    </a>
+                  </h3>
+                  <div class="post-meta">
+                    <p class="post-date">{{ article.published_at | date: "%B %d, %Y" }}</p>
+                    <p class="read-time">{{ article.content | strip_html | number_of_words | divided_by: 200 | plus: 1 }} min read</p>
+                  </div>
+                </div>
+              </article>
+            {% endfor %}
+          {% endif %}
+        </div>
+
+        {% if paginate.pages > 1 %}
+          <div class="pagination-wrapper">
+            {% if paginate.previous %}
+              <a href="{{ paginate.previous.url }}" aria-label="Previous page">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.0434 18.1374C12.2769 18.3709 12.6431 18.3709 12.8766 18.1374C13.1101 17.9039 13.1101 17.5377 12.8766 17.3042L7.5724 12L12.8766 6.69582C13.1101 6.46231 13.1101 6.0961 12.8766 5.86259C12.6431 5.62908 12.2769 5.62908 12.0434 5.86259L5.86259 12.0434C5.62908 12.2769 5.62908 12.6431 5.86259 12.8766L12.0434 18.1374Z" fill="#333" />
+                  <path d="M5.5 12.5H20C20.2761 12.5 20.5 12.2761 20.5 12C20.5 11.7239 20.2761 11.5 20 11.5H5.5C5.22386 11.5 5 11.7239 5 12C5 12.2761 5.22386 12.5 5.5 12.5Z" fill="#333" />
+                </svg>
+              </a>
+            {% endif %}
+
+            {% for part in paginate.parts %}
+              {% if part.is_link %}
+                <a href="{{ part.url }}" class="page">{{ part.title }}</a>
+              {% elsif part.is_active %}
+                <span class="current">{{ part.title }}</span>
+              {% elsif part.title == '&hellip;' %}
+                <span class="ellipsis">{{ part.title }}</span>
+              {% endif %}
+            {% endfor %}
+
+            {% if paginate.next %}
+              <a href="{{ paginate.next.url }}" aria-label="Next page">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.9566 5.86259C12.7231 5.62908 12.3569 5.62908 12.1234 5.86259C11.8899 6.0961 11.8899 6.46231 12.1234 6.69582L17.4276 12L12.1234 17.3042C11.8899 17.5377 11.8899 17.9039 12.1234 18.1374C12.3569 18.3709 12.7231 18.3709 12.9566 18.1374L19.1374 11.9566C19.3709 11.7231 19.3709 11.3569 19.1374 11.1234L12.9566 5.86259Z" fill="#333" />
+                  <path d="M18.5 12.5H4C3.72386 12.5 3.5 12.2761 3.5 12C3.5 11.7239 3.72386 11.5 4 11.5H18.5C18.7761 11.5 19 11.7239 19 12C19 12.2761 18.7761 12.5 18.5 12.5Z" fill="#333" />
+                </svg>
+              </a>
+            {% endif %}
+          </div>
+        {% endif %}
+
+      {% endpaginate %}
+
+    {% else %}
+      <article class="blog-card">
+        <div class="blog-card-content">
+          <h3>5 Advantages Of Vitamin C</h3>
+          <p>Welcome to The Forbidden Fruit, where nature's purest treasures meet your journey to health, beauty, and vitality. Inspired by the wisdom of native cultures...</p>
+          <a href="#" class="greenButton">Read more</a>
+        </div>
+        <div class="blog-card-image">
+          <img
+            src="https://via.placeholder.com/600x400"
+            alt="Placeholder image of lemons"
+            loading="lazy">
+        </div>
+      </article>
+
+      <div class="blog-posts-grid">
+        {% for i in (1..6) %}
+          <article class="blog-post-card">
+            <div class="post-image">
+              <div style="background: #f0f0f0; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
+                <span>Post image {{ i }}</span>
+              </div>
+            </div>
+            <div class="post-content">
+              <h3 class="post-title">Blog Post Title {{ i }}</h3>
+              <div class="post-meta">
+                <p class="post-date">January {{ i | plus: 10 }}, 2024</p>
+                <p class="read-time">3 min read</p>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const tagsFilter = document.querySelector('.blog-tags-filter');
+    const blogPosts = document.querySelectorAll('.blog-card, .blog-post-card');
+    const tagButtons = document.querySelectorAll('.blog-tag');
+  
+    if (tagsFilter) {
+      tagsFilter.addEventListener('click', function(e) {
+        if (e.target.classList.contains('blog-tag')) {
+          tagButtons.forEach(btn => btn.classList.remove('active'));
+          e.target.classList.add('active');
+  
+          const selectedTag = e.target.getAttribute('data-tag');
+  
+          blogPosts.forEach(post => {
+            const postTags = post.getAttribute('data-tags') ? post.getAttribute('data-tags').split(' ') : [];
+  
+            if (selectedTag === 'all' || postTags.includes(selectedTag)) {
+              post.style.display = 'flex';
+            } else {
+              post.style.display = 'none';
+            }
+          });
+        }
+      });
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Blog Posts Blog Page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "email_heading",
+        "label": "Email Section Heading",
+        "default": "Discover Our Latest News"
+      },
+      {
+        "type": "text",
+        "id": "email_subtitle",
+        "label": "Email Section Subtitle",
+        "default": "And get 5% discount for your order."
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Tags Heading",
+        "default": "Explore More About Supplements"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Tags Subtitle",
+        "default": "The Forbidden Fruit is inspired by the wisdom of native cultures..."
+      }, {
+        "type": "blog",
+        "id": "blog",
+        "label": "Blog"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Blog Posts Blog Page",
+        "category": "Blog"
+      }
+    ]
+  }
+{% endschema %}
