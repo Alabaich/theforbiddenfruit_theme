@@ -1,0 +1,268 @@
+<style>
+  .subscriptions-section {
+    font-family: Manrope;
+  }
+
+  .subscriptions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .subscription-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    background: #F3F3EC;
+    align-self: stretch;
+    flex-grow: 1;
+  }
+
+  .subscription-card.highlighted {
+    background: #E7EEE7;
+    border-color: #38a169;
+  }
+
+  .subscription-card .plan-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .subscription-card .plan-info .plan-name {
+    color: #1A1A1A;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .subscription-card .plan-info .price {
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .subscription-card .plan-info .price .per-week {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+  }
+
+  .subscription-card .plan-info .best-for {
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+  }
+
+  .subscription-card .plan-button {
+    padding: 15px;
+    border-radius: 40px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .subscription-card .plan-button.green-button {
+    border-radius: 99px;
+    background: #A7EE43;
+    transition: all 0.3s ease;
+  }
+
+  .subscription-card .plan-button.green-button:hover {
+    background: #76d476;
+  }
+
+  .subscription-card .plan-button.gray-button {
+    background: transparent;
+    color: #2c2d2c;
+    border-radius: 12px;
+    border: 1.5px solid rgba(214, 221, 230, 0.40);
+    transition: all 0.3s ease;
+  }
+
+  .subscription-card .plan-button.gray-button:hover {
+    background: #2c2d2c;
+    color: #fff;
+    border-radius: 12px;
+    border: 1.5px solid rgba(214, 221, 230, 0.40);
+  }
+
+  .subscription-card .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .subscription-card .benefits-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  @media (max-width: 768px) {
+    .subscriptions-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="subscriptions-section pageWidth">
+  <div class="subscriptions-grid">
+    {% for block in section.blocks %}
+      {% liquid
+        assign card_class = 'subscription-card'
+        assign button_class = 'plan-button gray-button'
+        if block.settings.highlighted
+          assign card_class = card_class | append: ' highlighted'
+          assign button_class = 'plan-button green-button'
+        endif
+      %}
+      <div class="{{ card_class }}">
+        <div class="plan-info">
+          <span class="plan-name">{{ block.settings.plan_name }}</span>
+          <span class="price">
+            {{ block.settings.price }}
+            <span class="per-week">{{ block.settings.price_label }}</span>
+          </span>
+          <span class="best-for">{{ block.settings.subtitle }}</span>
+        </div>
+        <a href="{{ block.settings.button_url }}" class="{{ button_class }}">
+          {{ block.settings.button_text }}
+        </a>
+        <ul class="benefits-list">
+          {% assign benefits_text = block.settings.benefits | strip %}
+          {% if benefits_text != blank %}
+            {% assign benefits_array = benefits_text | newline_to_br | split: '<br />' %}
+            {% for benefit in benefits_array %}
+              {% assign benefit_stripped = benefit | strip %}
+              {% if benefit_stripped != blank %}
+                <li>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="#38a169"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                  {{ benefit_stripped }}
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Subscriptions",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "plan",
+        "name": "Subscription Plan",
+        "settings": [
+          {
+            "type": "text",
+            "id": "plan_name",
+            "label": "Plan Name",
+            "default": "Starter"
+          },
+          {
+            "type": "text",
+            "id": "price",
+            "label": "Price",
+            "default": "$99.99"
+          },
+          {
+            "type": "text",
+            "id": "price_label",
+            "label": "Price Label",
+            "default": "per week"
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "Best for Individuals"
+          }, {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Select Plan"
+          }, {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+          }, {
+            "type": "checkbox",
+            "id": "highlighted",
+            "label": "Highlight this plan",
+            "default": false
+          }, {
+            "type": "textarea",
+            "id": "benefits",
+            "label": "Benefits",
+            "info": "Enter each benefit on a new line."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Subscriptions",
+        "category": "Custom",
+        "blocks": [
+          {
+            "type": "plan",
+            "settings": {
+              "plan_name": "Starter",
+              "price": "$99.99",
+              "subtitle": "Best for Individuals",
+              "button_text": "Select Plan",
+              "benefits": "Basic Support\n2 Packages\nEmail Support\nCommunity Access"
+            }
+          }, {
+            "type": "plan",
+            "settings": {
+              "plan_name": "Pro",
+              "price": "$129.99",
+              "subtitle": "For Two",
+              "button_text": "Start with Plus",
+              "highlighted": true,
+              "benefits": "Priority Support\n4 Packages\nPhone Support\nAdvanced Food Plan"
+            }
+          }, {
+            "type": "plan",
+            "settings": {
+              "plan_name": "Enterprise",
+              "price": "$199.99",
+              "subtitle": "Family Pack",
+              "button_text": "Contact Sales",
+              "benefits": "24/7 Priority Support\n6 Packages\nPresent Package Of New Products\nPhone Support\nAdvanced Food Plan"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
