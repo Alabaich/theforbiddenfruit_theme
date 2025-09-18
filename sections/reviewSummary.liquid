@@ -1,0 +1,266 @@
+<style>
+  .reviews-summary-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .reviews-summary-section .title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .reviews-summary-section .title-wrapper .title {
+    color: #1A1A1A;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .reviews-summary-section .title-wrapper .subtitle {
+    color: #616161;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.36px;
+  }
+
+  .reviews-summary-section .rating-summary-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .reviews-summary-section .rating-overall {
+    color: #000;
+    font-family: Manrope;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 32px;
+    letter-spacing: -0.48px;
+  }
+
+  .reviews-summary-section .rating-stars {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .reviews-summary-section .reviews-count {
+    color: rgba(0, 0, 0, 0.60);
+    font-family: Manrope;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  .reviews-summary-section .ratings-chart {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .reviews-summary-section .rating-bar-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .reviews-summary-section .rating-bar-wrapper .star-label {
+    color: #000;
+    font-family: Manrope;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  .reviews-summary-section .rating-bar-wrapper .bar-container {
+    flex-grow: 1;
+    background: #EFEFEF;
+    border-radius: 2px;
+    height: 14px;
+  }
+
+  .reviews-summary-section .rating-bar-wrapper .bar {
+    background: #115C11;
+    height: 100%;
+    border-radius: 4px;
+  }
+
+  .reviews-summary-section .rating-bar-wrapper .percentage-label {
+    color: #000;
+    font-family: Manrope;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+  }
+</style>
+
+<div class="reviews-summary-section pageWidth">
+  <div class="title-wrapper">
+    <h2 class="title">{{ section.settings.title }}</h2>
+    <p class="subtitle">{{ section.settings.subtitle }}</p>
+  </div>
+
+  <div class="rating-summary-wrapper">
+    <div class="rating-overall">{{ section.settings.overall_rating | divided_by: 10.0 | round: 1 }} / 5.0</div>
+
+    <div class="rating-stars">
+      {% liquid
+        assign overall_rating_float = section.settings.overall_rating | divided_by: 10.0
+        assign filled_stars = overall_rating_float | floor
+        assign half_star_check = overall_rating_float | modulo: 1
+        assign next_star = filled_stars | plus: 1
+      %}
+      {% for i in (1..5) %}
+        {% if i <= filled_stars %}
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="#38a169"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#38a169" />
+          </svg>
+        {% elsif half_star_check >= 0.25 and i == next_star %}
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77V2Z" fill="#38a169" />
+            <path d="M12 2L8.91 8.26L2 9.27L7 14.14L5.82 21.02L12 17.77V2Z" fill="#EFEFEF" />
+          </svg>
+        {% else %}
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+              stroke="#EFEFEF"
+              stroke-width="2"
+              fill="none" />
+          </svg>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="reviews-count">{{ section.settings.reviews_count }} reviews</div>
+  </div>
+
+  <div class="ratings-chart">
+    {% for i in (1..5) reversed %}
+      {% liquid
+        assign percentage = "percentage_star_" | append: i
+        assign percentage_value = section.settings[percentage]
+      %}
+      <div class="rating-bar-wrapper">
+        <span class="star-label">{{ i }}</span>
+        <div class="bar-container">
+          <div class="bar" style="width: {{ percentage_value }}%;"></div>
+        </div>
+        <span class="percentage-label">{{ percentage_value }}%</span>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Reviews Summary",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "All Reviews"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Read what people are saying about us."
+      },
+      {
+        "type": "number",
+        "id": "overall_rating",
+        "label": "Overall Rating (x10)",
+        "info": "Enter 45 for 4.5",
+        "default": 45
+      },
+      {
+        "type": "number",
+        "id": "reviews_count",
+        "label": "Reviews Count",
+        "default": 454
+      }, {
+        "type": "range",
+        "id": "percentage_star_5",
+        "label": "5-Star Percentage",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 82
+      }, {
+        "type": "range",
+        "id": "percentage_star_4",
+        "label": "4-Star Percentage",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 10
+      }, {
+        "type": "range",
+        "id": "percentage_star_3",
+        "label": "3-Star Percentage",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 4
+      }, {
+        "type": "range",
+        "id": "percentage_star_2",
+        "label": "2-Star Percentage",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 1
+      }, {
+        "type": "range",
+        "id": "percentage_star_1",
+        "label": "1-Star Percentage",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 3
+      }
+    ],
+    "presets": [
+      {
+        "name": "Reviews Summary",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}
