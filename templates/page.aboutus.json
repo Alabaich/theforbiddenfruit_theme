@@ -11,10 +11,33 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
+    },
+    "hero_slider_KrTHxF": {
+      "type": "heroSlider",
+      "blocks": {
+        "slide_et6N4a": {
+          "type": "slide",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "slide_et6N4a"
+      ],
+      "name": "Hero Slider",
+      "settings": {
+        "heading": "Your Slice of Tropical Paradise.",
+        "subtitle": "Fresh and juicy exotic fruits delivered directly from the Caribbean Islands and South America. Discover the taste you've been looking for.",
+        "button_1_text": "See Calalogue",
+        "button_1_url": "shopify://collections/all",
+        "button_2_text": "Contact Us",
+        "button_2_url": "shopify://pages/contact"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hero_slider_KrTHxF"
   ]
 }
