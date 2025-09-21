@@ -34,10 +34,88 @@
         "button_2_text": "Contact Us",
         "button_2_url": "shopify://pages/contact"
       }
+    },
+    "our_values_hhjYMN": {
+      "type": "ourValues",
+      "blocks": {
+        "value_block_iWGTrm": {
+          "type": "value_block",
+          "settings": {
+            "text_1": "Our Vision",
+            "text_2": "To directly deliver the freshest and most unique tropical fruits from the Caribbean and South America, making exotic flavors accessible to everyone."
+          }
+        },
+        "value_block_6LXq7c": {
+          "type": "value_block",
+          "settings": {
+            "text_1": "Our Mission",
+            "text_2": "To create a direct connection between our customers and the tropical farms, where exotic fruits become an integral part of a healthy and vibrant lifestyle."
+          }
+        },
+        "value_block_THNqwb": {
+          "type": "value_block",
+          "settings": {
+            "text_1": "Our Values",
+            "text_2": "We are committed to quality, authenticity, and sustainability.   We select each fruit for its exceptional taste, ensure it is sourced directly from trusted growers."
+          }
+        }
+      },
+      "block_order": [
+        "value_block_iWGTrm",
+        "value_block_6LXq7c",
+        "value_block_THNqwb"
+      ],
+      "name": "Our Values",
+      "settings": {}
+    },
+    "featured_article_JF3qwJ": {
+      "type": "featuredArticle",
+      "name": "Featured Article",
+      "settings": {
+        "subheading": "Nutrition Specialist",
+        "date": "01/05/2025",
+        "heading": "How One Ancient Herb Delivers the Nutrients Your Meals Are Missing",
+        "body_text": "Energy and Vitality: Lessons From the PastIn today’s fast-paced world, we often overlook one of the most crucial aspects of our well-being: a balanced diet. Despite the abundance of food, many of us face deficiencies in key vitamins, minerals, and antioxidants. However, the wisdom of our ancestors can offer a solution. For millennia, people have harnessed the power of nature, and today we can turn to ancient herbs to restore vitality to our bodies. <br> <br> Unlocking an Ancient Secret: Meet MoringaAmong the treasures of traditional medicine, Moringa oleifera, known as the “miracle tree,” holds a special place. This herb, revered in Asia and Africa for its incredible properties, has been used for centuries to support health and boost immunity. Today, the powder from its leaves is becoming increasingly popular as one of the most nutrient-dense sources on the planet. Moringa contains protein, amino acids, vitamins (A, C, E), potassium, calcium, and magnesium. It’s a true superfood that helps fill the gaps in the modern diet. <br> <br> The Science of Nutrition: Why It WorksMoringa's unique composition is not only due to its rich vitamin content but also its powerful antioxidants, which fight free radicals, help reduce inflammation, and improve overall body function. Regular consumption of moringa powder can aid in improving digestion, boosting energy levels, strengthening the immune system, and even improving the condition of your skin and hair. Unlike synthetic supplements, moringa offers a holistic solution where all elements work in harmony to give your body exactly what it needs. <br><br> Easy and Delicious: How to Add Moringa to Your DietIntegrating moringa into your daily life is incredibly simple. The powder has a mild, slightly grassy flavor that pairs well with many foods. You can add it to your morning smoothies, mix it with juice or water, sprinkle it on salads, or even use it as an ingredient in baking. One of our favorite ways is to add a spoonful of moringa to yogurt or morning oatmeal. This not only enriches the taste but also instantly increases the nutritional value of your breakfast.<br> <br> Reclaim Your Energy: Your Journey Starts HereThe wisdom of our ancestors, embodied in moringa, is now available to everyone. By adding this ancient herb to your daily diet, you are taking an important step towards a healthier and more energetic life. Forget about nutrient deficiencies—it's time to nourish your body the way nature intended."
+      }
+    },
+    "gallery_slider_TUYJaK": {
+      "type": "gallerySlider",
+      "blocks": {
+        "image_slide_jx7bM4": {
+          "type": "image_slide",
+          "settings": {}
+        },
+        "image_slide_TFbGLA": {
+          "type": "image_slide",
+          "settings": {}
+        },
+        "image_slide_KCyxbF": {
+          "type": "image_slide",
+          "settings": {}
+        },
+        "image_slide_WLfPWY": {
+          "type": "image_slide",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_slide_jx7bM4",
+        "image_slide_TFbGLA",
+        "image_slide_KCyxbF",
+        "image_slide_WLfPWY"
+      ],
+      "name": "Gallery Slider",
+      "settings": {
+        "heading": "Our Gallery",
+        "subtitle": "Our Latest Available Images"
+      }
     }
   },
   "order": [
     "main",
-    "hero_slider_KrTHxF"
+    "hero_slider_KrTHxF",
+    "our_values_hhjYMN",
+    "featured_article_JF3qwJ",
+    "gallery_slider_TUYJaK"
   ]
 }
