@@ -109,6 +109,117 @@
         "heading": "Our Gallery",
         "subtitle": "Our Latest Available Images"
       }
+    },
+    "our_achievements_4MWwL3": {
+      "type": "ourAchievements",
+      "blocks": {
+        "achievement_gg3zNQ": {
+          "type": "achievement",
+          "settings": {
+            "number": "5+",
+            "text": "Years Experience"
+          }
+        },
+        "achievement_dwXbKf": {
+          "type": "achievement",
+          "settings": {
+            "number": "5K+",
+            "text": "Trusted Customers"
+          }
+        },
+        "achievement_TJRrD8": {
+          "type": "achievement",
+          "settings": {
+            "number": "100+",
+            "text": "Positive Reviews"
+          }
+        },
+        "achievement_RBPhFm": {
+          "type": "achievement",
+          "settings": {
+            "number": "40+",
+            "text": "Available Items"
+          }
+        }
+      },
+      "block_order": [
+        "achievement_gg3zNQ",
+        "achievement_dwXbKf",
+        "achievement_TJRrD8",
+        "achievement_RBPhFm"
+      ],
+      "name": "Content with Media",
+      "settings": {
+        "reverse_layout": false,
+        "upper_title": "Trusted by the Tawira People",
+        "title": "Discover the World of The Forbidden Fruit",
+        "subtitle": "We aren't just sellers; we are explorers. Over 5 years of experience have allowed us to build direct relationships with farmers, so we can deliver the freshest and highest quality exotic fruits directly from the Caribbean Islands and South America.",
+        "button_text": "Shop Now",
+        "button_link": "",
+        "bottom_text": "Your journey to stronger hair, radiant skin, and natural vitality starts here. Your journey to stronger hair, radiant skin."
+      }
+    },
+    "reviews_z6NWqA": {
+      "type": "reviews",
+      "blocks": {
+        "review_UU3Keq": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Amazing product! I highly recommend it to everyone.",
+            "author": "John Doe",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_Ae9Gcw": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Amazing product! I highly recommend it to everyone.",
+            "author": "John Doe",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_XUehtM": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Amazing product! I highly recommend it to everyone.",
+            "author": "John Doe",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_eVPm7N": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Amazing product! I highly recommend it to everyone.",
+            "author": "John Doe",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_GWaPCx": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Great quality and fast shipping. Will buy again!",
+            "author": "Jane Smith",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        }
+      },
+      "block_order": [
+        "review_UU3Keq",
+        "review_Ae9Gcw",
+        "review_XUehtM",
+        "review_eVPm7N",
+        "review_GWaPCx"
+      ],
+      "name": "Reviews",
+      "settings": {
+        "heading": "Reviews",
+        "subtitle": "Read what people are saying about us."
+      }
     }
   },
   "order": [
@@ -116,6 +227,8 @@
     "hero_slider_KrTHxF",
     "our_values_hhjYMN",
     "featured_article_JF3qwJ",
-    "gallery_slider_TUYJaK"
+    "gallery_slider_TUYJaK",
+    "our_achievements_4MWwL3",
+    "reviews_z6NWqA"
   ]
 }
