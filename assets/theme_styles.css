@@ -59,6 +59,7 @@ h1 {
   padding: 12px 32px;
   flex-direction: column;
   justify-content: center;
+  font-family: Manrope;
   align-items: center;
   gap: 10px;
   background-color: var(--color-white);
@@ -89,6 +90,7 @@ h1 {
 .greenButton {
   display: flex;
   padding: 15px 40px;
+  font-family: Manrope;
   flex-direction: column;
   justify-content: center;
   align-items: center;
