@@ -21,8 +21,8 @@
       "layout-header": {
         "type": "layout-header",
         "settings": {
-          "logo": "shopify://shop_images/Logo_White.png",
-          "transparent_logo": "shopify://shop_images/Logo_Black.png",
+          "logo": "shopify://shop_images/Logo_Black.png",
+          "transparent_logo": "shopify://shop_images/Logo_White.png",
           "button_text": "Contact Us",
           "button_link": "shopify://pages/contact"
         }
