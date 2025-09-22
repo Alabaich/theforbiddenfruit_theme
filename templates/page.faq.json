@@ -32,29 +32,36 @@
         "faq_item_CaA4Te": {
           "type": "faq_item",
           "settings": {
-            "question": "How can I place an order?",
-            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+            "question": "Do you ship internationally?",
+            "answer": "<p>We ship internationally; shipping cost, delivery windows, and duties vary by destination and are calculated at checkout.</p>"
           }
         },
         "faq_item_QqbQdq": {
           "type": "faq_item",
           "settings": {
-            "question": "What types of fruits do you offer?",
-            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+            "question": "What is your return policy?",
+            "answer": "<p>We accept returns on unopened products within 30 days. Opened products with manufacturing defects may be eligible for replacement or credit - contact support with photos and order details. Handling and shipping fees are non-refundable. </p>"
           }
         },
         "faq_item_wbcGbG": {
           "type": "faq_item",
           "settings": {
-            "question": "What is your exchange and refund policy?",
-            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+            "question": "How long does processing take before my order ships?",
+            "answer": "<p>Most orders are processed within 1–2 business days. You’ll receive a shipping confirmation email as soon as your order is on its way.</p>"
           }
         },
         "faq_item_3tLVKd": {
           "type": "faq_item",
           "settings": {
-            "question": "How can I pay for my order?",
-            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+            "question": "How can I track my order?",
+            "answer": "<p>Once your order is shipped, you’ll receive a confirmation email with a tracking number. You can use this number to follow your package’s progress online.</p>"
+          }
+        },
+        "faq_item_TnkUwb": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How can I contact customer support?",
+            "answer": "<p>You can reach our support team anytime via email at support@theforbiddenfruit.com<br/>We typically respond within 1–2 business days.</p>"
           }
         }
       },
@@ -62,7 +69,8 @@
         "faq_item_CaA4Te",
         "faq_item_QqbQdq",
         "faq_item_wbcGbG",
-        "faq_item_3tLVKd"
+        "faq_item_3tLVKd",
+        "faq_item_TnkUwb"
       ],
       "name": "FAQ Section",
       "settings": {
