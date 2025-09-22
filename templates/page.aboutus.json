@@ -19,7 +19,9 @@
       "blocks": {
         "slide_et6N4a": {
           "type": "slide",
-          "settings": {}
+          "settings": {
+            "slide_image": "shopify://shop_images/slider2_1.png"
+          }
         }
       },
       "block_order": [
@@ -83,27 +85,43 @@
       "blocks": {
         "image_slide_jx7bM4": {
           "type": "image_slide",
-          "settings": {}
+          "settings": {
+            "slide_image": "shopify://shop_images/gallery1.png"
+          }
         },
         "image_slide_TFbGLA": {
           "type": "image_slide",
-          "settings": {}
+          "settings": {
+            "slide_image": "shopify://shop_images/gallery2.png"
+          }
         },
         "image_slide_KCyxbF": {
           "type": "image_slide",
-          "settings": {}
+          "settings": {
+            "slide_image": "shopify://shop_images/gallery4.png"
+          }
         },
         "image_slide_WLfPWY": {
           "type": "image_slide",
-          "settings": {}
+          "settings": {
+            "slide_image": "shopify://shop_images/gallery3.png"
+          }
+        },
+        "image_slide_QPAhg7": {
+          "type": "image_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/gallery2.png"
+          }
         }
       },
       "block_order": [
         "image_slide_jx7bM4",
         "image_slide_TFbGLA",
         "image_slide_KCyxbF",
-        "image_slide_WLfPWY"
+        "image_slide_WLfPWY",
+        "image_slide_QPAhg7"
       ],
+      "disabled": true,
       "name": "Gallery Slider",
       "settings": {
         "heading": "Our Gallery",
@@ -150,6 +168,7 @@
       ],
       "name": "Content with Media",
       "settings": {
+        "image": "shopify://shop_images/gallery4.png",
         "reverse_layout": false,
         "upper_title": "Trusted by the Tawira People",
         "title": "Discover the World of The Forbidden Fruit",
