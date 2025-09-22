@@ -11,10 +11,61 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
+    },
+    "review_summary_T7ixXd": {
+      "type": "reviewSummary",
+      "name": "Reviews Summary",
+      "settings": {
+        "title": "All Reviews",
+        "subtitle": "Read what people are saying about us.",
+        "overall_rating": 45,
+        "reviews_count": 454,
+        "percentage_star_5": 82,
+        "percentage_star_4": 10,
+        "percentage_star_3": 4,
+        "percentage_star_2": 1,
+        "percentage_star_1": 3
+      }
+    },
+    "reviews_kPgjEh": {
+      "type": "reviews",
+      "blocks": {
+        "review_KfpeUy": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Amazing product! I highly recommend it to everyone.",
+            "author": "John Doe",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_wUfgjg": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Great quality and fast shipping. Will buy again!",
+            "author": "Jane Smith",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        }
+      },
+      "block_order": [
+        "review_KfpeUy",
+        "review_wUfgjg"
+      ],
+      "disabled": true,
+      "name": "Reviews",
+      "settings": {
+        "heading": "Customer Reviews",
+        "subtitle": "See what our customers are saying about us"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "review_summary_T7ixXd",
+    "reviews_kPgjEh"
   ]
 }
