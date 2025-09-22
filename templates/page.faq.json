@@ -11,10 +11,69 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
+    },
+    "hero_slider_zFmkTq": {
+      "type": "heroSlider",
+      "name": "Hero Slider",
+      "settings": {
+        "heading": "Have Questions?",
+        "subtitle": "Indulge in a vibrant selection of tropical fruits sourced from the lush landscapes of the Caribbean and South America. Experience the flavors that will tantalize your taste buds.",
+        "button_1_text": "",
+        "button_1_url": "",
+        "button_2_text": "Get in Touch",
+        "button_2_url": "shopify://pages/contact"
+      }
+    },
+    "faq_aErDzg": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_CaA4Te": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How can I place an order?",
+            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        },
+        "faq_item_QqbQdq": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What types of fruits do you offer?",
+            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        },
+        "faq_item_wbcGbG": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your exchange and refund policy?",
+            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        },
+        "faq_item_3tLVKd": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How can I pay for my order?",
+            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_CaA4Te",
+        "faq_item_QqbQdq",
+        "faq_item_wbcGbG",
+        "faq_item_3tLVKd"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hero_slider_zFmkTq",
+    "faq_aErDzg"
   ]
 }
