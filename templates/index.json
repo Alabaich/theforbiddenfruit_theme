@@ -13,14 +13,14 @@
       "type": "hero-section",
       "name": "Hero Section",
       "settings": {
-        "image": "shopify://shop_images/1FF.png",
+        "image": "shopify://shop_images/Frame_52.png",
         "upper_title": "Elevate Your Skincare Ritual",
         "heading": "Nature’s Secret to General Well-being",
         "subtitle": "Experience the transformative power of nature.",
         "button_text": "Shop Now",
         "button_link": "",
         "show_info_block": true,
-        "info_block_image": "shopify://shop_images/2herosection.png",
+        "info_block_image": "shopify://shop_images/2herosection_1.png",
         "info_block_main_text": "100%",
         "info_block_sub_text": "Pure & Organic"
       }
@@ -87,11 +87,12 @@
     },
     "home_collections_kwVQfD": {
       "type": "homeCollections",
+      "disabled": true,
       "name": "Home Collections",
       "settings": {
         "heading": "Our Collections",
         "subtitle": "Discover our amazing product categories",
-        "background_image": "shopify://shop_images/homepageCollections.png",
+        "background_image": "shopify://shop_images/homepageCollections_1.png",
         "collection_1": "accessory",
         "icon_1": "<svg width=\"101\" height=\"101\" viewbox=\"0 0 101 101\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M97.1462 45.373H75.4795C75.4795 52.0035 72.8456 58.3623 68.1572 63.0507C63.4688 67.7391 57.1099 70.373 50.4795 70.373C43.8491 70.373 37.4902 67.7391 32.8018 63.0507C28.1134 58.3623 25.4795 52.0035 25.4795 45.373H3.60449\" stroke=\"#115C11\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M34.8545 42.2479C34.8545 46.3919 36.5007 50.3662 39.4309 53.2965C42.3612 56.2267 46.3355 57.8729 50.4795 57.8729C54.6235 57.8729 58.5978 56.2267 61.528 53.2965C64.4583 50.3662 66.1045 46.3919 66.1045 42.2479C66.1045 31.1854 53.867 27.4646 57.5503 9.42707C57.6827 8.79475 57.6159 8.13693 57.359 7.54414C57.1022 6.95136 56.6679 6.45276 56.116 6.11695C55.5641 5.78115 54.9217 5.62465 54.2772 5.66899C53.6326 5.71334 53.0177 5.95635 52.517 6.36457C47.318 10.8564 43.0752 16.3478 40.0409 22.5122C37.0067 28.6766 35.2429 35.3882 34.8545 42.2479Z\" stroke=\"#115C11\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M6.72949 93.8105C6.31509 93.8105 5.91766 93.6459 5.62464 93.3529C5.33161 93.0599 5.16699 92.6624 5.16699 92.248C5.16699 91.8336 5.33161 91.4362 5.62464 91.1432C5.91766 90.8502 6.31509 90.6855 6.72949 90.6855M6.72949 93.8105C7.14389 93.8105 7.54132 93.6459 7.83435 93.3529C8.12737 93.0599 8.29199 92.6624 8.29199 92.248C8.29199 91.8336 8.12737 91.4362 7.83435 91.1432C7.54132 90.8502 7.14389 90.6855 6.72949 90.6855M34.8545 93.8105C34.4401 93.8105 34.0427 93.6459 33.7496 93.3529C33.4566 93.0599 33.292 92.6624 33.292 92.248C33.292 91.8336 33.4566 91.4362 33.7496 91.1432C34.0427 90.8502 34.4401 90.6855 34.8545 90.6855M34.8545 93.8105C35.2689 93.8105 35.6663 93.6459 35.9593 93.3529C36.2524 93.0599 36.417 92.6624 36.417 92.248C36.417 91.8336 36.2524 91.4362 35.9593 91.1432C35.6663 90.8502 35.2689 90.6855 34.8545 90.6855M66.1045 93.8105C65.6901 93.8105 65.2927 93.6459 64.9996 93.3529C64.7066 93.0599 64.542 92.6624 64.542 92.248C64.542 91.8336 64.7066 91.4362 64.9996 91.1432C65.2927 90.8502 65.6901 90.6855 66.1045 90.6855M66.1045 93.8105C66.5189 93.8105 66.9163 93.6459 67.2093 93.3529C67.5024 93.0599 67.667 92.6624 67.667 92.248C67.667 91.8336 67.5024 91.4362 67.2093 91.1432C66.9163 90.8502 66.5189 90.6855 66.1045 90.6855M94.2295 93.8105C93.8151 93.8105 93.4177 93.6459 93.1246 93.3529C92.8316 93.0599 92.667 92.6624 92.667 92.248C92.667 91.8336 92.8316 91.4362 93.1246 91.1432C93.4177 90.8502 93.8151 90.6855 94.2295 90.6855M94.2295 93.8105C94.6439 93.8105 95.0413 93.6459 95.3343 93.3529C95.6274 93.0599 95.792 92.6624 95.792 92.248C95.792 91.8336 95.6274 91.4362 95.3343 91.1432C95.0413 90.8502 94.6439 90.6855 94.2295 90.6855M94.2295 62.5605C93.8151 62.5605 93.4177 62.3959 93.1246 62.1029C92.8316 61.8099 92.667 61.4124 92.667 60.998C92.667 60.5836 92.8316 60.1862 93.1246 59.8932C93.4177 59.6002 93.8151 59.4355 94.2295 59.4355M94.2295 62.5605C94.6439 62.5605 95.0413 62.3959 95.3343 62.1029C95.6274 61.8099 95.792 61.4124 95.792 60.998C95.792 60.5836 95.6274 60.1862 95.3343 59.8932C95.0413 59.6002 94.6439 59.4355 94.2295 59.4355M81.7295 78.1855C81.3151 78.1855 80.9177 78.0209 80.6246 77.7279C80.3316 77.4349 80.167 77.0374 80.167 76.623C80.167 76.2086 80.3316 75.8112 80.6246 75.5182C80.9177 75.2252 81.3151 75.0605 81.7295 75.0605M81.7295 78.1855C82.1439 78.1855 82.5413 78.0209 82.8343 77.7279C83.1274 77.4349 83.292 77.0374 83.292 76.623C83.292 76.2086 83.1274 75.8112 82.8343 75.5182C82.5413 75.2252 82.1439 75.0605 81.7295 75.0605M19.2295 78.1855C18.8151 78.1855 18.4177 78.0209 18.1246 77.7279C17.8316 77.4349 17.667 77.0374 17.667 76.623C17.667 76.2086 17.8316 75.8112 18.1246 75.5182C18.4177 75.2252 18.8151 75.0605 19.2295 75.0605M19.2295 78.1855C19.6439 78.1855 20.0413 78.0209 20.3343 77.7279C20.6274 77.4349 20.792 77.0374 20.792 76.623C20.792 76.2086 20.6274 75.8112 20.3343 75.5182C20.0413 75.2252 19.6439 75.0605 19.2295 75.0605M6.72949 62.5605C6.31509 62.5605 5.91766 62.3959 5.62464 62.1029C5.33161 61.8099 5.16699 61.4124 5.16699 60.998C5.16699 60.5836 5.33161 60.1862 5.62464 59.8932C5.91766 59.6002 6.31509 59.4355 6.72949 59.4355M6.72949 62.5605C7.14389 62.5605 7.54132 62.3959 7.83435 62.1029C8.12737 61.8099 8.29199 61.4124 8.29199 60.998C8.29199 60.5836 8.12737 60.1862 7.83435 59.8932C7.54132 59.6002 7.14389 59.4355 6.72949 59.4355\" stroke=\"#115C11\" stroke-width=\"1.5\"></path>\n</svg>",
         "title_1": "Collection 1",
@@ -165,6 +166,7 @@
     },
     "selected_products_cGUiGH": {
       "type": "selectedProducts",
+      "disabled": true,
       "name": "Selected Products",
       "settings": {
         "heading": "Explore Our Products",
@@ -182,13 +184,13 @@
       "type": "switchSideImage",
       "name": "Switch Side Image",
       "settings": {
-        "image": "shopify://shop_images/homepage.png",
+        "image": "shopify://shop_images/homepage_1.png",
         "reverse_layout": true,
         "upper_title": "Trusted by the Tawira People",
         "title": "Find Out More About The Forbidden Fruit",
         "subtitle": "Your journey to stronger hair, radiant skin, and natural vitality starts here.",
         "button_text": "About Us",
-        "button_link": "shopify://pages/faq"
+        "button_link": "shopify://pages/about-us"
       }
     },
     "reviews_jJVg3Y": {
@@ -214,12 +216,12 @@
         },
         "review_DXi6DU": {
           "type": "review",
+          "disabled": true,
           "settings": {
             "review_type": "video",
             "quote": "Amazing product! I highly recommend it to everyone.",
             "author": "John Doe",
-            "video_url": "https://www.youtube.com/watch?v=-V4jiPcNUjg",
-            "video_thumbnail": "shopify://shop_images/reviewthumbnail.png"
+            "video_url": "https://www.youtube.com/watch?v=-V4jiPcNUjg"
           }
         },
         "review_GeK9ie": {
@@ -227,6 +229,15 @@
           "settings": {
             "review_type": "text",
             "quote": "\"Amazing product! I highly recommend it to everyone.\"",
+            "author": "John Doe",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_K6ej4z": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Amazing product! I highly recommend it to everyone.",
             "author": "John Doe",
             "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
           }
@@ -246,6 +257,7 @@
         "review_FaiMcY",
         "review_DXi6DU",
         "review_GeK9ie",
+        "review_K6ej4z",
         "review_xUEg8q"
       ],
       "name": "Reviews",
@@ -258,17 +270,18 @@
       "type": "switchSideImage",
       "name": "Switch Side Image",
       "settings": {
-        "image": "shopify://shop_images/homepage.png",
+        "image": "shopify://shop_images/Frame_26.png",
         "reverse_layout": false,
         "upper_title": "Trusted by the Tawira People",
         "title": "Experience Nature’s Forbidden Gift",
         "subtitle": "Your journey to stronger hair, radiant skin, and natural vitality starts here.",
         "button_text": "About Us",
-        "button_link": "shopify://collections/bestsellers"
+        "button_link": "shopify://pages/about-us"
       }
     },
     "blog_posts_home_page_RAyAfQ": {
       "type": "blogPostsHomePage",
+      "disabled": true,
       "name": "Blog Posts Homepage",
       "settings": {
         "heading": "Explore More About Supplements",
