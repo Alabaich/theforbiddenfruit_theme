@@ -9,16 +9,6 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page-contact",
-      "settings": {
-        "title": "Get In Touch",
-        "subtitle": "Fresh and juicy exotic fruits delivered directly from the Caribbean Islands and South America. Discover the taste you've been looking for.",
-        "show_contact_info": true,
-        "phone_number": "+1-234-567-8",
-        "email_address": "businessEmail@forbiddenFruit.com"
-      }
-    },
     "our_location_Cmb6fA": {
       "type": "ourLocation",
       "name": "Contact Page Hero",
@@ -27,7 +17,17 @@
         "description": "Welcome to The Forbidden Fruit, where nature's purest treasures meet your journey to health, beauty, and vitality. Inspired by the wisdom of native cultures and rooted in the belief that nature holds the key to transformation, we are dedicated to sharing organic, sustainable, and life-enhancing remedies with the world. Our flagship product, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "button_text": "Contact Us",
         "button_link": "",
-        "map_url": ""
+        "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.937912185639!2d-79.4882949!3d43.836385299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2eb46403e055%3A0x41f58a3617d5083d!2s59%20Forecastle%20Rd%2C%20Concord%2C%20ON%20L4K%205H9%2C%20Canada!5e0!3m2!1sen!2spl!4v1758560562880!5m2!1sen!2spl"
+      }
+    },
+    "main": {
+      "type": "main-page-contact",
+      "settings": {
+        "title": "Get In Touch",
+        "subtitle": "Fresh and juicy exotic fruits delivered directly from the Caribbean Islands and South America. Discover the taste you've been looking for.",
+        "show_contact_info": true,
+        "phone_number": "+1 (647) 917-0018",
+        "email_address": "support@theforbiddenfruit.com"
       }
     }
   },
