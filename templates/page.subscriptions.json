@@ -11,10 +11,76 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "hero_slider_Wkpwwt": {
+      "type": "heroSlider",
+      "name": "Hero Slider",
+      "settings": {
+        "heading": "Have Questions?",
+        "subtitle": "Indulge in a vibrant selection of tropical fruits sourced from the lush landscapes of the Caribbean and South America. Experience the flavors that will tantalize your taste buds.",
+        "button_1_text": "",
+        "button_1_url": "",
+        "button_2_text": "Get in Touch",
+        "button_2_url": "shopify://pages/contact"
+      }
+    },
+    "subscriptions_kWbMXc": {
+      "type": "subscriptions",
+      "blocks": {
+        "plan_dcDUFj": {
+          "type": "plan",
+          "settings": {
+            "plan_name": "Starter",
+            "price": "$99.99",
+            "price_label": "per week",
+            "subtitle": "Best for Individuals",
+            "button_text": "Select Plan",
+            "button_url": "",
+            "highlighted": false,
+            "benefits": "Basic Support\n2 Packages\nEmail Support\nCommunity Access"
+          }
+        },
+        "plan_c4jD3K": {
+          "type": "plan",
+          "settings": {
+            "plan_name": "Pro",
+            "price": "$129.99",
+            "price_label": "per week",
+            "subtitle": "For Two",
+            "button_text": "Start with Plus",
+            "button_url": "",
+            "highlighted": true,
+            "benefits": "Priority Support\n4 Packages\nPhone Support\nAdvanced Food Plan"
+          }
+        },
+        "plan_pchrp7": {
+          "type": "plan",
+          "settings": {
+            "plan_name": "Enterprise",
+            "price": "$199.99",
+            "price_label": "per week",
+            "subtitle": "Family Pack",
+            "button_text": "Contact Sales",
+            "button_url": "",
+            "highlighted": false,
+            "benefits": "24/7 Priority Support\n6 Packages\nPresent Package Of New Products\nPhone Support\nAdvanced Food Plan"
+          }
+        }
+      },
+      "block_order": [
+        "plan_dcDUFj",
+        "plan_c4jD3K",
+        "plan_pchrp7"
+      ],
+      "name": "Subscriptions",
       "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "hero_slider_Wkpwwt",
+    "subscriptions_kWbMXc"
   ]
 }

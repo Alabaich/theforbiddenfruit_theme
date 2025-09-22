@@ -29,6 +29,17 @@
       },
       "layout-footer": {
         "type": "layout-footer",
+        "blocks": {
+          "link_list_kenhDC": {
+            "type": "link_list",
+            "settings": {
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "link_list_kenhDC"
+        ],
         "settings": {
           "logo": "shopify://shop_images/Logo_White.png",
           "description": "Welcome to The Forbidden Fruit, where nature’s treasures support your journey to health, beauty, and vitality with organic, sustainable, and transformative remedies."
