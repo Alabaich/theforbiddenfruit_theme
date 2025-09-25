@@ -156,7 +156,7 @@
           "type": "achievement",
           "settings": {
             "number": "40+",
-            "text": "Available Items"
+            "text": "Wellness Essentials"
           }
         }
       },
@@ -170,7 +170,7 @@
       "settings": {
         "image": "shopify://shop_images/gallery4.png",
         "reverse_layout": false,
-        "upper_title": "Trusted by the Tawira People",
+        "upper_title": "",
         "title": "Discover the World of The Forbidden Fruit",
         "subtitle": "We aren't just sellers; we are explorers. Over 5 years of experience have allowed us to build direct relationships with farmers, so we can deliver the freshest and highest quality exotic fruits directly from the Caribbean Islands and South America.",
         "button_text": "Shop Now",
