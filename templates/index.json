@@ -87,7 +87,6 @@
     },
     "home_collections_kwVQfD": {
       "type": "homeCollections",
-      "disabled": true,
       "name": "Home Collections",
       "settings": {
         "heading": "Our Collections",
