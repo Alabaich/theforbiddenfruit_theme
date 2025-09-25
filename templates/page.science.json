@@ -22,10 +22,17 @@
           "settings": {
             "slide_image": "shopify://shop_images/slider2_1.png"
           }
+        },
+        "slide_xnqTPF": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/e28cb059e0ddec49e56b870971b72cbcbb85623b.png"
+          }
         }
       },
       "block_order": [
-        "slide_LLTMcd"
+        "slide_LLTMcd",
+        "slide_xnqTPF"
       ],
       "name": "Hero Slider",
       "settings": {
