@@ -421,7 +421,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     new Splide('.product-images-splide', {
       type: 'fade',
       rewind: true,
@@ -475,7 +475,7 @@
       })
       .then(response => response.json())
       .then(() => {
-        window.location.href = '/checkout';
+        window.location.href = '/cart';
       })
       .catch(error => {
         console.error('Error:', error);
@@ -492,7 +492,7 @@
       })
       .then(response => response.json())
       .then(() => {
-        document.dispatchEvent(new Event('cart:open'));
+        window.location.href = '/cart';
       })
       .catch(error => {
         console.error('Error:', error);

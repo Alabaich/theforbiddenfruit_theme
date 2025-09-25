@@ -1,3 +1,4 @@
+
 <style>
   .customHeader .customHeader__inner {
     display: flex;
@@ -37,6 +38,16 @@
   .customHeader .customHeader__inner .iconsBlock path {
     stroke: #222222 !important;
   }
+  .customHeader .cart-count-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    line-height: 1;
+  }
+
   .customHeader .customHeader__inner .navBlock {
     display: flex;
     align-items: center;
@@ -207,7 +218,8 @@
     </div>
 
     {% assign link_class = 'flex flex-col justify-center items-center text-sm text-gray-600 hover:text-black font-medium transition duration-150 p-2' %}
-    {% assign icon_class = 'w-auto h-7 text-black mb-2' %}
+    {% assign link_class_cart = 'flex justify-center items-center text-sm text-gray-600 hover:text-black font-medium transition duration-150 p-2' %}
+    {% assign icon_class = 'w-auto h-7 text-black' %}
 
     <div class="hidden md:flex space-x-2 lg:space-x-6 iconsBlock">
       <a href="{{ routes.search_url }}" class="{{ link_class }}">
@@ -220,11 +232,11 @@
             , class: icon_class %}
         </a>
       {% endif %}
-      <a href="{{ routes.cart_url }}" class="{{ link_class }} relative">
+      <a href="{{ routes.cart_url }}" class="{{ link_class_cart }} relative">
         {% render 'icon-cart'
           , class: icon_class %}
         {% if cart.item_count > 0 %}
-          <div class="w-5 h-5 flex justify-center items-center bg-black text-white text-xs border border-white rounded-full absolute top-0 right-0">
+          <div class="flex justify-center items-center bg-black text-white border border-white rounded-full absolute top-0 right-0 cart-count-badge">
             {{ cart.item_count }}
           </div>
         {% endif %}
@@ -300,62 +312,62 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const heroSection = document.querySelector('.js-hero-section');
-    const header = document.querySelector('.customHeader');
-    if (!header) {
-      console.error('Header not found');
-      return;
-    }
-    
-    const logo = header.querySelector('a img');
-    const transparentLogoSrc = "{{ section.settings.transparent_logo | image_url: width: 200 }}";
-    
-    if (heroSection && header) {
-      header.classList.add('transparent-header');
-      if (logo && transparentLogoSrc) {
-        logo.src = transparentLogoSrc;
-      }
-    } else {
-      const regularLogoSrc = "{{ section.settings.logo | image_url: width: 200 }}";
-      if (logo && regularLogoSrc) {
-        logo.src = regularLogoSrc;
-      }
-    }
-  });
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    const menuButton = document.querySelector('.mobile-menu-button');
-    const closeButton = document.querySelector('.mobile-menu-close');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const overlay = document.querySelector('.mobile-menu-overlay');
-    
-    if (!menuButton || !closeButton || !mobileMenu || !overlay) {
-      console.error('Mobile menu elements not found');
-      return;
-    }
-    
-    function openMenu() {
-      mobileMenu.classList.add('active');
-      overlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    
-    function closeMenu() {
-      mobileMenu.classList.remove('active');
-      overlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-    
-    menuButton.addEventListener('click', openMenu);
-    closeButton.addEventListener('click', closeMenu);
-    overlay.addEventListener('click', closeMenu);
-  });
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroSection = document.querySelector('.js-hero-section');
+      const header = document.querySelector('.customHeader');
+      if (!header) {
+        console.error('Header not found');
+        return;
+      }
+      
+      const logo = header.querySelector('a img');
+      const transparentLogoSrc = "{{ section.settings.transparent_logo | image_url: width: 200 }}";
+      
+      if (heroSection && header) {
+        header.classList.add('transparent-header');
+        if (logo && transparentLogoSrc) {
+          logo.src = transparentLogoSrc;
+        }
+      } else {
+        const regularLogoSrc = "{{ section.settings.logo | image_url: width: 200 }}";
+        if (logo && regularLogoSrc) {
+          logo.src = regularLogoSrc;
+        }
+      }
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.querySelector('.mobile-menu-button');
+      const closeButton = document.querySelector('.mobile-menu-close');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const overlay = document.querySelector('.mobile-menu-overlay');
+      
+      if (!menuButton || !closeButton || !mobileMenu || !overlay) {
+        console.error('Mobile menu elements not found');
+        return;
+      }
+      
+      function openMenu() {
+        mobileMenu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeMenu() {
+        mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      menuButton.addEventListener('click', openMenu);
+      closeButton.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+    });
 </script>
 
 {% schema %}
   {
-    "name": "t:sections.header.name",
+    "name": "Header",
     "settings": [
       {
         "type": "image_picker",
@@ -369,7 +381,7 @@
       },
       {
         "type": "paragraph",
-        "content": "t:sections.header.settings.paragraph"
+        "content": "Link to your main menu in Navigation"
       },
       {
         "type": "text",
