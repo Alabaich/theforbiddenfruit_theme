@@ -121,17 +121,6 @@
   padding-bottom: 200px;
   }
 
-  .content-bottom-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-    padding: 0 16px;
-    box-sizing: border-box;
-    position: absolute;
-    bottom: 120px;
-  }
-
   .product-description-section {
     color: lightgray;
     font-family: Manrope;
@@ -395,7 +384,7 @@
   </div>
 
   <div class="quantity-form-section">
-    <form action="/cart/add" method="post" enctype="multipart/form-data">
+    <form action="/cart/add" method="post" enctype="multipart/form-data" id="product-form">
       <input type="hidden" name="id" value="{{ current_variant.id }}">
       <div class="quantity-selector">
         <button type="button" class="quantity-down-button">–</button>
@@ -403,7 +392,7 @@
         <button type="button" class="quantity-up-button">+</button>
       </div>
     </form>
-    <button class="buy-now-button">Buy Now</button>
+    <button type="submit" form="product-form" class="buy-now-button">Buy Now</button>
   </div>
   
   <div class="footer-container pageWidth">
@@ -423,7 +412,7 @@
         {% endif %}
         <span class="footer-price-current">{{ current_variant.price | money }}</span>
       </div>
-      <button class="add-to-cart-button">Add To Cart</button>
+      <button type="submit" form="product-form" class="add-to-cart-button">Add To Cart</button>
     </div>
   </div>
 </div>
@@ -447,6 +436,9 @@
     const quantityInput = document.getElementById('quantity-input');
     const quantityDownButton = document.querySelector('.quantity-down-button');
     const quantityUpButton = document.querySelector('.quantity-up-button');
+    const productForm = document.getElementById('product-form');
+    const buyNowButton = document.querySelector('.buy-now-button');
+    const addToCartButton = document.querySelector('.add-to-cart-button');
 
     function updateQuantityButtons() {
       const currentValue = parseInt(quantityInput.value);
@@ -473,10 +465,43 @@
 
     quantityInput.addEventListener('change', updateQuantityButtons);
 
+    buyNowButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      const formData = new FormData(productForm);
+      
+      fetch('/cart/add.js', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(() => {
+        window.location.href = '/checkout';
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+
+    addToCartButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      const formData = new FormData(productForm);
+      
+      fetch('/cart/add.js', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(() => {
+        document.dispatchEvent(new Event('cart:open'));
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+
     updateQuantityButtons();
 
     const variantButtons = document.querySelectorAll('.variant-button');
-    const productForm = document.querySelector('form[action="/cart/add"]');
     const hiddenInput = productForm.querySelector('input[name="id"]');
     const productWeightElement = document.querySelector('.product-weight');
     const priceElement = document.querySelector('.price-section .current-price');
