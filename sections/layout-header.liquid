@@ -1,4 +1,3 @@
-
 <style>
   .customHeader .customHeader__inner {
     display: flex;
@@ -222,16 +221,6 @@
     {% assign icon_class = 'w-auto h-7 text-black' %}
 
     <div class="hidden md:flex space-x-2 lg:space-x-6 iconsBlock">
-      <a href="{{ routes.search_url }}" class="{{ link_class }}">
-        {% render 'icon-search'
-          , class: icon_class %}
-      </a>
-      {% if shop.customer_accounts_enabled %}
-        <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="{{ link_class }}">
-          {% render 'icon-account'
-            , class: icon_class %}
-        </a>
-      {% endif %}
       <a href="{{ routes.cart_url }}" class="{{ link_class_cart }} relative">
         {% render 'icon-cart'
           , class: icon_class %}
@@ -240,6 +229,16 @@
             {{ cart.item_count }}
           </div>
         {% endif %}
+      </a>
+      {% if shop.customer_accounts_enabled %}
+        <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="{{ link_class }}">
+          {% render 'icon-account'
+            , class: icon_class %}
+        </a>
+      {% endif %}
+      <a href="{{ routes.search_url }}" class="{{ link_class }}">
+        {% render 'icon-search'
+          , class: icon_class %}
       </a>
       {% if section.settings.button_text != blank %}
         <a href="{{ section.settings.button_link }}" class="greenButton">{{ section.settings.button_text }}</a>
