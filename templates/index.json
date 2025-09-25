@@ -166,15 +166,12 @@
     },
     "selected_products_cGUiGH": {
       "type": "selectedProducts",
-      "disabled": true,
       "name": "Selected Products",
       "settings": {
         "heading": "Explore Our Products",
         "subtitle": "The Forbidden Fruit is inspired by the wisdom of native cultures who believed nature holds the key to true transformation.",
         "product_list": [
-          "capadulla-bark",
-          "mullein-flower",
-          "miracle-brew"
+          "capadulla-bark"
         ],
         "show_tag": true,
         "button_text": "Shop Now"
