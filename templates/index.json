@@ -186,9 +186,9 @@
       "settings": {
         "image": "shopify://shop_images/homepage_1.png",
         "reverse_layout": true,
-        "upper_title": "Trusted by the Tawira People",
-        "title": "Find Out More About The Forbidden Fruit",
-        "subtitle": "Your journey to stronger hair, radiant skin, and natural vitality starts here.",
+        "upper_title": "Directly Sourced. Always Pure.",
+        "title": "The Science Behind Our Natural Vitality.",
+        "subtitle": "Our mission is to harness the power of rare Caribbean and South American ingredients. Discover how our commitment to purity and rigorous standards fuels your journey to total health and radiance.",
         "button_text": "About Us",
         "button_link": "shopify://pages/about-us"
       }
@@ -268,6 +268,7 @@
     },
     "switch_side_image_7DfEXb": {
       "type": "switchSideImage",
+      "disabled": true,
       "name": "Switch Side Image",
       "settings": {
         "image": "shopify://shop_images/Frame_26.png",
