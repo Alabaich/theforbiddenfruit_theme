@@ -23,8 +23,8 @@
         "settings": {
           "logo": "shopify://shop_images/Logo_Black.png",
           "transparent_logo": "shopify://shop_images/Logo_White.png",
-          "button_text": "Contact Us",
-          "button_link": "shopify://pages/contact"
+          "button_text": "Shop Now",
+          "button_link": "shopify://collections/all"
         }
       },
       "layout-footer": {
