@@ -22,10 +22,17 @@
           "settings": {
             "slide_image": "shopify://shop_images/slider2_1.png"
           }
+        },
+        "slide_RGKpYz": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/scienceImage.png"
+          }
         }
       },
       "block_order": [
-        "slide_et6N4a"
+        "slide_et6N4a",
+        "slide_RGKpYz"
       ],
       "name": "Hero Slider",
       "settings": {
