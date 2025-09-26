@@ -1,22 +1,29 @@
 <style>
   .mn-hero-section {
-    position: relative;
-    max-width: 100%;
+    display: flex;
+    text-align: left;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .mn-text-content-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 50px;
+    gap: 30px;
+    max-width: 50%;
+    flex-shrink: 0;
+    min-height: 500px;
   }
 
   .mn-hero-heading {
-    padding: 0 10%;
     width: 100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 1000px;
+    max-width: 100%;
+    padding: 0;
   }
 
   .mn-hero-heading h1 {
@@ -24,165 +31,280 @@
     font-family: 'Manrope'
     , sans-serif;
     margin: 0;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 800;
   }
 
   .mn-hero-heading .subtitle {
     font-family: 'Manrope'
     , sans-serif;
     margin: 0;
-  }
-
-  .mn-hero-content {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+    color: #616161;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
   }
 
   .mn-custom-blocks {
     display: flex;
     flex-direction: column;
-    gap: 35px;
     width: 100%;
-    padding: 0 20px;
     box-sizing: border-box;
+    border-top: 1px solid #e0e0e0;
   }
 
   .mn-custom-block {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .mn-custom-block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .mn-custom-block-header:hover {
+    background-color: #f9f9f9;
+  }
+
+  .mn-custom-block-left {
     display: flex;
     align-items: center;
     gap: 15px;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
   }
 
-  .mn-custom-block svg {
-    width: 32px;
-    height: 32px;
+  .mn-custom-block .icon-left {
+    font-size: 20px;
+    line-height: 1;
+    color: #000;
+    width: 20px;
+    height: 20px;
+    text-align: center;
     flex-shrink: 0;
+  }
+
+  .mn-custom-block svg.plus-icon-circle {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: #616161;
+    transition: transform 0.3s ease;
+  }
+
+  .mn-custom-block.active svg.plus-icon-circle {
+    transform: rotate(45deg);
   }
 
   .mn-custom-text {
     font-size: 16px;
     line-height: 1.4;
-    color: #000;
+    color: #2c2d2c;
     font-family: 'Manrope'
     , sans-serif;
     text-align: left;
-    flex: 1;
+    font-weight: 500;
   }
 
-  .mn-custom-text strong {
-    font-weight: 600;
+  .mn-custom-block-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease
+    , padding 0.3s ease;
+    padding: 0;
   }
 
-  .mn-custom-text em {
-    font-style: italic;
+  .mn-custom-block.active .mn-custom-block-content {
+    max-height: 200px;
+    padding: 0 0 15px;
   }
 
-  .mn-custom-text u {
-    text-decoration: underline;
-  }
-
-  .mn-bottom-text {
+  .mn-custom-block-content p {
+    margin: 0;
     color: #616161;
-    font-family: 'Onest'
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Manrope'
     , sans-serif;
-    font-size: 20px;
-    text-transform: capitalize;
-    text-align: left;
-    max-width: 100%;
-    padding: 0 20px;
+    padding-left: 35px;
   }
 
-  @media (max-width: 768px) {
-    .mn-custom-blocks {
-      padding: 0 15px;
-      gap: 25px;
-    }
-
-    .mn-custom-text {
-      font-size: 14px;
-    }
-
-    .mn-bottom-text {
-      font-size: 20px;
-      padding: 0 15px;
-    }
+  .mn-image-container {
+    max-width: 45%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
   }
 
-  @media (max-width: 769px) {
+  .mn-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    max-height: 600px;
+  }
+
+  @media (max-width: 992px) {
     .mn-hero-section {
+      flex-direction: column-reverse;
       gap: 30px;
     }
 
-    .mn-hero-heading {
-      padding: 0 5%;
-      gap: 15px;
+    .mn-text-content-wrapper {
+      max-width: 100%;
+      min-height: auto;
     }
 
-    .mn-custom-blocks {
-      gap: 20px;
-      padding: 0 10px;
+    .mn-image-container {
+      max-width: 100%;
+      position: static;
     }
 
-    .mn-custom-block {
-      gap: 12px;
+    .mn-hero-heading h1 {
+      font-size: 36px;
     }
 
-    .mn-custom-block svg {
-      width: 28px;
-      height: 28px;
+    .mn-hero-heading .subtitle {
+      font-size: 15px;
     }
 
     .mn-custom-text {
-      font-size: 14px;
+      font-size: 15px;
     }
 
-    .mn-bottom-text {
-      font-size: 16px;
-      padding: 0 10px;
+    .mn-custom-block-content p {
+      padding-left: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mn-hero-heading h1 {
+      font-size: 32px;
+    }
+
+    .mn-custom-block-header {
+      padding: 12px 0;
+    }
+
+    .mn-custom-block.active .mn-custom-block-content {
+      padding: 0 0 12px;
+    }
+
+    .mn-custom-block-content p {
+      padding-left: 25px;
     }
   }
 </style>
 
 <div class="mn-hero-section pageWidth verticalPadding">
-  <div class="mn-hero-heading">
-    {% if section.settings.heading != blank %}
-      <h1>{{ section.settings.heading }}</h1>
-    {% endif %}
+  <div class="mn-text-content-wrapper">
 
-    {% if section.settings.subtitle != blank %}
-      <p class="subtitle">{{ section.settings.subtitle }}</p>
-    {% endif %}
-  </div>
+    <div class="mn-hero-heading">
+      {% if section.settings.heading != blank %}
+        <h1>{{ section.settings.heading }}</h1>
+      {% endif %}
 
-  <div class="mn-hero-content">
+      {% if section.settings.subtitle != blank %}
+        <p class="subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </div>
+
     {% if section.blocks.size > 0 %}
       <div class="mn-custom-blocks">
         {% for block in section.blocks %}
           <div class="mn-custom-block" {{ block.shopify_attributes }}>
-            {% if block.settings.custom_svg != blank %}
-              {{ block.settings.custom_svg }}
-            {% endif %}
-            {% if block.settings.custom_text != blank %}
-              <div class="mn-custom-text">{{ block.settings.custom_text }}</div>
-            {% endif %}
+            <div class="mn-custom-block-header" data-block-index="{{ forloop.index0 }}">
+              <div class="mn-custom-block-left">
+                {% if block.settings.custom_svg != blank %}
+                  <span class="icon-left" aria-hidden="true">{{ block.settings.custom_svg }}</span>
+                {% endif %}
+                {% if block.settings.custom_text != blank %}
+                  <div class="mn-custom-text">{{ block.settings.custom_text }}</div>
+                {% endif %}
+              </div>
+
+              <svg
+                class="plus-icon-circle"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"></circle>
+                <line
+                  x1="12"
+                  y1="8"
+                  x2="12"
+                  y2="16"></line>
+                <line
+                  x1="8"
+                  y1="12"
+                  x2="16"
+                  y2="12"></line>
+              </svg>
+            </div>
+
+            <div class="mn-custom-block-content">
+              {% if block.settings.content_text != blank %}
+                {{ block.settings.content_text }}
+              {% endif %}
+            </div>
           </div>
         {% endfor %}
       </div>
     {% endif %}
+  </div>
 
-    {% if section.settings.bottom_text != blank %}
-      <div class="mn-bottom-text">
-        {{ section.settings.bottom_text }}
+  <div class="mn-image-container">
+    {% if section.settings.image != blank %}
+      <img
+        srcset="{{ section.settings.image | image_url: width: 400 }} 400w,
+                {{ section.settings.image | image_url: width: 600 }} 600w,
+                {{ section.settings.image | image_url: width: 800 }} 800w"
+        src="{{ section.settings.image | image_url: width: 600 }}"
+        sizes="(max-width: 992px) 100vw, 45vw"
+        alt="{{ section.settings.image.alt | escape }}"
+        loading="lazy">
+    {% else %}
+      <div style="background: #f5f5f5; width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+        <span style="color: #999;">Image will appear here</span>
       </div>
     {% endif %}
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const blocks = document.querySelectorAll('.mn-custom-block-header');
+  
+  blocks.forEach(block => {
+    block.addEventListener('click', function() {
+      const parentBlock = this.parentElement;
+      const isActive = parentBlock.classList.contains('active');
+      
+      document.querySelectorAll('.mn-custom-block').forEach(b => {
+        b.classList.remove('active');
+      });
+      
+      if (!isActive) {
+        parentBlock.classList.add('active');
+      }
+    });
+  });
+  });
+</script>
 
 {% schema %}
   {
@@ -192,34 +314,125 @@
         "type": "text",
         "id": "heading",
         "label": "Heading",
-        "default": "Main Title"
+        "default": "Bring Back What Your Diet Leaves Behind"
       }, {
         "type": "text",
         "id": "subtitle",
         "label": "Subtitle",
-        "default": "Your subtitle text here"
+        "default": "Most modern meals miss out on key natural compounds. Our supplements restore them – helping you feel stronger, healthier, and more energized."
       }, {
-        "type": "richtext",
-        "id": "bottom_text",
-        "label": "Bottom Text",
-        "default": "<p>The standard modern diet, heavy in refined grains (white bread, pasta), processed meats, sugar, and unhealthy fats, is systematically stripped of the compounds listed above.</p>"
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
       }
     ],
     "blocks": [
       {
-        "type": "custom_block",
-        "name": "Custom Block",
+        "type": "alkaloids_block",
+        "name": "Alkaloids Block",
         "settings": [
           {
             "type": "html",
             "id": "custom_svg",
             "label": "Custom SVG Icon",
-            "info": "Paste SVG code here"
+            "default": "&#10038;"
           }, {
             "type": "richtext",
             "id": "custom_text",
-            "label": "Custom Text",
-            "info": "Text with formatting options"
+            "label": "Block Title",
+            "default": "<p><strong>Alkaloids</strong> For Focus And Vitality</p>"
+          }, {
+            "type": "richtext",
+            "id": "content_text",
+            "label": "Content Text",
+            "default": "<p>Alkaloids are natural compounds that support mental clarity and physical vitality through their unique biochemical properties.</p>"
+          }
+        ]
+      },
+      {
+        "type": "tannins_block",
+        "name": "Tannins Block",
+        "settings": [
+          {
+            "type": "html",
+            "id": "custom_svg",
+            "label": "Custom SVG Icon",
+            "default": "&#8776;"
+          }, {
+            "type": "richtext",
+            "id": "custom_text",
+            "label": "Block Title",
+            "default": "<p><strong>Tannins</strong> For Cellular Protection</p>"
+          }, {
+            "type": "richtext",
+            "id": "content_text",
+            "label": "Content Text",
+            "default": "<p>Tannins provide powerful antioxidant protection for your cells, helping to combat oxidative stress and maintain cellular health.</p>"
+          }
+        ]
+      },
+      {
+        "type": "saponins_block",
+        "name": "Saponins Block",
+        "settings": [
+          {
+            "type": "html",
+            "id": "custom_svg",
+            "label": "Custom SVG Icon",
+            "default": "&#10038;"
+          }, {
+            "type": "richtext",
+            "id": "custom_text",
+            "label": "Block Title",
+            "default": "<p><strong>Saponins</strong> For Energy And Balance</p>"
+          }, {
+            "type": "richtext",
+            "id": "content_text",
+            "label": "Content Text",
+            "default": "<p>Saponins help regulate energy levels and maintain hormonal balance through their adaptogenic properties.</p>"
+          }
+        ]
+      },
+      {
+        "type": "flavonoids_block",
+        "name": "Flavonoids Block",
+        "settings": [
+          {
+            "type": "html",
+            "id": "custom_svg",
+            "label": "Custom SVG Icon",
+            "default": "&#8776;"
+          }, {
+            "type": "richtext",
+            "id": "custom_text",
+            "label": "Block Title",
+            "default": "<p><strong>Flavonoids</strong> For Heart And Defenses</p>"
+          }, {
+            "type": "richtext",
+            "id": "content_text",
+            "label": "Content Text",
+            "default": "<p>Flavonoids support cardiovascular health and strengthen the immune system with their anti-inflammatory properties.</p>"
+          }
+        ]
+      }, {
+        "type": "phytosterols_block",
+        "name": "Phytosterols Block",
+        "settings": [
+          {
+            "type": "html",
+            "id": "custom_svg",
+            "label": "Custom SVG Icon",
+            "default": "&#10033;"
+          }, {
+            "type": "richtext",
+            "id": "custom_text",
+            "label": "Block Title",
+            "default": "<p><strong>Phytosterols</strong> For Heart And Hormonal Health</p>"
+          }, {
+            "type": "richtext",
+            "id": "content_text",
+            "label": "Content Text",
+            "default": "<p>Phytosterols support heart health and help maintain balanced hormone levels through their structural similarity to cholesterol.</p>"
           }
         ]
       }
@@ -229,12 +442,23 @@
         "name": "Missing Nutrients",
         "category": "Custom",
         "settings": {
-          "heading": "Main Title",
-          "subtitle": "Your subtitle text here"
+          "heading": "Bring Back What Your Diet Leaves Behind",
+          "subtitle": "Most modern meals miss out on key natural compounds. Our supplements restore them – helping you feel stronger, healthier, and more energized."
         },
         "blocks": [
           {
-            "type": "custom_block"
+            "type": "alkaloids_block"
+          },
+          {
+            "type": "tannins_block"
+          },
+          {
+            "type": "saponins_block"
+          },
+          {
+            "type": "flavonoids_block"
+          }, {
+            "type": "phytosterols_block"
           }
         ]
       }
