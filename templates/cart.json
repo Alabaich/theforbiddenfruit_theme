@@ -17,7 +17,7 @@
       "type": "selectedProducts",
       "name": "Selected Products",
       "settings": {
-        "heading": "Featured Products",
+        "heading": "You May Also Like",
         "subtitle": "Discover our best selling products",
         "product_list": [
           "capadulla-bark",
