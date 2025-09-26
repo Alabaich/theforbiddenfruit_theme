@@ -1,54 +1,615 @@
-<div class="container">
-  <h1 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-16">
-    {{ 'search.title' | t }}
-  </h1>
+<style>
+  .search-bar-container {
+    width: 100%;
+    margin: 30px auto 40px auto;
+  }
 
-  <div class="max-w-screen-sm flex mx-auto mb-12 md:mb-16">
-    <form
-      action="{{ routes.search_url }}"
-      method="get"
-      role="search"
-      class="w-full flex"
-    >
-      {% comment %} search only in products {% endcomment %}
+  .search-form-inner {
+    display: flex;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+  }
+
+  .search-input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    padding-right: 60px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+
+  .search-button svg path {
+    transition: stroke 0.3s;
+    stroke: #2c2d2c;
+  }
+
+  .search-button:hover svg path {
+    stroke: #38a169;
+  }
+
+  .pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .pagination-wrapper a,
+  .pagination-wrapper span {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-family: 'Onest', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease;
+  }
+
+  .pagination-wrapper a:hover {
+    background: #f0f0f0;
+  }
+
+  .pagination-wrapper .current {
+    background: #0A330A;
+    color: white;
+  }
+
+  .no-products-message,
+  .no-search-performed {
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+    color: #555;
+    font-family: 'Manrope', sans-serif;
+  }
+
+    .collection-header {
+    width: 100%;
+  }
+  
+  .collection-header-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .collection-title {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .collection-description {
+    font-size: 16px;
+    color: #616161;
+    margin: 0;
+  }
+  
+  .collection-filters-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .collection-filters {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .filter-item {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .collection-filters .filter-item .filter-text {
+    color: #616161;
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.36px;
+    transition: color 0.3s ease;
+  }
+  
+  .filter-item svg {
+    transition: transform 0.3s ease;
+  }
+
+  .filter-item.active .filter-text,
+  .filter-item.active svg path {
+    color: #2c2d2c;
+  }
+
+  .filter-item.active svg {
+    transform: rotate(180deg);
+  }
+
+  .filter-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-top: 10px;
+    min-width: 200px;
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .filter-dropdown.active {
+    display: block;
+  }
+  
+  .price-range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .price-range-inputs input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .price-range-inputs span {
+    color: #616161;
+  }
+
+  .filter-option {
+    padding: 8px 12px;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.2s ease;
+  }
+  
+  .filter-option:hover {
+    background-color: #f5f5f5;
+  }
+
+  .price-presets {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+  }
+
+  .price-presets .filter-option {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+
+  .apply-filter-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(56, 161, 105, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .apply-filter-button:hover {
+    background: linear-gradient(135deg, #2f855a 0%, #276749 100%);
+    box-shadow: 0 6px 12px rgba(56, 161, 105, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .apply-filter-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(56, 161, 105, 0.3);
+  }
+  
+  .collection-sort-options {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sort-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 10;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    min-width: 220px;
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .sort-dropdown.active {
+    display: block;
+  }
+  
+  .sort-option {
+    padding: 8px 12px;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    font-family: 'Manrope';
+  }
+  
+  .sort-option:hover,
+  .sort-option.active {
+    background-color: #f5f5f5;
+  }
+  
+  .collection-products-count {
+    color: #616161;
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.36px;
+  }
+  
+  .collection-sort-options .sort-label {
+    color: #616161;
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.36px;
+  }
+
+  .sort-selected-value {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-family: 'Manrope';
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .product-image {
+    width: 100%;
+    height: 360px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .product-image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .product-image:hover img {
+    transform: scale(1.05);
+  }
+
+  .product-tag {
+    color: #616161;
+    font-family: 'Onest', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: capitalize;
+    min-height: 21px;
+    margin: 0;
+  }
+
+  .product-title {
+    color: #2c2d2c;
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0;
+  }
+
+  .product-price-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .product-prices {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .product-price {
+    color: #2c2d2c;
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .product-compare-price {
+    color: #616161;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    text-decoration: line-through;
+  }
+  
+  .greenButton {
+    padding: 12px 32px;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 968px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .collection-header {
+      padding: 0 20px;
+      margin: 0 auto 30px;
+    }
+
+    .products-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .product-image {
+      height: 250px;
+    }
+  }
+</style>
+
+<div class="pageWidth">
+  <div class="collection-header">
+    <div class="collection-header-inner">
+      <h1 class="collection-title">Search Results</h1>
+    </div>
+  </div>
+
+  <div class="search-bar-container">
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search-form-inner">
       <input type="hidden" name="type" value="product" />
-
-      <input
-        type="text"
-        id="Search"
-        name="q"
-        value="{{ search.terms }}"
-        placeholder="{{ 'search.placeholder' | t }}"
-        class="w-full rounded-r-none px-3"
-      >
-
-      <button class="button button-primary w-auto inline-flex items-center flex-shrink-0 rounded-l-none">
-        {% render 'icon-search', class: 'w-6 h-auto sm:mr-2' %}
-
-        <span class="hidden sm:inline-block">
-          {{ 'action.to_search' | t }}
-        </span>
+      <input type="text" id="Search" name="q" value="{{ search.terms | escape }}" placeholder="Search here..." class="search-input">
+      <button type="submit" class="search-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
+          <path d="M9.66503 9.14292H3.33005M3.15048 9.97334L2.10386 13.0998C1.53063 14.8121 1.24402 15.6682 1.4497 16.1954C1.62832 16.6533 2.01195 17.0004 2.48534 17.1326C3.03045 17.2847 3.85379 16.9142 5.50045 16.1732L16.0571 11.4227C17.6644 10.6994 18.468 10.3378 18.7164 9.83542C18.9322 9.39897 18.9322 8.88678 18.7164 8.45032C18.468 7.94803 17.6644 7.58636 16.0571 6.86308L5.48225 2.10441C3.84054 1.36565 3.01969 0.996268 2.47512 1.1478C2.00218 1.27939 1.61859 1.62559 1.43935 2.0826C1.23295 2.60884 1.51651 3.46314 2.08362 5.17175L3.15252 8.39219C3.24991 8.68563 3.29862 8.8324 3.31784 8.9824C3.3349 9.11563 3.33472 9.25042 3.31733 9.38355C3.29771 9.53355 3.24864 9.68011 3.15048 9.97334Z" stroke="#172D2F" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </button>
     </form>
   </div>
 
-  {% paginate search.results by 16 %}
-    {% if search.performed %}
-      {% if search and search.results != empty %}
-        {% render 'layout-sort-bar', amount: search.results_count class: 'mb-8' %}
+  {% if search.performed %}
+    {% paginate search.results by 16 %}
+      {% if search.results.size > 0 %}
+        <div class="collection-filters-bar">
+          <div class="collection-filters">
+            <div class="collection-products-count" style="margin-right: 20px;">
+              {{ search.results_count }}
+              {% if search.results_count == 1 %}result found{% else %}results found{% endif %}
+            </div>
+          </div>
 
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8">
+          <div class="collection-sort-options">
+            <span class="sort-label">Sort By:</span>
+            <div class="sort-selected-value" id="sort-menu-toggle">
+              <span id="sort-by-text">Featured</span>
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L9 1" stroke="#616161" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="sort-dropdown" id="sort-dropdown-menu">
+              <div class="sort-option active" data-value="manual">Featured</div>
+              <div class="sort-option" data-value="best-selling">Best selling</div>
+              <div class="sort-option" data-value="title-ascending">Alphabetically, A-Z</div>
+              <div class="sort-option" data-value="title-descending">Alphabetically, Z-A</div>
+              <div class="sort-option" data-value="price-ascending">Price, low to high</div>
+              <div class="sort-option" data-value="price-descending">Price, high to low</div>
+              <div class="sort-option" data-value="created-ascending">Date, old to new</div>
+              <div class="sort-option" data-value="created-descending">Date, new to old</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="products-grid">
           {% for product in search.results %}
-            {% render 'layout-product', product: product %}
+            {% if product.object_type == 'product' %}
+              <div class="product-list-item">
+                <div class="product-card">
+                  <div class="product-image">
+                    <a href="{{ product.url }}">
+                      {% if product.featured_image %}
+                        <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title | escape }}" loading="lazy">
+                      {% else %}
+                        <div style="background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
+                          <span>No image</span>
+                        </div>
+                      {% endif %}
+                    </a>
+                  </div>
+                  <p class="product-tag">
+                    {% if product.collections != empty %}{{ product.collections.first.title }}{% endif %}
+                  </p>
+                  <h3 class="product-title">
+                    <a href="{{ product.url }}" style="color: inherit; text-decoration: none;">{{ product.title }}</a>
+                  </h3>
+                  <div class="product-price-container">
+                    <div class="product-prices">
+                      <span class="product-price">{{ product.price | money }}</span>
+                      {% if product.compare_at_price > product.price %}
+                        <span class="product-compare-price">{{ product.compare_at_price | money }}</span>
+                      {% endif %}
+                    </div>
+                    <a href="{{ product.url }}" class="greenButton">Shop Now</a>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
           {% endfor %}
         </div>
       {% else %}
-        <div class="text-center">
-          {{ 'search.no_results' | t }}
+        <div class="no-products-message">
+          No results found for "{{ search.terms | escape }}".
         </div>
       {% endif %}
-    {% endif %}
 
-    {% render 'layout-pagination', paginate: paginate %}
-  {% endpaginate %}
+      {% if paginate.pages > 1 %}
+        <div class="pagination-wrapper">
+          {% render 'layout-pagination', paginate: paginate %}
+        </div>
+      {% endif %}
+    {% endpaginate %}
+  {% else %}
+    <div class="no-search-performed">
+      Please enter a search term above.
+    </div>
+  {% endif %}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sortMenuToggle = document.getElementById('sort-menu-toggle');
+  const sortDropdownMenu = document.getElementById('sort-dropdown-menu');
+  const sortOptions = document.querySelectorAll('.sort-option');
+  const sortByText = document.getElementById('sort-by-text');
+
+  function closeAllDropdowns() {
+    document.querySelectorAll('.filter-dropdown.active, .sort-dropdown.active').forEach(dropdown => {
+      dropdown.classList.remove('active');
+      dropdown.closest('.filter-item')?.classList.remove('active');
+    });
+  }
+
+  if (sortMenuToggle && sortDropdownMenu) {
+    sortMenuToggle.addEventListener('click', function(event) {
+      const isActive = sortDropdownMenu.classList.contains('active');
+      closeAllDropdowns();
+      if (!isActive) {
+        sortDropdownMenu.classList.add('active');
+      }
+      event.stopPropagation();
+    });
+  }
+
+  sortOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      const sortValue = this.getAttribute('data-value');
+      updateSorting(sortValue);
+    });
+  });
+
+  function updateSorting(sortValue) {
+    const url = new URL(window.location);
+    if (sortValue === 'manual') {
+      url.searchParams.delete('sort_by');
+    } else {
+      url.searchParams.set('sort_by', sortValue);
+    }
+    window.location.href = url.toString();
+  }
+
+  function setActiveSortFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentSort = urlParams.get('sort_by') || 'manual';
+    sortOptions.forEach(option => {
+      option.classList.remove('active');
+      if (option.getAttribute('data-value') === currentSort) {
+        option.classList.add('active');
+        if (sortByText) {
+          sortByText.textContent = option.textContent;
+        }
+      }
+    });
+  }
+
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('.collection-sort-options') && !event.target.closest('.filter-item')) {
+      closeAllDropdowns();
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeAllDropdowns();
+    }
+  });
+
+  setActiveSortFromURL();
+});
+</script>
