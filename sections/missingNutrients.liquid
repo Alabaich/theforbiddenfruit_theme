@@ -4,7 +4,7 @@
     text-align: left;
     gap: 50px;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .mn-text-content-wrapper {
@@ -14,6 +14,7 @@
     max-width: 50%;
     flex-shrink: 0;
     min-height: 500px;
+    justify-content: space-between;
   }
 
   .mn-hero-heading {
@@ -51,7 +52,8 @@
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
-    border-top: 1px solid #e0e0e0;
+    flex: 1;
+    justify-content: flex-end;
   }
 
   .mn-custom-block {
@@ -136,36 +138,43 @@
     max-width: 45%;
     flex-grow: 1;
     display: flex;
-    justify-content: center;
-    position: sticky;
-    top: 20px;
-    align-self: flex-start;
+    align-items: stretch;
   }
 
   .mn-image-container img {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 10px;
     object-fit: cover;
-    max-height: 600px;
   }
 
   @media (max-width: 992px) {
     .mn-hero-section {
       flex-direction: column-reverse;
       gap: 30px;
+      align-items: flex-start;
     }
 
     .mn-text-content-wrapper {
       max-width: 100%;
       min-height: auto;
+      justify-content: flex-start;
+    }
+
+    .mn-custom-blocks {
+      justify-content: flex-start;
     }
 
     .mn-image-container {
       width: 100%;
       max-width: 100%;
       max-height: 200px;
-      position: static;
+      align-items: flex-start;
+    }
+
+    .mn-image-container img {
+      height: auto;
+      max-height: 200px;
     }
 
     .mn-hero-heading h1 {
