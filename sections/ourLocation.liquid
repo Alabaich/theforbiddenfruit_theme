@@ -25,7 +25,6 @@
   .contact-page-title-wrapper {
     flex-shrink: 0;
     width: 40%;
-    /* Фиксированная ширина для заголовка */
   }
 
   .contact-page-title {
@@ -59,18 +58,6 @@
     font-family: Manrope;
     font-weight: 500;
     border-radius: 50px;
-  }
-
-  .contact-page-map-container {
-    width: 100%;
-    height: 700px;
-  }
-
-  .contact-page-map {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    filter: grayscale(100%);
   }
 
   .contact-page-section::before {
@@ -127,16 +114,6 @@
       {% endif %}
     </div>
   </div>
-  <div class="contact-page-map-container">
-    {% if section.settings.map_url != blank %}
-      <iframe
-        src="{{ section.settings.map_url }}"
-        class="contact-page-map"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    {% endif %}
-  </div>
 </div>
 
 {% schema %}
@@ -153,7 +130,7 @@
         "type": "textarea",
         "id": "description",
         "label": "Description",
-        "default": "Welcome to The Forbidden Fruit, where nature's purest treasures meet your journey to health, beauty, and vitality. Inspired by the wisdom of native cultures and rooted in the belief that nature holds the key to transformation, we are dedicated to sharing organic, sustainable, and life-enhancing remedies with the world. Our flagship product, Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "default": "Welcome to The Forbidden Fruit, where nature's purest treasures meet your journey to health, beauty, and vitality. Inspired by the wisdom of native cultures and rooted in the belief that nature holds the key to transformation, we are dedicated to sharing organic, sustainable, and life-enhancing remedies with the world."
       },
       {
         "type": "text",
@@ -165,11 +142,6 @@
         "type": "url",
         "id": "button_link",
         "label": "Button Link"
-      }, {
-        "type": "url",
-        "id": "map_url",
-        "label": "Google Maps URL",
-        "info": "Paste the embed URL from Google Maps here."
       }
     ],
     "presets": [
