@@ -16,8 +16,7 @@
         "title": "Contact Us",
         "description": "We're always here to help you on your journey to health, beauty, and vitality.\n<br> <br>\nWhether you have a specific question about our organic remedies, need assistance with a subscription or order, or want to learn more about the science behind The Forbidden Fruit, please reach out. Our dedicated team is ready to provide you with the support and information you need.",
         "button_text": "Contact Us",
-        "button_link": "",
-        "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.937912185639!2d-79.4882949!3d43.836385299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2eb46403e055%3A0x41f58a3617d5083d!2s59%20Forecastle%20Rd%2C%20Concord%2C%20ON%20L4K%205H9%2C%20Canada!5e0!3m2!1sen!2spl!4v1758560562880!5m2!1sen!2spl"
+        "button_link": ""
       }
     },
     "main": {
@@ -29,10 +28,18 @@
         "phone_number": "+1 (647) 917-0018",
         "email_address": "support@theforbiddenfruit.com"
       }
+    },
+    "map_contact_HmLFKH": {
+      "type": "mapContact",
+      "name": "Contact Page Map",
+      "settings": {
+        "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.9377269625547!2d-79.49087518785461!3d43.83638914044239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2eb46403e055%3A0x41f58a3617d5083d!2s59%20Forecastle%20Rd%2C%20Concord%2C%20ON%20L4K%205H9%2C%20Canada!5e0!3m2!1sen!2spl!4v1758879767618!5m2!1sen!2spl"
+      }
     }
   },
   "order": [
     "our_location_Cmb6fA",
-    "main"
+    "main",
+    "map_contact_HmLFKH"
   ]
 }
