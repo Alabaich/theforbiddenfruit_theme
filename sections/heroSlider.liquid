@@ -33,6 +33,26 @@
     margin: 0;
   }
 
+  .greenButton {
+    display: flex;
+    padding: 15px 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #115c11;
+    border: 2px solid #115c11;
+    text-decoration: none;
+    width: fit-content;
+    color: #fff;
+    border-radius: 40px;
+    font-family: var(--font-onest, sans-serif);
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
   .greenButton:hover {
     background-color: transparent;
     color: #115c11 !important;
@@ -67,13 +87,13 @@
     box-shadow: 0 4px 12px rgba(17, 92, 17, 0.3);
   }
 
-  .hs-hero-slider .splide {
+  .hs-hero-slider .splide-container {
     width: 100%;
     order: 3;
     position: relative;
   }
 
-  .hs-hero-slider .splide__arrows {
+  .hs-hero-slider .custom-arrows {
     display: flex;
     padding: 0 25px;
     align-items: center;
@@ -85,14 +105,15 @@
     transform: translateY(-50%);
     justify-content: space-between;
     z-index: 2;
+    pointer-events: none;
   }
 
-  .hs-hero-slider .splide__arrow {
+  .hs-hero-slider .custom-arrow {
     pointer-events: auto;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
-    width: 3em !important;
-    height: 3em !important;
+    width: 3em;
+    height: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,31 +123,25 @@
     box-shadow: 0 4px 12px rgba(17, 92, 17, 0.2);
   }
 
-  .hs-hero-slider .splide__arrow:hover {
+  .hs-hero-slider .custom-arrow:hover {
     background: #115C11;
     transform: scale(1.1);
   }
 
-  .hs-hero-slider .splide__arrow--prev,
-  .hs-hero-slider .splide__arrow--next {
-    position: static;
-    transform: none;
-  }
-
-  .hs-hero-slider .splide__arrow svg {
-    width: 24px !important;
-    height: 24px !important;
-    fill: none !important;
+  .hs-hero-slider .custom-arrow svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
     transition: all 0.3s ease;
   }
 
-  .hs-hero-slider .splide__arrow path {
+  .hs-hero-slider .custom-arrow path {
     stroke: #115C11;
     stroke-width: 2;
     transition: all 0.3s ease;
   }
 
-  .hs-hero-slider .splide__arrow:hover path {
+  .hs-hero-slider .custom-arrow:hover path {
     stroke: #ffffff;
   }
 
@@ -144,13 +159,8 @@
     border-radius: 15px;
   }
 
-  .hs-hero-slider .splide__arrow--prev.custom-arrow svg {
+  .hs-hero-slider .custom-arrow-prev svg {
     transform: rotate(180deg);
-  }
-
-  .hs-hero-slider .splide__arrow--prev:not(.custom-arrow),
-  .hs-hero-slider .splide__arrow--next:not(.custom-arrow) {
-    display: none !important;
   }
 
   @media (max-width: 768px) {
@@ -158,6 +168,20 @@
       height: 300px;
       max-height: 300px;
       object-fit: cover;
+    }
+
+    .hs-hero-slider .custom-arrows {
+      padding: 0 15px;
+    }
+
+    .hs-hero-slider .custom-arrow {
+      width: 2.5em;
+      height: 2.5em;
+    }
+
+    .hs-hero-slider .custom-arrow svg {
+      width: 20px;
+      height: 20px;
     }
   }
 
@@ -202,11 +226,11 @@
     </div>
   {% endif %}
 
-
   {% if section.blocks.size > 0 %}
-    <div class="splide">
-      <div class="splide__arrows">
-        <button class="splide__arrow splide__arrow--prev custom-arrow">
+    <div class="splide-container">
+      <!-- Кастомные стрелки ВНЕ контейнера splide -->
+      <div class="custom-arrows">
+        <button class="custom-arrow custom-arrow-prev">
           <svg
             width="24"
             height="24"
@@ -221,7 +245,7 @@
               stroke-linejoin="round" />
           </svg>
         </button>
-        <button class="splide__arrow splide__arrow--next custom-arrow">
+        <button class="custom-arrow custom-arrow-next">
           <svg
             width="24"
             height="24"
@@ -237,26 +261,30 @@
           </svg>
         </button>
       </div>
-      <div class="splide__track">
-        <ul class="splide__list">
-          {% for block in section.blocks %}
-            <li class="splide__slide">
-              {% if block.settings.slide_image != blank %}
-                <img src="{{ block.settings.slide_image | img_url: '1200x' }}" alt="{{ block.settings.slide_image.alt }}">
-              {% else %}
-                <div style="background: #f0f0f0; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
-                  Slide {{ forloop.index }}
-                </div>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
+
+      <div class="splide">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for block in section.blocks %}
+              <li class="splide__slide">
+                {% if block.settings.slide_image != blank %}
+                  <img
+                    src="{{ block.settings.slide_image | img_url: '1200x' }}"
+                    alt="{{ block.settings.slide_image.alt }}"
+                    loading="lazy">
+                {% else %}
+                  <div style="background: #f0f0f0; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
+                    Slide {{ forloop.index }}
+                  </div>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     </div>
   {% endif %}
-
 </div>
-
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
@@ -266,32 +294,41 @@
     if (typeof Splide !== 'undefined') {
       const splideElement = document.querySelector('.splide');
       if (splideElement) {
+        // Инициализируем Splide
         var splide = new Splide('.splide', {
           type: 'loop',
           perPage: 1,
           autoplay: true,
           interval: 3000,
           pauseOnHover: false,
-          arrows: true,
-          pagination: false
+          arrows: false, // Отключаем стандартные стрелки
+          pagination: false,
+          drag: true,
+          wheel: false
         });
         
-        var prevArrow = document.querySelector('.splide__arrow--prev.custom-arrow');
-        var nextArrow = document.querySelector('.splide__arrow--next.custom-arrow');
+        // Монтируем слайдер
+        splide.mount();
+        
+        // Добавляем обработчики для кастомных стрелок ПОСЛЕ монтирования
+        var prevArrow = document.querySelector('.custom-arrow-prev');
+        var nextArrow = document.querySelector('.custom-arrow-next');
         
         if (prevArrow) {
-          prevArrow.addEventListener('click', function() {
+          prevArrow.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             splide.go('<');
           });
         }
         
         if (nextArrow) {
-          nextArrow.addEventListener('click', function() {
+          nextArrow.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             splide.go('>');
           });
         }
-        
-        splide.mount();
       }
     }
   });
