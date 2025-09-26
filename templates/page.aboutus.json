@@ -28,11 +28,18 @@
           "settings": {
             "slide_image": "shopify://shop_images/pexels-kindelmedia-8181553.jpg"
           }
+        },
+        "slide_DFbGQV": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/pexels-shkrabaanthony-4753643.jpg"
+          }
         }
       },
       "block_order": [
         "slide_et6N4a",
-        "slide_RGKpYz"
+        "slide_RGKpYz",
+        "slide_DFbGQV"
       ],
       "name": "Hero Slider",
       "settings": {
