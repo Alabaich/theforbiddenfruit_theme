@@ -1,1 +1,36 @@
-{"sections":{"main":{"type":"main-cart","settings":{}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {}
+    },
+    "selected_products_gzKiqk": {
+      "type": "selectedProducts",
+      "name": "Selected Products",
+      "settings": {
+        "heading": "You May Also Like",
+        "subtitle": "Discover our best selling products",
+        "product_list": [
+          "capadulla-bark",
+          "flor-de-manita",
+          "capadulla-bark-copy"
+        ],
+        "show_tag": true,
+        "button_text": "Shop Now"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "selected_products_gzKiqk"
+  ]
+}
