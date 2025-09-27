@@ -1,0 +1,240 @@
+<style>
+  .nutrition-gaps-section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nutrition-gaps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  .nutrition-gaps-grid .left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .left-column {
+    padding-right: 40px;
+  }
+
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .pre-heading {
+    color: #787878;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .nutrition-gaps-grid .subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #616161;
+    text-align: left;
+  }
+
+  .issue-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #e4efe2;
+    border-radius: 8px;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .issue-card-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 30px;
+    min-height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #d0dad0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .issue-card-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .issue-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .issue-card-content h4 {
+    color: #000;
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.24px;
+    text-transform: capitalize;
+  }
+
+  .issue-card-content p {
+    color: #787878;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  @media (max-width: 991px) {
+    .nutrition-gaps-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .left-column {
+      padding-right: 0;
+    }
+
+    .main-heading {
+      font-size: 32px;
+    }
+  }
+</style>
+
+<div class="nutrition-gaps-section pageWidth verticalPadding" style="background-color: {{ section.settings.background_color }};">
+  <div class="nutrition-gaps-grid">
+    <div class="left-column">
+      {% if section.settings.preheading != blank %}
+        <p class="pre-heading">{{ section.settings.preheading }}</p>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h1 class="main-heading">{{ section.settings.heading }}</h1>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <p class="subtitle">{{ section.settings.description }}</p>
+      {% endif %}
+
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="greenButton">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="right-column">
+      {% for block in section.blocks %}
+        <div class="issue-card" {{ block.shopify_attributes }}>
+          <div class="issue-card-icon">
+            {% if block.settings.icon_svg != blank %}
+              {{ block.settings.icon_svg }}
+            {% endif %}
+          </div>
+
+          <div class="issue-card-content">
+            {% if block.settings.title != blank %}
+              <h4>{{ block.settings.title }}</h4>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <p>{{ block.settings.text }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Nutrition Gaps",
+    "settings": [
+      {
+        "type": "text",
+        "id": "preheading",
+        "label": "Preheading",
+        "default": "Why Diet Alone Isn't Enough"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Why Food Alone Can't Do It All"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Factors like processed foods, added sugars, refined grains, and nutrient-depleted ingredients mean your meals may be missing key antioxidants, vitamins, minerals, and phytonutrients. This can lead to:"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop Now"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }, {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#ffffff"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "issue",
+        "name": "Health Issue",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Weakened Immunity"
+          }, {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Insufficient nutrients for optimal immune response."
+          }, {
+            "type": "textarea",
+            "id": "icon_svg",
+            "label": "SVG Icon Code",
+            "default": "<svg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7 1V13M1 7H13' stroke='#2c2d2c' stroke-width='2' stroke-linecap='round'/></svg>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Nutrition Gaps",
+        "category": "Custom",
+        "blocks": [
+          {
+            "type": "issue",
+            "settings": {
+              "icon_svg": "<svg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='7' cy='7' r='6' stroke='#2c2d2c' stroke-width='2'/><path d='M4 7H10' stroke='#2c2d2c' stroke-width='2' stroke-linecap='round'/></svg>",
+              "title": "Weakened Immunity",
+              "text": "Insufficient nutrients for optimal immune response."
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
