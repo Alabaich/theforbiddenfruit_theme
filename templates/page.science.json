@@ -67,6 +67,49 @@
       "name": "Small Reviews Slider",
       "settings": {}
     },
+    "foundational_nutrition_DDbNNE": {
+      "type": "foundationalNutrition",
+      "blocks": {
+        "benefit_Hgd6D9": {
+          "type": "benefit",
+          "settings": {
+            "image": "shopify://shop_images/scienceImage3.png",
+            "title": "Energy & Vitality",
+            "text": "Fuel your body and mind for peak performance.",
+            "link_url": ""
+          }
+        },
+        "benefit_N6tgc6": {
+          "type": "benefit",
+          "settings": {
+            "image": "shopify://shop_images/img.png",
+            "title": "Immune Support",
+            "text": "Strengthen your natural defenses.",
+            "link_url": ""
+          }
+        },
+        "benefit_3GBhqh": {
+          "type": "benefit",
+          "settings": {
+            "image": "shopify://shop_images/img2.png",
+            "title": "Digestive Balance",
+            "text": "Promote gut health and nutrient absorption.",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefit_Hgd6D9",
+        "benefit_N6tgc6",
+        "benefit_3GBhqh"
+      ],
+      "name": "Foundational Nutrition Grid",
+      "settings": {
+        "preheading": "What Is Foundational Nutrition",
+        "heading": "Foundational Nutrition Provides The Essential Nutrients Your Body Needs To Thrive Every Day",
+        "description": "A complete base of vitamins, minerals, phytonutrients, and probiotics designed to energize, balance, and strengthen your body from within. It supports:"
+      }
+    },
     "nutrition_gaps_qcwqcN": {
       "type": "nutrition-gaps",
       "blocks": {
@@ -317,6 +360,7 @@
     "main",
     "hero_section_MAiHDn",
     "small_reviews_slider_MaBJ94",
+    "foundational_nutrition_DDbNNE",
     "nutrition_gaps_qcwqcN",
     "missing_nutrients_jxFC6x",
     "reviews_apjbwE",
