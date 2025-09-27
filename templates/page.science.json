@@ -122,11 +122,11 @@
     "faq_iqggzA": {
       "type": "faq",
       "blocks": {
-        "faq_item_XrBgF4": {
+        "faq_item_jNpKbr": {
           "type": "faq_item",
           "settings": {
             "question": "What is your exchange and refund policy?",
-            "answer": "<p>We accept returns on unopened products within 30 days. Opened products with manufacturing defects may be eligible for replacement or credit - contact support with photos and order details. Handling and shipping fees are non-refundable.</p>"
+            "answer": "<p>We accept returns within 30 days of purchase, provided the items are unopened and in their original packaging.</p>"
           }
         },
         "faq_item_ULfGLM": {
@@ -140,38 +140,30 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does one package last?",
-            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+            "answer": "<p>The duration depends on the product and usage frequency. A 30ml tincture typically lasts 4-6 weeks with regular use.</p>"
           }
         },
         "faq_item_tM69RG": {
           "type": "faq_item",
           "settings": {
             "question": "Do you offer a guarantee?",
-            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+            "answer": "<p>Yes! We stand behind our products with a 100% satisfaction guarantee. All our CBD is third-party lab tested for purity and potency.</p>"
           }
         },
         "faq_item_HFfa8F": {
           "type": "faq_item",
           "settings": {
-            "question": "How can I place an order?",
-            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
-          }
-        },
-        "faq_item_jNpKbr": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What is your exchange and refund policy?",
-            "answer": "<p>We accept returns within 30 days of purchase, provided the items are unopened and in their original packaging.</p>"
+            "question": "How can I contact customer support?",
+            "answer": "<p>You can reach our support team anytime via email at support@theforbiddenfruit.com<br/>We typically respond within 1–2 business days.</p>"
           }
         }
       },
       "block_order": [
-        "faq_item_XrBgF4",
+        "faq_item_jNpKbr",
         "faq_item_ULfGLM",
         "faq_item_LTjmxT",
         "faq_item_tM69RG",
-        "faq_item_HFfa8F",
-        "faq_item_jNpKbr"
+        "faq_item_HFfa8F"
       ],
       "name": "FAQ Section",
       "settings": {
