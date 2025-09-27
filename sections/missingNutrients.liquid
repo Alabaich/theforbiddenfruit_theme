@@ -1,485 +1,524 @@
 <style>
-  .mn-hero-section {
-    display: flex;
-    text-align: left;
-    gap: 50px;
-    justify-content: space-between;
-    align-items: stretch;
-    max-height: 700px;
-  }
-  .mn-text-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    max-width: 50%;
-    flex-shrink: 0;
-    min-height: 500px;
-    justify-content: space-between;
+  .mn-hero-section {
+    display: flex;
+    text-align: left;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: stretch;
+    max-height: 700px;
+  }
+  /* New style to invert text color */
+  .mn-white-text h1,
+  .mn-white-text .mn-custom-text,
+  .mn-white-text .mn-custom-block .icon-left,
+  .mn-white-text .mn-custom-block-content p {
+    color: #ffffff !important;
   }
 
-  .mn-hero-heading {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 100%;
-    padding: 0;
+  .mn-white-text .subtitle,
+  .mn-white-text .mn-custom-block svg.plus-icon-circle,
+  .mn-white-text .mn-custom-block-content p {
+    color: #e0e0e0 !important; /* Slightly lighter white for subtitles/details */
   }
 
-  .mn-hero-heading h1 {
-    color: #2c2d2c;
-    font-family: 'Manrope'
-    , sans-serif;
-    margin: 0;
-    font-size: 48px;
-    line-height: 1.1;
-    font-weight: 800;
+  .mn-white-text .mn-custom-block {
+    border-bottom: 1px solid #616161; /* Darker line for contrast */
   }
 
-  .mn-hero-heading .subtitle {
-    font-family: 'Manrope'
-    , sans-serif;
-    margin: 0;
-    color: #616161;
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: left;
+  .mn-white-text .mn-custom-block-header:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight hover on dark background */
   }
+  
+  /* --- (rest of your existing CSS styles remain unchanged) --- */
 
-  .mn-custom-blocks {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    box-sizing: border-box;
-    flex: 1;
-    justify-content: flex-end;
-  }
+  .mn-text-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 50%;
+    flex-shrink: 0;
+    min-height: 500px;
+    justify-content: space-between;
+  }
 
-  .mn-custom-block {
-    border-bottom: 1px solid #e0e0e0;
-  }
+  .mn-hero-heading {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+    padding: 0;
+  }
 
-  .mn-custom-block-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+  .mn-hero-heading h1 {
+    color: #2c2d2c;
+    font-family: 'Manrope'
+    , sans-serif;
+    margin: 0;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 800;
+  }
 
-  .mn-custom-block-header:hover {
-    background-color: #f9f9f9;
-  }
+  .mn-hero-heading .subtitle {
+    font-family: 'Manrope'
+    , sans-serif;
+    margin: 0;
+    color: #616161;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+  }
 
-  .mn-custom-block-left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
+  .mn-custom-blocks {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1;
+    justify-content: flex-end;
+  }
 
-  .mn-custom-block .icon-left {
-    font-size: 20px;
-    line-height: 1;
-    color: #000;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    flex-shrink: 0;
-  }
+  .mn-custom-block {
+    border-bottom: 1px solid #e0e0e0;
+  }
 
-  .mn-custom-block svg.plus-icon-circle {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    color: #616161;
-    transition: transform 0.3s ease;
-  }
+  .mn-custom-block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-  .mn-custom-block.active svg.plus-icon-circle {
-    transform: rotate(45deg);
-  }
+  .mn-custom-block-header:hover {
+    background-color: #f9f9f9;
+  }
 
-  .mn-custom-text {
-    font-size: 16px;
-    line-height: 1.4;
-    color: #2c2d2c;
-    font-family: 'Manrope'
-    , sans-serif;
-    text-align: left;
-    font-weight: 500;
-  }
+  .mn-custom-block-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
 
-  .mn-custom-block-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease
-    , padding 0.3s ease;
-    padding: 0;
-  }
+  .mn-custom-block .icon-left {
+    font-size: 20px;
+    line-height: 1;
+    color: #000;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    flex-shrink: 0;
+  }
 
-  .mn-custom-block.active .mn-custom-block-content {
-    max-height: 200px;
-    padding: 0 0 15px;
-  }
+  .mn-custom-block svg.plus-icon-circle {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: #616161;
+    transition: transform 0.3s ease;
+  }
 
-  .mn-custom-block-content p {
-    margin: 0;
-    color: #616161;
-    font-size: 14px;
-    line-height: 1.5;
-    font-family: 'Manrope'
-    , sans-serif;
-    padding-left: 35px;
-  }
+  .mn-custom-block.active svg.plus-icon-circle {
+    transform: rotate(45deg);
+  }
 
-  .mn-image-container {
-    max-width: 45%;
-    flex-grow: 1;
-    display: flex;
-    align-items: stretch;
-  }
+  .mn-custom-text {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #2c2d2c;
+    font-family: 'Manrope'
+    , sans-serif;
+    text-align: left;
+    font-weight: 500;
+  }
 
-  .mn-image-container img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-  }
+  .mn-custom-block-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease
+    , padding 0.3s ease;
+    padding: 0;
+  }
 
-  @media (max-width: 992px) {
-    .mn-hero-section {
-      flex-direction: column-reverse;
-      gap: 30px;
-      align-items: flex-start;
-    }
+  .mn-custom-block.active .mn-custom-block-content {
+    max-height: 200px;
+    padding: 0 0 15px;
+  }
 
-    .mn-text-content-wrapper {
-      max-width: 100%;
-      min-height: auto;
-      justify-content: flex-start;
-    }
+  .mn-custom-block-content p {
+    margin: 0;
+    color: #616161;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Manrope'
+    , sans-serif;
+    padding-left: 35px;
+  }
 
-    .mn-custom-blocks {
-      justify-content: flex-start;
-    }
+  .mn-image-container {
+    max-width: 45%;
+    flex-grow: 1;
+    display: flex;
+    align-items: stretch;
+  }
 
-    .mn-image-container {
-      width: 100%;
-      max-width: 100%;
-      max-height: 200px;
-      align-items: flex-start;
-    }
+  .mn-image-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
 
-    .mn-image-container img {
-      height: auto;
-      max-height: 200px;
-    }
+  @media (max-width: 992px) {
+    .mn-hero-section {
+      flex-direction: column-reverse;
+      gap: 30px;
+      align-items: flex-start;
+    }
 
-    .mn-hero-heading h1 {
-      font-size: 36px;
-    }
+    .mn-text-content-wrapper {
+      max-width: 100%;
+      min-height: auto;
+      justify-content: flex-start;
+    }
 
-    .mn-hero-heading .subtitle {
-      font-size: 15px;
-    }
+    .mn-custom-blocks {
+      justify-content: flex-start;
+    }
 
-    .mn-custom-text {
-      font-size: 15px;
-    }
+    .mn-image-container {
+      width: 100%;
+      max-width: 100%;
+      max-height: 200px;
+      align-items: flex-start;
+    }
 
-    .mn-custom-block-content p {
-      padding-left: 30px;
-    }
-  }
+    .mn-image-container img {
+      height: auto;
+      max-height: 200px;
+    }
 
-  @media (max-width: 768px) {
-    .mn-hero-heading h1 {
-      font-size: 32px;
-    }
+    .mn-hero-heading h1 {
+      font-size: 36px;
+    }
 
-    .mn-custom-block-header {
-      padding: 12px 0;
-    }
+    .mn-hero-heading .subtitle {
+      font-size: 15px;
+    }
 
-    .mn-custom-block.active .mn-custom-block-content {
-      padding: 0 0 12px;
-    }
+    .mn-custom-text {
+      font-size: 15px;
+    }
 
-    .mn-custom-block-content p {
-      padding-left: 25px;
-    }
-  }
+    .mn-custom-block-content p {
+      padding-left: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mn-hero-heading h1 {
+      font-size: 32px;
+    }
+
+    .mn-custom-block-header {
+      padding: 12px 0;
+    }
+
+    .mn-custom-block.active .mn-custom-block-content {
+      padding: 0 0 12px;
+    }
+
+    .mn-custom-block-content p {
+      padding-left: 25px;
+    }
+  }
 </style>
 
-<div class="mn-hero-section pageWidth verticalPadding" style="background-color: {{ section.settings.background_color }};">
-  <div class="mn-text-content-wrapper">
+{% comment %} Add the mn-white-text class if the setting is checked {% endcomment %}
+{% assign text_class = '' %}
+{% if section.settings.enable_white_text %}
+  {% assign text_class = 'mn-white-text' %}
+{% endif %}
 
-    <div class="mn-hero-heading">
-      {% if section.settings.heading != blank %}
-        <h1>{{ section.settings.heading }}</h1>
-      {% endif %}
+<div class="mn-hero-section pageWidth verticalPadding {{ text_class }}" style="background-color: {{ section.settings.background_color }};">
+  <div class="mn-text-content-wrapper">
 
-      {% if section.settings.subtitle != blank %}
-        <p class="subtitle">{{ section.settings.subtitle }}</p>
-      {% endif %}
-    </div>
+    <div class="mn-hero-heading">
+      {% if section.settings.heading != blank %}
+        <h1>{{ section.settings.heading }}</h1>
+      {% endif %}
 
-    {% if section.blocks.size > 0 %}
-      <div class="mn-custom-blocks">
-        {% for block in section.blocks %}
-          <div class="mn-custom-block" {{ block.shopify_attributes }}>
-            <div class="mn-custom-block-header" data-block-index="{{ forloop.index0 }}">
-              <div class="mn-custom-block-left">
-                {% if block.settings.custom_svg != blank %}
-                  <span class="icon-left" aria-hidden="true">{{ block.settings.custom_svg }}</span>
-                {% endif %}
-                {% if block.settings.custom_text != blank %}
-                  <div class="mn-custom-text">{{ block.settings.custom_text }}</div>
-                {% endif %}
-              </div>
+      {% if section.settings.subtitle != blank %}
+        <p class="subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </div>
 
-              <svg
-                class="plus-icon-circle"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="10"></circle>
-                <line
-                  x1="12"
-                  y1="8"
-                  x2="12"
-                  y2="16"></line>
-                <line
-                  x1="8"
-                  y1="12"
-                  x2="16"
-                  y2="12"></line>
-              </svg>
-            </div>
+    {% if section.blocks.size > 0 %}
+      <div class="mn-custom-blocks">
+        {% for block in section.blocks %}
+          <div class="mn-custom-block" {{ block.shopify_attributes }}>
+            <div class="mn-custom-block-header" data-block-index="{{ forloop.index0 }}">
+              <div class="mn-custom-block-left">
+                {% if block.settings.custom_svg != blank %}
+                  <span class="icon-left" aria-hidden="true">{{ block.settings.custom_svg }}</span>
+                {% endif %}
+                {% if block.settings.custom_text != blank %}
+                  <div class="mn-custom-text">{{ block.settings.custom_text }}</div>
+                {% endif %}
+              </div>
 
-            <div class="mn-custom-block-content">
-              {% if block.settings.content_text != blank %}
-                {{ block.settings.content_text }}
-              {% endif %}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-  </div>
+              <svg
+                class="plus-icon-circle"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"></circle>
+                <line
+                  x1="12"
+                  y1="8"
+                  x2="12"
+                  y2="16"></line>
+                <line
+                  x1="8"
+                  y1="12"
+                  x2="16"
+                  y2="12"></line>
+              </svg>
+            </div>
 
-  <div class="mn-image-container">
-    {% if section.settings.image != blank %}
-      <img
-        srcset="{{ section.settings.image | image_url: width: 400 }} 400w,
-                {{ section.settings.image | image_url: width: 600 }} 600w,
-                {{ section.settings.image | image_url: width: 800 }} 800w"
-        src="{{ section.settings.image | image_url: width: 600 }}"
-        sizes="(max-width: 992px) 100vw, 45vw"
-        alt="{{ section.settings.image.alt | escape }}"
-        loading="lazy">
-    {% else %}
-      <div style="background: #f5f5f5; width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-        <span style="color: #999;">Image will appear here</span>
-      </div>
-    {% endif %}
-  </div>
+            <div class="mn-custom-block-content">
+              {% if block.settings.content_text != blank %}
+                {{ block.settings.content_text }}
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="mn-image-container">
+    {% if section.settings.image != blank %}
+      <img
+        srcset="{{ section.settings.image | image_url: width: 400 }} 400w,
+                {{ section.settings.image | image_url: width: 600 }} 600w,
+                {{ section.settings.image | image_url: width: 800 }} 800w"
+        src="{{ section.settings.image | image_url: width: 600 }}"
+        sizes="(max-width: 992px) 100vw, 45vw"
+        alt="{{ section.settings.image.alt | escape }}"
+        loading="lazy">
+    {% else %}
+      <div style="background: #f5f5f5; width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+        <span style="color: #999;">Image will appear here</span>
+      </div>
+    {% endif %}
+  </div>
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-  const blocks = document.querySelectorAll('.mn-custom-block-header');
-  
-  blocks.forEach(block => {
-    block.addEventListener('click', function() {
-      const parentBlock = this.parentElement;
-      const isActive = parentBlock.classList.contains('active');
-      
-      document.querySelectorAll('.mn-custom-block').forEach(b => {
-        b.classList.remove('active');
-      });
-      
-      if (!isActive) {
-        parentBlock.classList.add('active');
-      }
-    });
-  });
-  });
+  document.addEventListener('DOMContentLoaded', function() {
+  const blocks = document.querySelectorAll('.mn-custom-block-header');
+  
+  blocks.forEach(block => {
+    block.addEventListener('click', function() {
+      const parentBlock = this.parentElement;
+      const isActive = parentBlock.classList.contains('active');
+      
+      // Close all blocks
+      document.querySelectorAll('.mn-custom-block').forEach(b => {
+        b.classList.remove('active');
+      });
+      
+      // Open the clicked block if it was not already active
+      if (!isActive) {
+        parentBlock.classList.add('active');
+      }
+    });
+  });
+  });
 </script>
 
 {% schema %}
-  {
-    "name": "Missing Nutrients",
-    "settings": [
+  {
+    "name": "Missing Nutrients",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Bring Back What Your Diet Leaves Behind"
+      }, {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Most modern meals miss out on key natural compounds. Our supplements restore them – helping you feel stronger, healthier, and more energized."
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "transparent"
+      },
       {
-        "type": "text",
-        "id": "heading",
-        "label": "Heading",
-        "default": "Bring Back What Your Diet Leaves Behind"
-      }, {
-        "type": "text",
-        "id": "subtitle",
-        "label": "Subtitle",
-        "default": "Most modern meals miss out on key natural compounds. Our supplements restore them – helping you feel stronger, healthier, and more energized."
-      }, {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Image"
-      },
-      {
-        "type": "color",
-        "id": "background_color",
-        "label": "Background Color",
-        "default": "transparent"
+        "type": "checkbox",
+        "id": "enable_white_text",
+        "label": "Enable white text color",
+        "default": false
       }
-    ],
-    "blocks": [
-      {
-        "type": "alkaloids_block",
-        "name": "Alkaloids Block",
-        "settings": [
-          {
-            "type": "html",
-            "id": "custom_svg",
-            "label": "Custom SVG Icon",
-            "default": "&#10038;"
-          }, {
-            "type": "richtext",
-            "id": "custom_text",
-            "label": "Block Title",
-            "default": "<p><strong>Alkaloids</strong> For Focus And Vitality</p>"
-          }, {
-            "type": "richtext",
-            "id": "content_text",
-            "label": "Content Text",
-            "default": "<p>Alkaloids are natural compounds that support mental clarity and physical vitality through their unique biochemical properties.</p>"
-          }
-        ]
-      },
-      {
-        "type": "tannins_block",
-        "name": "Tannins Block",
-        "settings": [
-          {
-            "type": "html",
-            "id": "custom_svg",
-            "label": "Custom SVG Icon",
-            "default": "&#8776;"
-          }, {
-            "type": "richtext",
-            "id": "custom_text",
-            "label": "Block Title",
-            "default": "<p><strong>Tannins</strong> For Cellular Protection</p>"
-          }, {
-            "type": "richtext",
-            "id": "content_text",
-            "label": "Content Text",
-            "default": "<p>Tannins provide powerful antioxidant protection for your cells, helping to combat oxidative stress and maintain cellular health.</p>"
-          }
-        ]
-      },
-      {
-        "type": "saponins_block",
-        "name": "Saponins Block",
-        "settings": [
-          {
-            "type": "html",
-            "id": "custom_svg",
-            "label": "Custom SVG Icon",
-            "default": "&#10038;"
-          }, {
-            "type": "richtext",
-            "id": "custom_text",
-            "label": "Block Title",
-            "default": "<p><strong>Saponins</strong> For Energy And Balance</p>"
-          }, {
-            "type": "richtext",
-            "id": "content_text",
-            "label": "Content Text",
-            "default": "<p>Saponins help regulate energy levels and maintain hormonal balance through their adaptogenic properties.</p>"
-          }
-        ]
-      },
-      {
-        "type": "flavonoids_block",
-        "name": "Flavonoids Block",
-        "settings": [
-          {
-            "type": "html",
-            "id": "custom_svg",
-            "label": "Custom SVG Icon",
-            "default": "&#8776;"
-          }, {
-            "type": "richtext",
-            "id": "custom_text",
-            "label": "Block Title",
-            "default": "<p><strong>Flavonoids</strong> For Heart And Defenses</p>"
-          }, {
-            "type": "richtext",
-            "id": "content_text",
-            "label": "Content Text",
-            "default": "<p>Flavonoids support cardiovascular health and strengthen the immune system with their anti-inflammatory properties.</p>"
-          }
-        ]
-      }, {
-        "type": "phytosterols_block",
-        "name": "Phytosterols Block",
-        "settings": [
-          {
-            "type": "html",
-            "id": "custom_svg",
-            "label": "Custom SVG Icon",
-            "default": "&#10033;"
-          }, {
-            "type": "richtext",
-            "id": "custom_text",
-            "label": "Block Title",
-            "default": "<p><strong>Phytosterols</strong> For Heart And Hormonal Health</p>"
-          }, {
-            "type": "richtext",
-            "id": "content_text",
-            "label": "Content Text",
-            "default": "<p>Phytosterols support heart health and help maintain balanced hormone levels through their structural similarity to cholesterol.</p>"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Missing Nutrients",
-        "category": "Custom",
-        "settings": {
-          "heading": "Bring Back What Your Diet Leaves Behind",
-          "subtitle": "Most modern meals miss out on key natural compounds. Our supplements restore them – helping you feel stronger, healthier, and more energized.",
-          "background_color": "transparent"
-        },
-        "blocks": [
-          {
-            "type": "alkaloids_block"
-          },
-          {
-            "type": "tannins_block"
-          },
-          {
-            "type": "saponins_block"
-          },
-          {
-            "type": "flavonoids_block"
-          }, {
-            "type": "phytosterols_block"
-          }
-        ]
-      }
-    ]
-  }
+    ],
+    "blocks": [
+      {
+        "type": "alkaloids_block",
+        "name": "Alkaloids Block",
+        "settings": [
+          {
+            "type": "html",
+            "id": "custom_svg",
+            "label": "Custom SVG Icon",
+            "default": "&#10038;"
+          }, {
+            "type": "richtext",
+            "id": "custom_text",
+            "label": "Block Title",
+            "default": "<p><strong>Alkaloids</strong> For Focus And Vitality</p>"
+          }, {
+            "type": "richtext",
+            "id": "content_text",
+            "label": "Content Text",
+            "default": "<p>Alkaloids are natural compounds that support mental clarity and physical vitality through their unique biochemical properties.</p>"
+          }
+        ]
+      },
+      {
+        "type": "tannins_block",
+        "name": "Tannins Block",
+        "settings": [
+          {
+            "type": "html",
+            "id": "custom_svg",
+            "label": "Custom SVG Icon",
+            "default": "&#8776;"
+          }, {
+            "type": "richtext",
+            "id": "custom_text",
+            "label": "Block Title",
+            "default": "<p><strong>Tannins</strong> For Cellular Protection</p>"
+          }, {
+            "type": "richtext",
+            "id": "content_text",
+            "label": "Content Text",
+            "default": "<p>Tannins provide powerful antioxidant protection for your cells, helping to combat oxidative stress and maintain cellular health.</p>"
+          }
+        ]
+      },
+      {
+        "type": "saponins_block",
+        "name": "Saponins Block",
+        "settings": [
+          {
+            "type": "html",
+            "id": "custom_svg",
+            "label": "Custom SVG Icon",
+            "default": "&#10038;"
+          }, {
+            "type": "richtext",
+            "id": "custom_text",
+            "label": "Block Title",
+            "default": "<p><strong>Saponins</strong> For Energy And Balance</p>"
+          }, {
+            "type": "richtext",
+            "id": "content_text",
+            "label": "Content Text",
+            "default": "<p>Saponins help regulate energy levels and maintain hormonal balance through their adaptogenic properties.</p>"
+          }
+        ]
+      },
+      {
+        "type": "flavonoids_block",
+        "name": "Flavonoids Block",
+        "settings": [
+          {
+            "type": "html",
+            "id": "custom_svg",
+            "label": "Custom SVG Icon",
+            "default": "&#8776;"
+          }, {
+            "type": "richtext",
+            "id": "custom_text",
+            "label": "Block Title",
+            "default": "<p><strong>Flavonoids</strong> For Heart And Defenses</p>"
+          }, {
+            "type": "richtext",
+            "id": "content_text",
+            "label": "Content Text",
+            "default": "<p>Flavonoids support cardiovascular health and strengthen the immune system with their anti-inflammatory properties.</p>"
+          }
+        ]
+      }, {
+        "type": "phytosterols_block",
+        "name": "Phytosterols Block",
+        "settings": [
+          {
+            "type": "html",
+            "id": "custom_svg",
+            "label": "Custom SVG Icon",
+            "default": "&#10033;"
+          }, {
+            "type": "richtext",
+            "id": "custom_text",
+            "label": "Block Title",
+            "default": "<p><strong>Phytosterols</strong> For Heart And Hormonal Health</p>"
+          }, {
+            "type": "richtext",
+            "id": "content_text",
+            "label": "Content Text",
+            "default": "<p>Phytosterols support heart health and help maintain balanced hormone levels through their structural similarity to cholesterol.</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Missing Nutrients",
+        "category": "Custom",
+        "settings": {
+          "heading": "Bring Back What Your Diet Leaves Behind",
+          "subtitle": "Most modern meals miss out on key natural compounds. Our supplements restore them – helping you feel stronger, healthier, and more energized.",
+          "background_color": "transparent",
+          "enable_white_text": false
+        },
+        "blocks": [
+          {
+            "type": "alkaloids_block"
+          },
+          {
+            "type": "tannins_block"
+          },
+          {
+            "type": "saponins_block"
+          },
+          {
+            "type": "flavonoids_block"
+          }, {
+            "type": "phytosterols_block"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}
