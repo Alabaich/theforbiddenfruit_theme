@@ -14,207 +14,24 @@
       "disabled": true,
       "settings": {}
     },
-    "hero_slider_9eJ4dU": {
-      "type": "heroSlider",
-      "blocks": {
-        "slide_LLTMcd": {
-          "type": "slide",
-          "settings": {
-            "slide_image": "shopify://shop_images/slider2_1.png"
-          }
-        },
-        "slide_xnqTPF": {
-          "type": "slide",
-          "settings": {
-            "slide_image": "shopify://shop_images/e28cb059e0ddec49e56b870971b72cbcbb85623b.png"
-          }
-        }
-      },
-      "block_order": [
-        "slide_LLTMcd",
-        "slide_xnqTPF"
-      ],
-      "name": "Hero Slider",
+    "hero_section_MAiHDn": {
+      "type": "hero-section",
+      "name": "Hero Section",
       "settings": {
-        "heading": "The Future of Wellness is Ancient Wisdom",
-        "subtitle": "Every formula we create is born at the intersection of rigorous research and nature’s most powerful intelligence.",
-        "button_1_text": "Show now",
-        "button_1_url": "shopify://collections",
-        "button_2_text": "Contact Us",
-        "button_2_url": "shopify://pages/contact"
-      }
-    },
-    "our_values_WKBwYW": {
-      "type": "ourValues",
-      "blocks": {
-        "value_block_LyVpkn": {
-          "type": "value_block",
-          "settings": {
-            "text_1": "Our Vision",
-            "text_2": "To redefine wellness by uniting ancient wisdom with modern science, creating premium solutions that empower people to thrive with clarity, vitality, and balance."
-          }
-        },
-        "value_block_6rzKGH": {
-          "type": "value_block",
-          "settings": {
-            "text_1": "Our Mission",
-            "text_2": "To craft evidence-based, nature-driven formulations of uncompromising purity, bridging tradition and innovation so our customers can unlock their fullest potential."
-          }
-        },
-        "value_block_qAXPdj": {
-          "type": "value_block",
-          "settings": {
-            "text_1": "Our Values",
-            "text_2": "We are committed to integrity, transparency, and sustainability. Every ingredient is traceable, every formula grounded in research, and every product designed with respect for both people and planet."
-          }
-        }
-      },
-      "block_order": [
-        "value_block_LyVpkn",
-        "value_block_6rzKGH",
-        "value_block_qAXPdj"
-      ],
-      "name": "Our Values",
-      "settings": {}
-    },
-    "gallery_slider_Hr9MNC": {
-      "type": "gallerySlider",
-      "blocks": {
-        "image_slide_3Nc3Tx": {
-          "type": "image_slide",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "image_slide_3Nc3Tx"
-      ],
-      "disabled": true,
-      "name": "Gallery Slider",
-      "settings": {
-        "heading": "Gallery Title",
-        "subtitle": "Your subtitle text here"
-      }
-    },
-    "our_achievements_33AcPd": {
-      "type": "ourAchievements",
-      "blocks": {
-        "achievement_9RcEfN": {
-          "type": "achievement",
-          "settings": {
-            "number": "5+",
-            "text": "Years Experience"
-          }
-        },
-        "achievement_FB3Q7p": {
-          "type": "achievement",
-          "settings": {
-            "number": "5K+",
-            "text": "Trusted Customers"
-          }
-        },
-        "achievement_nqEyM9": {
-          "type": "achievement",
-          "settings": {
-            "number": "100+",
-            "text": "Positive Reviews"
-          }
-        },
-        "achievement_pEkFfD": {
-          "type": "achievement",
-          "settings": {
-            "number": "40+",
-            "text": "Available Items"
-          }
-        }
-      },
-      "block_order": [
-        "achievement_9RcEfN",
-        "achievement_FB3Q7p",
-        "achievement_nqEyM9",
-        "achievement_pEkFfD"
-      ],
-      "name": "Content with Media",
-      "settings": {
-        "image": "shopify://shop_images/scienceImage.png",
-        "reverse_layout": false,
-        "upper_title": "Trusted by the Tawira People",
-        "title": "Purity & Integrity  of Ingredients",
-        "subtitle": "We source botanicals and nutrients the way they are meant to be—sustainably harvested, minimally processed, and standardized for their most active compounds. If it doesn’t meet our standards, it doesn’t make it into your hands.",
-        "button_text": "Shop Now",
-        "button_link": "",
-        "bottom_text": "Ancestral remedies are not folklore to us—they are blueprints. We study traditional applications, validate them with modern science, and elevate them through advanced extraction and delivery systems. In doing so, we preserve wisdom while ensuring efficacy."
-      }
-    },
-    "reviews_acawJX": {
-      "type": "reviews",
-      "blocks": {
-        "review_wQekJY": {
-          "type": "review",
-          "settings": {
-            "review_type": "text",
-            "quote": "Amazing product! I highly recommend it to everyone.",
-            "author": "John Doe",
-            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
-          }
-        },
-        "review_BeiTUh": {
-          "type": "review",
-          "settings": {
-            "review_type": "text",
-            "quote": "Amazing product! I highly recommend it to everyone.",
-            "author": "John Doe",
-            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
-          }
-        },
-        "review_Wdh8iK": {
-          "type": "review",
-          "settings": {
-            "review_type": "text",
-            "quote": "Amazing product! I highly recommend it to everyone.",
-            "author": "John Doe",
-            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
-          }
-        },
-        "review_meTBxU": {
-          "type": "review",
-          "settings": {
-            "review_type": "text",
-            "quote": "Amazing product! I highly recommend it to everyone.",
-            "author": "John Doe",
-            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
-          }
-        },
-        "review_NfXCwe": {
-          "type": "review",
-          "settings": {
-            "review_type": "text",
-            "quote": "Great quality and fast shipping. Will buy again!",
-            "author": "Jane Smith",
-            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
-          }
-        }
-      },
-      "block_order": [
-        "review_wQekJY",
-        "review_BeiTUh",
-        "review_Wdh8iK",
-        "review_meTBxU",
-        "review_NfXCwe"
-      ],
-      "disabled": true,
-      "name": "Reviews",
-      "settings": {
-        "heading": "Customer Reviews",
-        "subtitle": "See what our customers are saying about us"
+        "image": "shopify://shop_images/95acef4bb72c41cf36f006d4cf7e3e40ce0d3c61.jpg",
+        "upper_title": "",
+        "heading": "Build Your Health on  a Strong Foundation",
+        "subtitle": "The Forbidden Fruit delivers the essential nutrients modern diets often lack — so your body can thrive every day.",
+        "button_text": "Start Your Foundation",
+        "button_link": "shopify://pages/contact",
+        "show_info_block": false,
+        "info_block_main_text": "",
+        "info_block_sub_text": ""
       }
     }
   },
   "order": [
     "main",
-    "hero_slider_9eJ4dU",
-    "our_values_WKBwYW",
-    "gallery_slider_Hr9MNC",
-    "our_achievements_33AcPd",
-    "reviews_acawJX"
+    "hero_section_MAiHDn"
   ]
 }
