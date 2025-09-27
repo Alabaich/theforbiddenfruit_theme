@@ -381,6 +381,13 @@
             </a>
           </li>
         {% endif %}
+        {% if section.settings.return_policy_link != blank %}
+          <li>
+            <a href="{{ section.settings.return_policy_link }}">
+              {{ section.settings.return_policy_text | default: "Return Policy" }}
+            </a>
+          </li>
+        {% endif %}
       </ul>
     </div>
     <div class="footer-bottom__right">
@@ -479,17 +486,24 @@
         "id": "terms_of_service_text",
         "label": "Terms of Service Text",
         "default": "Terms of Service"
-      },
-      {
+      }, {
         "type": "url",
         "id": "privacy_policy_link",
         "label": "Privacy Policy Link"
-      },
-      {
+      }, {
         "type": "text",
         "id": "privacy_policy_text",
         "label": "Privacy Policy Text",
         "default": "Privacy Policy"
+      }, {
+        "type": "url",
+        "id": "return_policy_link",
+        "label": "Return Policy Link"
+      }, {
+        "type": "text",
+        "id": "return_policy_text",
+        "label": "Return Policy Text",
+        "default": "Return Policy"
       }
     ],
     "blocks": [
@@ -497,8 +511,7 @@
         "type": "newsletter",
         "name": "Newsletter",
         "limit": 1
-      },
-      {
+      }, {
         "type": "link_list",
         "name": "Link list",
         "settings": [
@@ -509,8 +522,7 @@
             "default": "footer"
           }
         ]
-      },
-      {
+      }, {
         "type": "text_block",
         "name": "Text block",
         "settings": [
