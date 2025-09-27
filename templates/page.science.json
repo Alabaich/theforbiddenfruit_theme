@@ -170,6 +170,53 @@
         "heading": "Frequently Asked Questions",
         "subheading": ""
       }
+    },
+    "science_sitemap_NKKTiY": {
+      "type": "scienceSitemap",
+      "blocks": {
+        "sitemap_link_UJYGF6": {
+          "type": "sitemap_link",
+          "settings": {
+            "link_image": "shopify://shop_images/img.png",
+            "link_text": "About Us",
+            "link_url": "shopify://pages/about-us"
+          }
+        },
+        "sitemap_link_hWLaC8": {
+          "type": "sitemap_link",
+          "settings": {
+            "link_image": "shopify://shop_images/WhatsApp_Image_2025-09-26_at_11.41.30_86ff94c5.jpg",
+            "link_text": "Products",
+            "link_url": "shopify://collections/all"
+          }
+        },
+        "sitemap_link_KJDRhN": {
+          "type": "sitemap_link",
+          "settings": {
+            "link_image": "shopify://shop_images/img2.png",
+            "link_text": "Blog",
+            "link_url": "shopify://blogs/news"
+          }
+        },
+        "sitemap_link_EEdaCe": {
+          "type": "sitemap_link",
+          "settings": {
+            "link_image": "shopify://shop_images/gallery1.png",
+            "link_text": "Collections",
+            "link_url": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "sitemap_link_UJYGF6",
+        "sitemap_link_hWLaC8",
+        "sitemap_link_KJDRhN",
+        "sitemap_link_EEdaCe"
+      ],
+      "name": "Footer Sitemap",
+      "settings": {
+        "sitemap_title": "More About The Forbidden Fruit"
+      }
     }
   },
   "order": [
@@ -177,6 +224,7 @@
     "hero_section_MAiHDn",
     "small_reviews_slider_MaBJ94",
     "reviews_apjbwE",
-    "faq_iqggzA"
+    "faq_iqggzA",
+    "science_sitemap_NKKTiY"
   ]
 }
