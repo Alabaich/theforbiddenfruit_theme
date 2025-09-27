@@ -1,0 +1,161 @@
+<style>
+  .footer-sitemap {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background: #E8EFE8;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .card-item {
+    display: block;
+    position: relative;
+    padding-top: 100%;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    min-height: 100px;
+  }
+
+  .card-item:hover {
+    transform: scale(1.02);
+  }
+
+  .card-text {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: #FFF;
+    font-family: Manrope;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: -0.56px;
+    text-transform: capitalize;
+    z-index: 2;
+  }
+
+  .card-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: background 0.3s ease;
+  }
+
+  .card-item:hover::before {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .card-item {    
+      min-height: unset;
+    }
+  }
+</style>
+
+<div class="footer-sitemap pageWidth">
+  <h2 style="text-align: center;">{{ section.settings.sitemap_title | default: "More About The Forbidden Fruit" }}</h2>
+  <div class="card-grid">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'sitemap_link' %}
+          <a
+            href="{{ block.settings.link_url }}"
+            class="card-item"
+            style="background-image: url('{{ block.settings.link_image | img_url: '600x600' }}');">
+            <span class="card-text">{{ block.settings.link_text }}</span>
+          </a>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Footer Sitemap",
+    "settings": [
+      {
+        "type": "text",
+        "id": "sitemap_title",
+        "label": "Sitemap Title",
+        "default": "More About The Forbidden Fruit"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "sitemap_link",
+        "name": "Sitemap Link",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "link_image",
+            "label": "Link Icon"
+          }, {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link Text",
+            "default": "Link Name"
+          }, {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Footer Sitemap",
+        "blocks": [
+          {
+            "type": "sitemap_link",
+            "settings": {
+              "link_text": "About Us",
+              "link_url": "/pages/about-us"
+            }
+          }, {
+            "type": "sitemap_link",
+            "settings": {
+              "link_text": "Products",
+              "link_url": "/collections/all"
+            }
+          }, {
+            "type": "sitemap_link",
+            "settings": {
+              "link_text": "Blog",
+              "link_url": "/blogs/news"
+            }
+          }, {
+            "type": "sitemap_link",
+            "settings": {
+              "link_text": "Collections",
+              "link_url": "/collections"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
