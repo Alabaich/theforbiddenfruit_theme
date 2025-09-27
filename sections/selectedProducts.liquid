@@ -95,20 +95,27 @@
 
   .product-price {
     color: #2c2d2c;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Manrope'
+    , sans-serif;
     font-size: 20px;
     font-weight: 700;
   }
 
   .product-compare-price {
     color: #616161;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Manrope'
+    , sans-serif;
     font-size: 16px;
     text-decoration: line-through;
   }
 
   .section-button-wrapper {
     text-align: center;
+  }
+
+  .greenButton {
+    padding: 12px 32px;
+    transition: background-color 0.3s ease;
   }
 
   @media (max-width: 968px) {
@@ -182,7 +189,7 @@
           {% endif %}
 
           <h3 class="product-title">
-            <a href="{{ product.url }}">
+            <a href="{{ product.url }}" style="color: inherit; text-decoration: none;">
               {{ product.title }}
             </a>
           </h3>
@@ -216,8 +223,8 @@
             <p class="product-tag">Collection</p>
           {% endif %}
 
-          <h3 class="product-title" >
-            <a href="#" style="color: inherit; text-decoration: none;">
+          <h3 class="product-title">
+            <a href="#">
               Product Title {{ i }}
             </a>
           </h3>
@@ -273,20 +280,17 @@
         "id": "show_tag",
         "label": "Show product collection",
         "default": true
-      },
-      {
+      }, {
         "type": "text",
         "id": "button_text",
         "label": "Product Card Button Text",
         "default": "Shop Now"
-      },
-      {
+      }, {
         "type": "text",
         "id": "all_products_button_text",
         "label": "View All Button Text",
         "default": "View All Products"
-      },
-      {
+      }, {
         "type": "url",
         "id": "all_products_link",
         "label": "View All Button Link",
