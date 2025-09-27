@@ -115,8 +115,68 @@
       ],
       "name": "Reviews",
       "settings": {
-        "heading": "Customer Reviews",
-        "subtitle": "See what our customers are saying about us"
+        "heading": "Reviews",
+        "subtitle": "Read what people are saying about us."
+      }
+    },
+    "faq_iqggzA": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_XrBgF4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your exchange and refund policy?",
+            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        },
+        "faq_item_ULfGLM": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I use it?",
+            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        },
+        "faq_item_LTjmxT": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does one package last?",
+            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        },
+        "faq_item_tM69RG": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer a guarantee?",
+            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        },
+        "faq_item_HFfa8F": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How can I place an order?",
+            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        },
+        "faq_item_jNpKbr": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your exchange and refund policy?",
+            "answer": "<p>We accept returns within 30 days of purchase, provided the items are unopened and in their original packaging.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_XrBgF4",
+        "faq_item_ULfGLM",
+        "faq_item_LTjmxT",
+        "faq_item_tM69RG",
+        "faq_item_HFfa8F",
+        "faq_item_jNpKbr"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": ""
       }
     }
   },
@@ -124,6 +184,7 @@
     "main",
     "hero_section_MAiHDn",
     "small_reviews_slider_MaBJ94",
-    "reviews_apjbwE"
+    "reviews_apjbwE",
+    "faq_iqggzA"
   ]
 }
