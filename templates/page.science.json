@@ -28,10 +28,49 @@
         "info_block_main_text": "",
         "info_block_sub_text": ""
       }
+    },
+    "small_reviews_slider_MaBJ94": {
+      "type": "smallReviewsSlider",
+      "blocks": {
+        "rating_info_xT7FXd": {
+          "type": "rating_info",
+          "settings": {}
+        },
+        "review_HazDL3": {
+          "type": "review",
+          "settings": {
+            "main_text": "Amanda K",
+            "sub_text": "“Miracle Smoothie”"
+          }
+        },
+        "review_NBmPrt": {
+          "type": "review",
+          "settings": {
+            "main_text": "Alison M",
+            "sub_text": "“Game Changer For Your Energy And Health”"
+          }
+        },
+        "review_H8kFyN": {
+          "type": "review",
+          "settings": {
+            "main_text": "Ines K.",
+            "sub_text": "“The Product Changed My Life”"
+          }
+        }
+      },
+      "block_order": [
+        "rating_info_xT7FXd",
+        "review_HazDL3",
+        "review_NBmPrt",
+        "review_H8kFyN"
+      ],
+      "name": "Small Reviews Slider",
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "hero_section_MAiHDn"
+    "hero_section_MAiHDn",
+    "small_reviews_slider_MaBJ94"
   ]
 }
