@@ -95,23 +95,20 @@
 
   .product-price {
     color: #2c2d2c;
-    font-family: 'Manrope'
-    , sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 20px;
     font-weight: 700;
   }
 
   .product-compare-price {
     color: #616161;
-    font-family: 'Manrope'
-    , sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 16px;
     text-decoration: line-through;
   }
 
-  .greenButton {
-    padding: 12px 32px;
-    transition: background-color 0.3s ease;
+  .section-button-wrapper {
+    text-align: center;
   }
 
   @media (max-width: 968px) {
@@ -134,6 +131,11 @@
     .product-image {
       height: 250px;
     }
+
+    .product-price-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 </style>
 
@@ -149,48 +151,56 @@
   </div>
 
   <div class="products-grid">
-    {% for product in section.settings.product_list limit: 3 %}
-      <div class="product-card">
-        <div class="product-image">
-          <a href="{{ product.url }}">
-            {% if product.featured_image %}
-              <img
-                src="{{ product.featured_image | img_url: '400x400' }}"
-                alt="{{ product.title }}"
-                loading="lazy">
-            {% else %}
-              <div style="background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center; border-radius: 12px;"></div>
-            {% endif %}
-          </a>
-        </div>
-
-        {% if section.settings.show_tag %}
-          <p class="product-tag">
-            {% if product.collections != empty %}
-              {{ product.collections.first.title }}
-            {% endif %}
-          </p>
-        {% endif %}
-
-        <h3 class="product-title">
-          <a href="{{ product.url }}" style="color: inherit; text-decoration: none;">
-            {{ product.title }}
-          </a>
-        </h3>
-
-        <div class="product-price-container">
-          <div class="product-prices">
-            <span class="product-price">{{ product.price | money }}</span>
-            {% if product.compare_at_price > product.price %}
-              <span class="product-compare-price">{{ product.compare_at_price | money }}</span>
-            {% endif %}
+    {% if section.settings.product_list != blank %}
+      {% for product in section.settings.product_list limit: 3 %}
+        <div class="product-card">
+          <div class="product-image">
+            <a href="{{ product.url }}">
+              {% if product.featured_image %}
+                <img
+                  src="{{ product.featured_image | img_url: '400x400' }}"
+                  alt="{{ product.featured_image.alt | escape }}"
+                  loading="lazy"
+                  width="400"
+                  height="400">
+              {% else %}
+                <div style="background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
+                  <span>No image</span>
+                </div>
+              {% endif %}
+            </a>
           </div>
 
-          <a href="{{ product.url }}" class="greenButton">
-            {{ section.settings.button_text }}
-          </a>
+          {% if section.settings.show_tag %}
+            <p class="product-tag">
+              {% if product.collections != empty %}
+                {{ product.collections.first.title }}
+              {% else %}
+                &nbsp;
+              {% endif %}
+            </p>
+          {% endif %}
+
+          <h3 class="product-title">
+            <a href="{{ product.url }}">
+              {{ product.title }}
+            </a>
+          </h3>
+
+          <div class="product-price-container">
+            <div class="product-prices">
+              <span class="product-price">{{ product.price | money }}</span>
+              {% if product.compare_at_price > product.price %}
+                <span class="product-compare-price">{{ product.compare_at_price | money }}</span>
+              {% endif %}
+            </div>
+
+            <a href="{{ product.url }}" class="greenButton">
+              {{ section.settings.button_text | default: "Shop Now" }}
+            </a>
+          </div>
         </div>
-      </div>
+      {% endfor %}
     {% else %}
       {% for i in (1..3) %}
         <div class="product-card">
@@ -207,7 +217,7 @@
           {% endif %}
 
           <h3 class="product-title">
-            <a href="#" style="color: inherit; text-decoration: none;">
+            <a href="#">
               Product Title {{ i }}
             </a>
           </h3>
@@ -219,13 +229,21 @@
             </div>
 
             <a href="#" class="greenButton">
-              {{ section.settings.button_text }}
+              {{ section.settings.button_text | default: "Shop Now" }}
             </a>
           </div>
         </div>
       {% endfor %}
-    {% endfor %}
+    {% endif %}
   </div>
+
+  {% if section.settings.all_products_link != blank %}
+    <div class="section-button-wrapper">
+      <a href="{{ section.settings.all_products_link }}" class="greenButton">
+        {{ section.settings.all_products_button_text | default: "View All Products" }}
+      </a>
+    </div>
+  {% endif %}
 </section>
 
 {% schema %}
@@ -255,11 +273,24 @@
         "id": "show_tag",
         "label": "Show product collection",
         "default": true
-      }, {
+      },
+      {
         "type": "text",
         "id": "button_text",
-        "label": "Button Text",
+        "label": "Product Card Button Text",
         "default": "Shop Now"
+      },
+      {
+        "type": "text",
+        "id": "all_products_button_text",
+        "label": "View All Button Text",
+        "default": "View All Products"
+      },
+      {
+        "type": "url",
+        "id": "all_products_link",
+        "label": "View All Button Link",
+        "default": "/collections/all"
       }
     ],
     "presets": [
