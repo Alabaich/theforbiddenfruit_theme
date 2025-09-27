@@ -49,7 +49,13 @@
         ],
         "settings": {
           "logo": "shopify://shop_images/Logo_White.png",
-          "description": "Welcome to The Forbidden Fruit, where nature’s treasures support your journey to health, beauty, and vitality with organic, sustainable, and transformative remedies."
+          "description": "Welcome to The Forbidden Fruit, where nature’s treasures support your journey to health, beauty, and vitality with organic, sustainable, and transformative remedies.",
+          "terms_of_service_link": "shopify://policies/terms-of-service",
+          "terms_of_service_text": "Terms of Service",
+          "privacy_policy_link": "shopify://policies/privacy-policy",
+          "privacy_policy_text": "Privacy Policy",
+          "return_policy_link": "shopify://policies/refund-policy",
+          "return_policy_text": "Return Policy"
         }
       }
     },
