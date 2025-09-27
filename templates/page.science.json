@@ -66,11 +66,64 @@
       ],
       "name": "Small Reviews Slider",
       "settings": {}
+    },
+    "reviews_apjbwE": {
+      "type": "reviews",
+      "blocks": {
+        "review_ePkxky": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "\"This product is a total game-changer, I absolutely love it!\"",
+            "author": "John Doe",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_FbVCqx": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "\"Exactly what I needed. It's so well-made and easy to use.\"",
+            "author": "Sarah Miller",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_dkGq9c": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "\"Fast delivery and the quality is even better than I expected. Five stars!\"",
+            "author": "Mark Taylor",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_JTcrnL": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "“cool”",
+            "author": "Jane Smith",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        }
+      },
+      "block_order": [
+        "review_ePkxky",
+        "review_FbVCqx",
+        "review_dkGq9c",
+        "review_JTcrnL"
+      ],
+      "name": "Reviews",
+      "settings": {
+        "heading": "Customer Reviews",
+        "subtitle": "See what our customers are saying about us"
+      }
     }
   },
   "order": [
     "main",
     "hero_section_MAiHDn",
-    "small_reviews_slider_MaBJ94"
+    "small_reviews_slider_MaBJ94",
+    "reviews_apjbwE"
   ]
 }
