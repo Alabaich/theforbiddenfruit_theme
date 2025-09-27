@@ -7,7 +7,6 @@
     align-items: stretch;
     max-height: 700px;
   }
-
   .mn-text-content-wrapper {
     display: flex;
     flex-direction: column;
@@ -214,7 +213,7 @@
   }
 </style>
 
-<div class="mn-hero-section pageWidth verticalPadding">
+<div class="mn-hero-section pageWidth verticalPadding" style="background-color: {{ section.settings.background_color }};">
   <div class="mn-text-content-wrapper">
 
     <div class="mn-hero-heading">
@@ -336,6 +335,12 @@
         "type": "image_picker",
         "id": "image",
         "label": "Image"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "transparent"
       }
     ],
     "blocks": [
@@ -455,7 +460,8 @@
         "category": "Custom",
         "settings": {
           "heading": "Bring Back What Your Diet Leaves Behind",
-          "subtitle": "Most modern meals miss out on key natural compounds. Our supplements restore them – helping you feel stronger, healthier, and more energized."
+          "subtitle": "Most modern meals miss out on key natural compounds. Our supplements restore them – helping you feel stronger, healthier, and more energized.",
+          "background_color": "transparent"
         },
         "blocks": [
           {
