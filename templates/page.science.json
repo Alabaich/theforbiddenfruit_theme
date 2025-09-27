@@ -132,8 +132,8 @@
         "faq_item_ULfGLM": {
           "type": "faq_item",
           "settings": {
-            "question": "How do I use it?",
-            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+            "question": "How long does processing take before my order ships?",
+            "answer": "<p>Most orders are processed within 1–2 business days. You’ll receive a shipping confirmation email as soon as your order is on its way.</p>"
           }
         },
         "faq_item_LTjmxT": {
