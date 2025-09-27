@@ -180,7 +180,9 @@
           "golden-sea-moss"
         ],
         "show_tag": true,
-        "button_text": "Shop Now"
+        "button_text": "Shop Now",
+        "all_products_button_text": "View All",
+        "all_products_link": "shopify://collections/all"
       }
     },
     "switch_side_image_NE4Ma3": {
