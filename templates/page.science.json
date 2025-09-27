@@ -114,7 +114,8 @@
         "heading": "Bring Back What Your Diet Leaves Behind",
         "subtitle": "Most modern meals miss out on key natural compounds. Our supplements restore them – helping you feel stronger, healthier, and more energized.",
         "image": "shopify://shop_images/scienceImage2.png",
-        "background_color": "#0a330a"
+        "background_color": "#0a330a",
+        "enable_white_text": true
       }
     },
     "reviews_apjbwE": {
