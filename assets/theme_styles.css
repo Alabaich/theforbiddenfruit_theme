@@ -95,8 +95,8 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  background-color: #115c11;
-  border: 2px solid #115c11;
+  background-color: #0A330A;
+  border: 2px solid #0A330A;
   text-decoration: none;
   width: fit-content;
   color: #fff;
@@ -114,13 +114,13 @@ a.greenButton span {
 
 .greenButton:hover {
   background-color: transparent;
-  border: 2px solid #115c11;
-  color: #115c11;
+  border: 2px solid #0A330A;
+  color: #0A330A;
   transition: all 0.3s;
 }
 
 .greenButton span {
-  color: #115c11;
+  color: #0A330A;
   font-family: var(--font-onest);
   font-size: 16px;
   font-style: normal;
@@ -129,7 +129,7 @@ a.greenButton span {
 
 .greenButton:hover span {
   transition: all 0.3s;
-  color: #115c11;
+  color: #0A330A;
 }
 
 body.min-h-screen {
