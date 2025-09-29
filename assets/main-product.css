@@ -173,6 +173,17 @@
     .quantity-form-section {
       right: 25px;
     }
+
+    .product-image-container {
+    top: 13%;
+    left: 0;
+    height: 60%;
+    width: 100%;
+}
+
+.splide__slide img {
+    max-height: 55vh;
+}
   }
 
   @media (max-width: 768px) {
