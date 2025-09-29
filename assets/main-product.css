@@ -71,6 +71,10 @@
      font-size: 3rem;
      font-weight: 600;
  }
+
+ .header-section{
+    padding: 70px 0;
+ }
 }
 
  .product-weight {
