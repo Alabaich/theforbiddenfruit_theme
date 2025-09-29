@@ -60,7 +60,7 @@
  .product-title {
      color: #FFF;
      font-family: Manrope;
-     font-size: 64px;
+     font-size: 4rem;
      font-weight: 600;
  }
 
@@ -188,11 +188,12 @@
 
  @media screen and (max-width: 1025px) {
      .product-image-container {
-         top: 16%;
+         top: 18%;
          height: 80%;
      }
 
      .splide__slide img {
+        object-fit: contain;
          height: 60vh;
          width: 100%;
      }
