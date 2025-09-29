@@ -181,10 +181,17 @@
     width: 100%;
 }
 
-.splide__slide img {
-    max-height: 55vh;
-}
+    .splide__slide img {
+        max-height: 55vh;
+    }
   }
+
+    @media screen and (max-width: 1000px) {
+    .splide__slide img {
+        height: 60vh;
+        width: 100%;
+    }
+    }
 
   @media (max-width: 768px) {
     .quantity-form-section {
