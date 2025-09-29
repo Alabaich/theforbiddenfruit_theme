@@ -198,7 +198,7 @@
           "type": "review",
           "settings": {
             "review_type": "text",
-            "quote": "Amazing product! I highly recommend it to everyone.",
+            "quote": "\"This product is a total game-changer, I absolutely love it!\"",
             "author": "John Doe",
             "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
           }
@@ -207,26 +207,8 @@
           "type": "review",
           "settings": {
             "review_type": "text",
-            "quote": "Amazing product! I highly recommend it to everyone.",
-            "author": "John Doe",
-            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
-          }
-        },
-        "review_XUehtM": {
-          "type": "review",
-          "settings": {
-            "review_type": "text",
-            "quote": "Amazing product! I highly recommend it to everyone.",
-            "author": "John Doe",
-            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
-          }
-        },
-        "review_eVPm7N": {
-          "type": "review",
-          "settings": {
-            "review_type": "text",
-            "quote": "Amazing product! I highly recommend it to everyone.",
-            "author": "John Doe",
+            "quote": "\"Exactly what I needed. It's so well-made and easy to use.\"",
+            "author": "Sarah Miller",
             "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
           }
         },
@@ -234,8 +216,26 @@
           "type": "review",
           "settings": {
             "review_type": "text",
-            "quote": "Great quality and fast shipping. Will buy again!",
+            "quote": "\"Fast delivery and the quality is even better than I expected. Five stars!\"",
+            "author": "Mark Taylor",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_XUehtM": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "“cool”",
             "author": "Jane Smith",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_eVPm7N": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "\"Great quality and fast shipping. Will buy again!\"",
+            "author": "Ronnie Jorne",
             "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
           }
         }
@@ -243,9 +243,9 @@
       "block_order": [
         "review_UU3Keq",
         "review_Ae9Gcw",
+        "review_GWaPCx",
         "review_XUehtM",
-        "review_eVPm7N",
-        "review_GWaPCx"
+        "review_eVPm7N"
       ],
       "name": "Reviews",
       "settings": {
