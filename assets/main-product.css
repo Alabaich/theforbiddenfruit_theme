@@ -210,6 +210,10 @@
          height: 60vh;
          width: 100%;
      }
+
+     .product-description-section{
+        display: none;
+     }
  }
 
  @media (max-width: 768px) {
