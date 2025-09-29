@@ -64,6 +64,15 @@
      font-weight: 600;
  }
 
+@media screen and (max-width: 768px) {
+ .product-title {
+     color: #FFF;
+     font-family: Manrope;
+     font-size: 3rem;
+     font-weight: 600;
+ }
+}
+
  .product-weight {
      color: #FFF;
      font-family: Inter;
