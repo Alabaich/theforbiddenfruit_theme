@@ -52,22 +52,11 @@
         "heading": "Customer Reviews",
         "subtitle": "See what our customers are saying about us"
       }
-    },
-    "contact-form": {
-      "type": "contact-form",
-      "settings": {
-        "title": "Get In Touch",
-        "subtitle": "Fresh and juicy exotic fruits delivered directly from the Caribbean Islands and South America.",
-        "show_contact_info": true,
-        "phone_number": "+1-234-567-8",
-        "email_address": "businessEmail@forbiddenFruit.com"
-      }
     }
   },
   "order": [
     "main",
     "review_summary_T7ixXd",
-    "reviews_kPgjEh",
-    "contact-form"
+    "reviews_kPgjEh"
   ]
 }

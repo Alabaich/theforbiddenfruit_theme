@@ -1,0 +1,222 @@
+<style>
+  .info-section-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+  }
+
+  @media (max-width: 990px) {
+    .info-section-wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+  .info-image-column {
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+  }
+
+  @media (max-width: 990px) {
+    .info-image-column {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  .info-image-holder {
+    width: 100%;
+    height: 450px;
+    background: #dcdcdc;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .info-image-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .info-text-column {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+  }
+
+  @media (max-width: 990px) {
+    .info-text-column {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  .info-tagline {
+    color: #787878;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  @media (max-width: 480px) {
+    .info-section-title {
+      font-size: 28px;
+    }
+
+    .info-benefit-list {
+      margin: 50px 0 0;
+    }
+  }
+
+  .info-benefit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 100px 0 0;
+  }
+
+  .info-benefit-item h3 {
+    color: #172D2F;
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.24px;
+    text-transform: capitalize;
+  }
+
+  .info-benefit-item p {
+    color: #787878;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  .placeholder-svg {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+<div class="info-section pageWidth">
+  <div class="info-section-wrapper">
+    <div class="info-image-column">
+      <div class="info-image-holder">
+        {% if section.settings.main_image != blank %}
+          {{ section.settings.main_image | image_url: width: 600 | image_tag: 
+ loading: 'lazy',
+ alt: section.settings.main_image.alt | default: section.settings.title
+          }}
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="info-text-column">
+      {% if section.settings.tagline != blank %}
+        <p class="info-tagline">{{ section.settings.tagline }}</p>
+      {% endif %}
+
+      {% if section.settings.title != blank %}
+        <h1>{{ section.settings.title }}</h1>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <ul class="info-benefit-list">
+          {% for block in section.blocks %}
+            <li class="info-benefit-item" {{ block.shopify_attributes }}>
+              {% if block.settings.heading != blank %}
+                <h3>{{ block.settings.heading }}</h3>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <p>{{ block.settings.text }}</p>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Image and Text Info",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "main_image",
+        "label": "Main Image"
+      }, {
+        "type": "text",
+        "id": "tagline",
+        "default": "Learn more about Batana Oil",
+        "label": "Section Tagline"
+      }, {
+        "type": "text",
+        "id": "title",
+        "default": "What Is Batana Oil",
+        "label": "Section Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "benefit_item",
+        "name": "Benefit Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "default": "Deep Conditioning & Moisturizing",
+            "label": "Benefit Heading"
+          }, {
+            "type": "textarea",
+            "id": "text",
+            "default": "Batana Oil is a powerful treatment that deeply conditions hair and moisturizes the scalp, supporting healthy hair growth.",
+            "label": "Benefit Description"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 5,
+    "presets": [
+      {
+        "name": "Image and Text Info Block",
+        "category": "Text and Images",
+        "blocks": [
+          {
+            "type": "benefit_item"
+          }, {
+            "type": "benefit_item",
+            "settings": {
+              "heading": "A Centuries-Old Tradition",
+              "text": "Used for generations by the Native Tawira people of Honduras, known as \"the people of beautiful hair,\" Batana Oil has a rich history in hair care."
+            }
+          }, {
+            "type": "benefit_item",
+            "settings": {
+              "heading": "Honduran Liquid Gold",
+              "text": "Harvested from the heart of the rainforest, Batana Oil (Elaeis oleifera), also known as Ojon Oil, is prized for its restorative properties. The Ojon brand, later acquired by Estee Lauder, helped bring this luxurious oil to the world."
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

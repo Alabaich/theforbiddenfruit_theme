@@ -68,8 +68,8 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     font-family: Manrope;
-    gap: 15px;
     font-weight: 600;
     font-size: 18px;
     transition: background-color 0.3s ease;
@@ -79,11 +79,31 @@
     background-color: #f1f1f1;
   }
 
+  .faq-question-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-grow: 1;
+  }
+
   .faq-question .icon {
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .faq-question .plus-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: #616161;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.active .plus-icon {
+    transform: rotate(45deg);
   }
 
   .faq-answer {
@@ -98,10 +118,6 @@
   .faq-answer p {
     margin: 0;
     font-family: Manrope;
-  }
-
-  .faq-item.active .faq-question .icon {
-    transform: rotate(90deg);
   }
 
   .faq-item.active .faq-answer {
@@ -159,22 +175,34 @@
     {% for block in section.blocks %}
       <div class="faq-item">
         <div class="faq-question">
-          <span class="icon">
-            <svg
-              width="9"
-              height="18"
-              viewBox="0 0 9 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M1 1.7085L6.36458 6.91683C6.64969 7.18381 6.87698 7.50631 7.03229 7.86464C7.18771 8.22297 7.26781 8.60954 7.26781 9.00016C7.26781 9.39079 7.18771 9.77704 7.03229 10.1354C6.87698 10.4938 6.64969 10.8165 6.36458 11.0835L1 16.2918"
-                stroke="#2C2D2C"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </span>
-          {{ block.settings.question }}
+          <div class="faq-question-content">
+            {{ block.settings.question }}
+          </div>
+          <svg
+            class="plus-icon"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle
+              cx="12"
+              cy="12"
+              r="10"></circle>
+            <line
+              x1="12"
+              y1="8"
+              x2="12"
+              y2="16"></line>
+            <line
+              x1="8"
+              y1="12"
+              x2="16"
+              y2="12"></line>
+          </svg>
         </div>
         <div class="faq-answer">
           {{ block.settings.answer }}
@@ -196,10 +224,14 @@
         question.addEventListener('click', () => {
           const isActive = item.classList.contains('active');
           faqItems.forEach(otherItem => {
-            otherItem.classList.remove('active');
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+            }
           });
           if (!isActive) {
             item.classList.add('active');
+          } else {
+            item.classList.remove('active');
           }
         });
       });

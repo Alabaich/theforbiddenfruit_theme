@@ -43,6 +43,14 @@
     box-sizing: border-box;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   }
+
+  :root {
+    --product-accent-color: {{ product.metafields.custom.background_color | default: '#2c2d2c' }};
+  }
+
+  .problem-icon svg g path {
+    fill: var(--product-accent-color);
+  }
 </style>
 
 

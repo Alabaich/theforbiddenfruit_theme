@@ -1,0 +1,191 @@
+<style>
+  .threeBlockBenefits {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .headings {
+    text-align: left;
+  }
+
+  .sub-heading {
+    color: #6A6A6A;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .grid-layout-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  @media (max-width: 990px) {
+    .grid-layout-3 {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid-layout-3 {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+
+    .threeBlockBenefits {
+      gap: 30px;
+    }
+  }
+
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 15px;
+  }
+
+  .item-image-holder {
+    overflow: hidden;
+    border-radius: 4px;
+    height: 450px;
+    position: relative;
+    background: #f5f5f5;
+  }
+
+  .item-image-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+  }
+
+  .placeholder-svg {
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+  }
+
+  .item-title {
+    color: #202020;
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.24px;
+    text-transform: capitalize;
+  }
+
+  .item-text p {
+    color: #717171;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+</style>
+
+<div class="content-wrapper threeBlockBenefits pageWidth">
+  <div class="headings">
+    {% if section.settings.tagline != blank %}
+      <p class="sub-heading">{{ section.settings.tagline }}</p>
+    {% endif %}
+
+    {% if section.settings.title != blank %}
+      <h2>{{ section.settings.title }}</h2>
+    {% endif %}
+  </div>
+
+  {% if section.blocks.size > 0 %}
+    <div class="grid-layout-3">
+      {% for block in section.blocks %}
+        <div class="grid-item" {{ block.shopify_attributes }}>
+          <div class="item-image-holder">
+            {% if block.settings.feature_image != blank %}
+              {{ block.settings.feature_image | image_url: width: 400 | image_tag: 
+ loading: 'lazy',
+ alt: block.settings.feature_image.alt | default: block.settings.heading,
+ class: 'feature-image'
+              }}
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+
+          {% if block.settings.heading != blank %}
+            <h3 class="item-title">{{ block.settings.heading }}</h3>
+          {% endif %}
+
+          {% if block.settings.text != blank %}
+            <div class="item-text">
+              <p>{{ block.settings.text }}</p>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "General Features Block",
+    "settings": [
+      {
+        "type": "text",
+        "id": "tagline",
+        "default": "Features",
+        "label": "Section Tagline (e.g., Features)"
+      }, {
+        "type": "text",
+        "id": "title",
+        "default": "How The Product Works",
+        "label": "Section Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "feature",
+        "name": "Benefit Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "feature_image",
+            "label": "Benefit Image"
+          }, {
+            "type": "text",
+            "id": "heading",
+            "default": "Main Benefit Title",
+            "label": "Benefit Heading"
+          }, {
+            "type": "textarea",
+            "id": "text",
+            "default": "Description of the benefit or feature.",
+            "label": "Benefit Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Three Column Features",
+        "blocks": [
+          {
+            "type": "feature"
+          }, {
+            "type": "feature"
+          }, {
+            "type": "feature"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
