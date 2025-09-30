@@ -186,7 +186,7 @@
         "title": "How to Use?",
         "subtitle": "Add a small amount to your hands, warm it up, and lightly rub until absorbed. As a result, you'll get shiny and hydrated hair. The oil is made by hand, and this raw extraction process preserves all the beneficial properties in the final product.",
         "button_text": "Order Now",
-        "button_link": "shopify://products/capadulla-bark-copy"
+        "button_link": "shopify://products/flor-de-manita-copy"
       }
     },
     "switch_side_image_product_kcGP3a": {
@@ -199,7 +199,7 @@
         "title": "Experience the ancient flower of breath. Feel clarity in every inhale!",
         "subtitle": "The Forbidden Fruit is inspired by the wisdom of native cultures who believed nature holds the key to true transformation.",
         "button_text": "Order Now",
-        "button_link": "shopify://products/capadulla-bark-copy"
+        "button_link": "shopify://products/flor-de-manita-copy"
       }
     },
     "faq_BM9egA": {
@@ -242,13 +242,13 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/12e63dc94c678675fcb5c0b3c0064f99e21a61ed.jpg",
+        "image": "shopify://shop_images/gallery3.png",
         "reverse_layout": true,
         "upper_title": "",
-        "title": "Discover the healing power of Mullein Flower!",
+        "title": "Purify your blood with Sarsaparilla Root!",
         "subtitle": "",
         "button_text": "Order Now",
-        "button_link": "shopify://products/capadulla-bark-copy"
+        "button_link": "shopify://products/flor-de-manita-copy"
       }
     }
   },
