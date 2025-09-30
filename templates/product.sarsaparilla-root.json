@@ -55,20 +55,21 @@
       "name": "Problem Statement",
       "settings": {
         "sub_heading": "The Problem",
-        "heading": "Do you struggle  with breathing freely?",
-        "tagline": "Your lungs deserve comfort, not constant irritation.",
-        "image": "shopify://shop_images/df4afce495271bdfc4ad0a44ab8612fcbfb25ca2.jpg",
-        "problems_list": "Struggling With Stamina & Sexual Performance\nLow Libido Or Premature Exhaustion\nScattered Focus & Sluggish Mood"
+        "heading": "Dealing with Skin  or Joint Issues?",
+        "tagline": "Nature's remedy for inflammation and skin health.",
+        "image": "shopify://shop_images/4d680d506ce6fbd9311951761a1f7c9d91f02b33.jpg",
+        "problems_list": "Inflammatory skin conditions like psoriasis\nJoint stiffness, headaches, and inflammation\nSkin issues, poor circulation, or low immunity"
       }
     },
     "switch_side_image_QQzE9E": {
       "type": "switchSideImage",
+      "custom_css": [],
       "name": "Switch Side Image",
       "settings": {
-        "image": "shopify://shop_images/Promise_Image.png",
+        "image": "shopify://shop_images/sarsaparilla.png",
         "reverse_layout": false,
         "upper_title": "The Promise",
-        "title": "Mullein Flower, enriched with nature’s minerals. Clears your lungs, soothes your body, restores your balance.",
+        "title": "Sarsaparilla Root, packed with saponins. Builds strong blood, nourishes muscles  and skin, supports joints, immunity, and renewed vitality.",
         "subtitle": "",
         "button_text": "",
         "button_link": ""
@@ -192,7 +193,7 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/18c5424584f47849c28aefa3dd1d611740b2a185_1.jpg",
+        "image": "shopify://shop_images/b230ef6435b0c7fbac4ea3948fd136f0299c05c0.jpg",
         "reverse_layout": true,
         "upper_title": "",
         "title": "Experience the ancient flower of breath. Feel clarity in every inhale!",
