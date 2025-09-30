@@ -13,50 +13,69 @@
       "type": "main-collection",
       "settings": {}
     },
-    "foundational_nutrition_VqWTnt": {
-      "type": "foundationalNutrition",
+    "missing_nutrients_x6FU3f": {
+      "type": "missingNutrients",
       "blocks": {
-        "benefit_tkgNgh": {
-          "type": "benefit",
+        "alkaloids_block_LpHcXi": {
+          "type": "alkaloids_block",
           "settings": {
-            "title": "Energy & Vitality",
-            "text": "Fuel your body and mind for peak performance.",
-            "link_url": ""
+            "custom_svg": "✶",
+            "custom_text": "<p><strong>Alkaloids</strong> For Focus And Vitality</p>",
+            "content_text": "<p>Alkaloids are natural compounds that support mental clarity and physical vitality through their unique biochemical properties.</p>"
           }
         },
-        "benefit_iKwTHg": {
-          "type": "benefit",
+        "tannins_block_d737bi": {
+          "type": "tannins_block",
           "settings": {
-            "title": "Immune Support",
-            "text": "Strengthen your natural defenses.",
-            "link_url": ""
+            "custom_svg": "≈",
+            "custom_text": "<p><strong>Tannins</strong> For Cellular Protection</p>",
+            "content_text": "<p>Tannins provide powerful antioxidant protection for your cells, helping to combat oxidative stress and maintain cellular health.</p>"
           }
         },
-        "benefit_wAepQq": {
-          "type": "benefit",
+        "saponins_block_HxzTr4": {
+          "type": "saponins_block",
           "settings": {
-            "title": "Digestive Balance",
-            "text": "Promote gut health and nutrient absorption.",
-            "link_url": ""
+            "custom_svg": "✶",
+            "custom_text": "<p><strong>Saponins</strong> For Energy And Balance</p>",
+            "content_text": "<p>Saponins help regulate energy levels and maintain hormonal balance through their adaptogenic properties.</p>"
+          }
+        },
+        "flavonoids_block_CWqwti": {
+          "type": "flavonoids_block",
+          "settings": {
+            "custom_svg": "≈",
+            "custom_text": "<p><strong>Flavonoids</strong> For Heart And Defenses</p>",
+            "content_text": "<p>Flavonoids support cardiovascular health and strengthen the immune system with their anti-inflammatory properties.</p>"
+          }
+        },
+        "phytosterols_block_NkyWgF": {
+          "type": "phytosterols_block",
+          "settings": {
+            "custom_svg": "✱",
+            "custom_text": "<p><strong>Phytosterols</strong> For Heart And Hormonal Health</p>",
+            "content_text": "<p>Phytosterols support heart health and help maintain balanced hormone levels through their structural similarity to cholesterol.</p>"
           }
         }
       },
       "block_order": [
-        "benefit_tkgNgh",
-        "benefit_iKwTHg",
-        "benefit_wAepQq"
+        "alkaloids_block_LpHcXi",
+        "tannins_block_d737bi",
+        "saponins_block_HxzTr4",
+        "flavonoids_block_CWqwti",
+        "phytosterols_block_NkyWgF"
       ],
-      "name": "Foundational Nutrition Grid",
+      "name": "Missing Nutrients",
       "settings": {
-        "preheading": "What Is Foundational Nutrition",
-        "heading": "Foundational Nutrition Provides The Essential Nutrients Your Body Needs To Thrive Every Day",
-        "description": "A complete base of vitamins, minerals, phytonutrients, and probiotics designed to energize, balance, and strengthen your body from within. It supports:"
+        "heading": "Bring Back What Your Diet Leaves Behind",
+        "subtitle": "Most modern meals miss out on key natural compounds. Our supplements restore them – helping you feel stronger, healthier, and more energized.",
+        "background_color": "rgba(0,0,0,0)",
+        "enable_white_text": false
       }
     },
-    "reviews_K99KV3": {
+    "reviews_ywxb9U": {
       "type": "reviews",
       "blocks": {
-        "review_U7NAGU": {
+        "review_tj6WTq": {
           "type": "review",
           "settings": {
             "review_type": "text",
@@ -65,7 +84,7 @@
             "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
           }
         },
-        "review_E9Utfn": {
+        "review_QWAXU7": {
           "type": "review",
           "settings": {
             "review_type": "text",
@@ -76,8 +95,8 @@
         }
       },
       "block_order": [
-        "review_U7NAGU",
-        "review_E9Utfn"
+        "review_tj6WTq",
+        "review_QWAXU7"
       ],
       "name": "Reviews",
       "settings": {
@@ -88,7 +107,7 @@
   },
   "order": [
     "main",
-    "foundational_nutrition_VqWTnt",
-    "reviews_K99KV3"
+    "missing_nutrients_x6FU3f",
+    "reviews_ywxb9U"
   ]
 }
