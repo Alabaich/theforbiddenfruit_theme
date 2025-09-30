@@ -1,0 +1,266 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "product_info_section_rR7cr8": {
+      "type": "productInfoSection",
+      "blocks": {
+        "benefit_item_UUCiXp": {
+          "type": "benefit_item",
+          "settings": {
+            "heading": "Deep Conditioning & Moisturizing",
+            "text": "Batana Oil is a powerful treatment that deeply conditions hair and moisturizes the scalp, supporting healthy hair growth."
+          }
+        },
+        "benefit_item_jkzCTE": {
+          "type": "benefit_item",
+          "settings": {
+            "heading": "A Centuries-Old Tradition",
+            "text": "Used for generations by the Native Tawira people of Honduras, known as \"the people of beautiful hair,\" Batana Oil has a rich history in hair care."
+          }
+        },
+        "benefit_item_tbg6iU": {
+          "type": "benefit_item",
+          "settings": {
+            "heading": "Honduran Liquid Gold",
+            "text": "Harvested from the heart of the rainforest, Batana Oil (Elaeis oleifera), also known as Ojon Oil, is prized for its restorative properties. The Ojon brand, later acquired by Estee Lauder, helped bring this luxurious oil to the world."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_item_UUCiXp",
+        "benefit_item_jkzCTE",
+        "benefit_item_tbg6iU"
+      ],
+      "disabled": true,
+      "name": "Image and Text Info Block",
+      "settings": {
+        "tagline": "Learn more about Batana Oil",
+        "title": "What Is Batana Oil"
+      }
+    },
+    "problem_statement_fkjKzj": {
+      "type": "problemStatement",
+      "name": "Problem Statement",
+      "settings": {
+        "sub_heading": "The Problem",
+        "heading": "Do you struggle  with breathing freely?",
+        "tagline": "Your lungs deserve comfort, not constant irritation.",
+        "image": "shopify://shop_images/df4afce495271bdfc4ad0a44ab8612fcbfb25ca2.jpg",
+        "problems_list": "Struggling With Stamina & Sexual Performance\nLow Libido Or Premature Exhaustion\nScattered Focus & Sluggish Mood"
+      }
+    },
+    "switch_side_image_QQzE9E": {
+      "type": "switchSideImage",
+      "name": "Switch Side Image",
+      "settings": {
+        "image": "shopify://shop_images/Promise_Image.png",
+        "reverse_layout": false,
+        "upper_title": "The Promise",
+        "title": "Mullein Flower, enriched with nature’s minerals. Clears your lungs, soothes your body, restores your balance.",
+        "subtitle": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "product_block_features_CFJUmM": {
+      "type": "productBlockFeatures",
+      "blocks": {
+        "feature_mrTjeK": {
+          "type": "feature",
+          "settings": {
+            "feature_image": "shopify://shop_images/12311231.png",
+            "heading": "Strengthens Hair",
+            "text": "Batana Oil is rich in fatty acids and Vitamin E, which fortify the hair structure to create strong, healthy hair without breakage or split ends."
+          }
+        },
+        "feature_DCKidD": {
+          "type": "feature",
+          "settings": {
+            "feature_image": "shopify://shop_images/3123412.png",
+            "heading": "Smooths Frizz",
+            "text": "It smoothes the hair follicle, eliminating frizz and leaving hair soft, shiny, and manageable."
+          }
+        },
+        "feature_CwEKjf": {
+          "type": "feature",
+          "settings": {
+            "feature_image": "shopify://shop_images/1235453.png",
+            "heading": "Nourishes Scalp & Protects Skin",
+            "text": "Batana Oil is rich in fatty acids and Vitamin E, which fortify the hair structure to create strong, healthy hair without breakage or split ends."
+          }
+        }
+      },
+      "block_order": [
+        "feature_mrTjeK",
+        "feature_DCKidD",
+        "feature_CwEKjf"
+      ],
+      "name": "Three Column Features",
+      "settings": {
+        "tagline": "Features",
+        "title": "How Batana Oil Works"
+      }
+    },
+    "reviews_G66YdT": {
+      "type": "reviews",
+      "blocks": {
+        "review_hykbEf": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "\"This product is a total game-changer, I absolutely love it!\"",
+            "author": "Sarah Miller",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_A7mzrn": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "“cool”",
+            "author": "graham Potter",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_TiJ8rw": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "\"After just a few days with Mullein Flower, my breathing felt lighter and my cough eased dramatically!\"",
+            "author": "Mark Taylor",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_nnLtm4": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "\"Exactly what I needed. It's so well-made and easy to use.\"",
+            "author": "Sarah Miller",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_xVTTGi": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "\"Great quality and fast shipping. Will buy again!\"",
+            "author": "Jane Smith",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        }
+      },
+      "block_order": [
+        "review_hykbEf",
+        "review_A7mzrn",
+        "review_TiJ8rw",
+        "review_nnLtm4",
+        "review_xVTTGi"
+      ],
+      "name": "Reviews",
+      "settings": {
+        "heading": "Customer Reviews",
+        "subtitle": "See what our customers are saying about us"
+      }
+    },
+    "switch_side_image_product_MEAhmD": {
+      "type": "switchSideImageProduct",
+      "name": "Product Feature",
+      "settings": {
+        "image": "shopify://shop_images/5c9d7175e5a4685fcd8569d4a85a406998afa394.png",
+        "reverse_layout": false,
+        "upper_title": "",
+        "title": "How to Use?",
+        "subtitle": "Add a small amount to your hands, warm it up, and lightly rub until absorbed. As a result, you'll get shiny and hydrated hair. The oil is made by hand, and this raw extraction process preserves all the beneficial properties in the final product.",
+        "button_text": "Order Now",
+        "button_link": "shopify://products/capadulla-bark-copy"
+      }
+    },
+    "switch_side_image_product_kcGP3a": {
+      "type": "switchSideImageProduct",
+      "name": "Product Feature",
+      "settings": {
+        "image": "shopify://shop_images/18c5424584f47849c28aefa3dd1d611740b2a185_1.jpg",
+        "reverse_layout": true,
+        "upper_title": "",
+        "title": "Experience the ancient flower of breath. Feel clarity in every inhale!",
+        "subtitle": "The Forbidden Fruit is inspired by the wisdom of native cultures who believed nature holds the key to true transformation.",
+        "button_text": "Order Now",
+        "button_link": "shopify://products/capadulla-bark-copy"
+      }
+    },
+    "faq_BM9egA": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_jifrVa": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your exchange and refund policy?",
+            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        },
+        "faq_item_rxUPpw": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I use it?",
+            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        },
+        "faq_item_FG8pDr": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer a guarantee?",
+            "answer": "<p>We accept all major credit cards, as well as PayPal payments.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_jifrVa",
+        "faq_item_rxUPpw",
+        "faq_item_FG8pDr"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": ""
+      }
+    },
+    "switch_side_image_product_HNTQUf": {
+      "type": "switchSideImageProduct",
+      "name": "Product Feature",
+      "settings": {
+        "image": "shopify://shop_images/12e63dc94c678675fcb5c0b3c0064f99e21a61ed.jpg",
+        "reverse_layout": true,
+        "upper_title": "",
+        "title": "Discover the healing power of Mullein Flower!",
+        "subtitle": "",
+        "button_text": "Order Now",
+        "button_link": "shopify://products/capadulla-bark-copy"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_info_section_rR7cr8",
+    "problem_statement_fkjKzj",
+    "switch_side_image_QQzE9E",
+    "product_block_features_CFJUmM",
+    "reviews_G66YdT",
+    "switch_side_image_product_MEAhmD",
+    "switch_side_image_product_kcGP3a",
+    "faq_BM9egA",
+    "switch_side_image_product_HNTQUf"
+  ]
+}
