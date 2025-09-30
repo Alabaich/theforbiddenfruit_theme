@@ -55,20 +55,20 @@
       "name": "Problem Statement",
       "settings": {
         "sub_heading": "The Problem",
-        "heading": "Is Your Heart Feeling Out of Balance?",
-        "tagline": "Support your cardiovascular health with nature's aid.",
-        "image": "shopify://shop_images/30ca6ef523283ae40e03d83cb8b7246902527bec.jpg",
-        "problems_list": "Dizziness, headaches & nerve tension\nRestless nights, insomnia & unsettling nerves\nElevated blood pressure & cholesterol concerns"
+        "heading": "Facing Challenges  in Intimacy?",
+        "tagline": "Revitalize your vitality naturally..",
+        "image": "shopify://shop_images/56ee44c0f717e69544b0dcf6bf7d314489ecbb0e.jpg",
+        "problems_list": "Struggling with stamina & sexual performance\nLow libido or premature exhaustion\nScattered focus & sluggish mood"
       }
     },
     "switch_side_image_QQzE9E": {
       "type": "switchSideImage",
       "name": "Switch Side Image",
       "settings": {
-        "image": "shopify://shop_images/florasdaqe.png",
+        "image": "shopify://shop_images/432341254wrwe341qrfw.png",
         "reverse_layout": false,
         "upper_title": "The Promise",
-        "title": "Flor De Manita - nature’s calming hand. Promotes cardiovascular harmony, supports nerves, soothes tension, and welcomes peaceful sleep.",
+        "title": "Capadulla Bark—your natural, energizing boost. Ignites vitality, supports libido, sharpens clarity, and revitalizes energy.",
         "subtitle": "",
         "button_text": "",
         "button_link": ""
@@ -185,20 +185,20 @@
         "title": "How to Use?",
         "subtitle": "Add a small amount to your hands, warm it up, and lightly rub until absorbed. As a result, you'll get shiny and hydrated hair. The oil is made by hand, and this raw extraction process preserves all the beneficial properties in the final product.",
         "button_text": "Order Now",
-        "button_link": "shopify://products/flor-de-manita"
+        "button_link": "shopify://products/capadulla-bark"
       }
     },
     "switch_side_image_product_kcGP3a": {
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/1fd80931f79eac012a9543cfd52b26c8b952fc67.jpg",
+        "image": "shopify://shop_images/7040ec8a822e19d1eb7e1c266db02d6b0671b6c8.jpg",
         "reverse_layout": true,
         "upper_title": "",
-        "title": "Protect your heart, balance your pressure!",
-        "subtitle": "Flor De Manita helps regulate blood pressure, strengthens cardiovascular function, and supports heart health—the ancient flower of circulation and balance.",
+        "title": "Unleash your passion, restore your power!",
+        "subtitle": "Revitalize your energy and libido with Capadulla Bark - the ancestral tonic of vitality.",
         "button_text": "Order Now",
-        "button_link": "shopify://products/flor-de-manita"
+        "button_link": "shopify://products/capadulla-bark"
       }
     },
     "faq_BM9egA": {
@@ -241,13 +241,13 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/490ba1667704fd08805900b8f9d5478ba0ab1806.jpg",
+        "image": "shopify://shop_images/5597a96979a92d1378b178be028ecef0694a76d4.jpg",
         "reverse_layout": true,
         "upper_title": "",
-        "title": "Keep your heart strong with Flor De Manita!",
+        "title": "Fuel your fire with Capadulla Bark!",
         "subtitle": "",
         "button_text": "Order Now",
-        "button_link": "shopify://products/flor-de-manita"
+        "button_link": "shopify://products/capadulla-bark"
       }
     }
   },
