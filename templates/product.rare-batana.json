@@ -55,10 +55,10 @@
       "name": "Problem Statement",
       "settings": {
         "sub_heading": "The Problem",
-        "heading": "Dealing with Skin  or Joint Issues?",
-        "tagline": "Nature's remedy for inflammation and skin health.",
-        "image": "shopify://shop_images/4d680d506ce6fbd9311951761a1f7c9d91f02b33.jpg",
-        "problems_list": "Inflammatory skin conditions like psoriasis\nJoint stiffness, headaches, and inflammation\nSkin issues, poor circulation, or low immunity"
+        "heading": "Struggling with Hair  or Skin Health?",
+        "tagline": "Restore vitality with a natural solution.",
+        "image": "shopify://shop_images/2853efea3eda2ceba5d098d2ccfc1c2e84ae2562.jpg",
+        "problems_list": "Dry, damaged hair or scalp irritation\nHair thinning, breakage, or slow regrowth\nScars or stretch marks diminishing confidence"
       }
     },
     "switch_side_image_QQzE9E": {
@@ -66,10 +66,10 @@
       "custom_css": [],
       "name": "Switch Side Image",
       "settings": {
-        "image": "shopify://shop_images/sarsaparilla.png",
+        "image": "shopify://shop_images/213124235r35ws.png",
         "reverse_layout": false,
         "upper_title": "The Promise",
-        "title": "Sarsaparilla Root, packed with saponins. Builds strong blood, nourishes muscles  and skin, supports joints, immunity, and renewed vitality.",
+        "title": "Honduran “liquid gold.” Deeply nourishes, restores hair strength, promotes regrowth, smooths scars, and boosts scalp health.",
         "subtitle": "",
         "button_text": "",
         "button_link": ""
@@ -186,20 +186,20 @@
         "title": "How to Use?",
         "subtitle": "Add a small amount to your hands, warm it up, and lightly rub until absorbed. As a result, you'll get shiny and hydrated hair. The oil is made by hand, and this raw extraction process preserves all the beneficial properties in the final product.",
         "button_text": "Order Now",
-        "button_link": "shopify://products/flor-de-manita-copy"
+        "button_link": "shopify://products/rare-batana"
       }
     },
     "switch_side_image_product_kcGP3a": {
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/b230ef6435b0c7fbac4ea3948fd136f0299c05c0.jpg",
+        "image": "shopify://shop_images/218dc6084f3dac52d585cf79962dc9e1a0945b86.png",
         "reverse_layout": true,
         "upper_title": "",
-        "title": "Cleanse your blood, restore your strength!",
-        "subtitle": "Sarsaparilla Root supports iron balance, flushes out impurities, and fuels lasting energy - the timeless herbal remedy for vitality.",
+        "title": "Restore your hair, renew your skin!",
+        "subtitle": "Rare Batana nourishes hair from root to tip, repairs damage, and diminishes scars—nature’s ancestral solution for lasting beauty.",
         "button_text": "Order Now",
-        "button_link": "shopify://products/flor-de-manita-copy"
+        "button_link": "shopify://products/rare-batana"
       }
     },
     "faq_BM9egA": {
@@ -242,13 +242,13 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/gallery3.png",
+        "image": "shopify://shop_images/c31052ab5f9bce30ebc1a2bcd49e8f2911eb5e77.png",
         "reverse_layout": true,
         "upper_title": "",
-        "title": "Purify your blood with Sarsaparilla Root!",
+        "title": "Revive your beauty  with Rare Batana Oil!",
         "subtitle": "",
         "button_text": "Order Now",
-        "button_link": "shopify://products/flor-de-manita-copy"
+        "button_link": "shopify://products/rare-batana"
       }
     }
   },
