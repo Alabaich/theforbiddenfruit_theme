@@ -10,29 +10,13 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
-      "disabled": true,
+      "type": "main-product",
       "settings": {}
     },
-    "review_summary_T7ixXd": {
-      "type": "reviewSummary",
-      "name": "Reviews Summary",
-      "settings": {
-        "title": "All Reviews",
-        "subtitle": "Read what people are saying about us.",
-        "overall_rating": 46,
-        "reviews_count": 454,
-        "percentage_star_5": 82,
-        "percentage_star_4": 10,
-        "percentage_star_3": 4,
-        "percentage_star_2": 1,
-        "percentage_star_1": 3
-      }
-    },
-    "reviews_kPgjEh": {
+    "reviews_D6NtzC": {
       "type": "reviews",
       "blocks": {
-        "review_KfpeUy": {
+        "review_N7pLaq": {
           "type": "review",
           "settings": {
             "review_type": "text",
@@ -41,7 +25,7 @@
             "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
           }
         },
-        "review_wUfgjg": {
+        "review_kJFN4x": {
           "type": "review",
           "settings": {
             "review_type": "text",
@@ -52,20 +36,31 @@
         }
       },
       "block_order": [
-        "review_KfpeUy",
-        "review_wUfgjg"
+        "review_N7pLaq",
+        "review_kJFN4x"
       ],
-      "disabled": true,
       "name": "Reviews",
       "settings": {
         "heading": "Customer Reviews",
         "subtitle": "See what our customers are saying about us"
       }
+    },
+    "switch_side_image_dxqbdh": {
+      "type": "switchSideImage",
+      "name": "Switch Side Image",
+      "settings": {
+        "reverse_layout": false,
+        "upper_title": "UPPER TITLE",
+        "title": "Main Heading Here",
+        "subtitle": "Your descriptive text goes here. You can add multiple lines of text to describe your product or service.",
+        "button_text": "Shop Now",
+        "button_link": ""
+      }
     }
   },
   "order": [
     "main",
-    "review_summary_T7ixXd",
-    "reviews_kPgjEh"
+    "reviews_D6NtzC",
+    "switch_side_image_dxqbdh"
   ]
 }
