@@ -1,1 +1,94 @@
-{"sections":{"main":{"type":"main-collection","settings":{}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "foundational_nutrition_VqWTnt": {
+      "type": "foundationalNutrition",
+      "blocks": {
+        "benefit_tkgNgh": {
+          "type": "benefit",
+          "settings": {
+            "title": "Energy & Vitality",
+            "text": "Fuel your body and mind for peak performance.",
+            "link_url": ""
+          }
+        },
+        "benefit_iKwTHg": {
+          "type": "benefit",
+          "settings": {
+            "title": "Immune Support",
+            "text": "Strengthen your natural defenses.",
+            "link_url": ""
+          }
+        },
+        "benefit_wAepQq": {
+          "type": "benefit",
+          "settings": {
+            "title": "Digestive Balance",
+            "text": "Promote gut health and nutrient absorption.",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefit_tkgNgh",
+        "benefit_iKwTHg",
+        "benefit_wAepQq"
+      ],
+      "name": "Foundational Nutrition Grid",
+      "settings": {
+        "preheading": "What Is Foundational Nutrition",
+        "heading": "Foundational Nutrition Provides The Essential Nutrients Your Body Needs To Thrive Every Day",
+        "description": "A complete base of vitamins, minerals, phytonutrients, and probiotics designed to energize, balance, and strengthen your body from within. It supports:"
+      }
+    },
+    "reviews_K99KV3": {
+      "type": "reviews",
+      "blocks": {
+        "review_U7NAGU": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Amazing product! I highly recommend it to everyone.",
+            "author": "John Doe",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        },
+        "review_E9Utfn": {
+          "type": "review",
+          "settings": {
+            "review_type": "text",
+            "quote": "Great quality and fast shipping. Will buy again!",
+            "author": "Jane Smith",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
+          }
+        }
+      },
+      "block_order": [
+        "review_U7NAGU",
+        "review_E9Utfn"
+      ],
+      "name": "Reviews",
+      "settings": {
+        "heading": "Customer Reviews",
+        "subtitle": "See what our customers are saying about us"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "foundational_nutrition_VqWTnt",
+    "reviews_K99KV3"
+  ]
+}
