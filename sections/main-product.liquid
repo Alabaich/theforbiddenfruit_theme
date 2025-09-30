@@ -57,7 +57,7 @@
   </style>
 {%- endif -%}
 
-<div class="product-page-wrapper pageWidth js-hero-section" style="">
+<div class="product-page-wrapper pageWidth js-hero-section" style="z-index:1;">
   <div class="header-section">
     <div class="product-title-section">
       <h1 class="product-title">{{ product.title }}</h1>
@@ -120,7 +120,7 @@
 
           {% for image in product.images %}
             <div class="splide__slide">
-              <img src="{{ image | image_url: width: 450 }}" alt="{{ image.alt | escape }}" class="product-image" style="z-index: 1;">
+              <img src="{{ image | image_url: width: 450 }}" alt="{{ image.alt | escape }}" class="product-image" style="z-index: 2;">
             </div>
           {% endfor %}
         </div>
