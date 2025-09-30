@@ -3,7 +3,7 @@
 {% assign background_color = product.metafields.custom.background_color %}
 
 
-{%  assign color_list = product.metafields.custom.background_colors %} 
+{%  assign color_list = product.metafields.custom.background_colors.value %} 
 {%- if color_list.size > 1 -%}
   <style>
     .add-to-cart-button {
