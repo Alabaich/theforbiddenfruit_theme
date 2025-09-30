@@ -4,13 +4,7 @@
 
 
 {%  assign color_list = product.metafields.custom.background_colors.value %} 
-{%- if color_list.size > 1 -%}
-  <style>
-    .add-to-cart-button {
-      background: radial-gradient(50% 45% at 50% 50%, {{ color_list[0] }} 40%, {{ color_list[1] }} 100%);
-    }
-  </style>
-{%- endif -%}
+
 
 {{ 'main-product.css' | asset_url | stylesheet_tag }}
 
