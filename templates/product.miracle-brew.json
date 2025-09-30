@@ -55,10 +55,10 @@
       "name": "Problem Statement",
       "settings": {
         "sub_heading": "The Problem",
-        "heading": "Dealing with Skin  or Joint Issues?",
-        "tagline": "Nature's remedy for inflammation and skin health.",
-        "image": "shopify://shop_images/4d680d506ce6fbd9311951761a1f7c9d91f02b33.jpg",
-        "problems_list": "Inflammatory skin conditions like psoriasis\nJoint stiffness, headaches, and inflammation\nSkin issues, poor circulation, or low immunity"
+        "heading": "Lacking Energy and Detox Support?",
+        "tagline": "Revitalize your body with a cleansing boost.",
+        "image": "shopify://shop_images/b9a6c74ac5b704362e77440e8a1f9d2c974fdc89.jpg",
+        "problems_list": "Fatigue and low energy levels\nToxin buildup and sluggish metabolism\nWeakened immune system"
       }
     },
     "switch_side_image_QQzE9E": {
@@ -66,10 +66,10 @@
       "custom_css": [],
       "name": "Switch Side Image",
       "settings": {
-        "image": "shopify://shop_images/sarsaparilla.png",
+        "image": "shopify://shop_images/miraclebrew.png",
         "reverse_layout": false,
         "upper_title": "The Promise",
-        "title": "Sarsaparilla Root, packed with saponins. Builds strong blood, nourishes muscles  and skin, supports joints, immunity, and renewed vitality.",
+        "title": "Miracle Brew, a potent detoxifier. Boosts energy, clears toxins, and strengthens immunity.",
         "subtitle": "",
         "button_text": "",
         "button_link": ""
@@ -193,7 +193,7 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/b230ef6435b0c7fbac4ea3948fd136f0299c05c0.jpg",
+        "image": "shopify://shop_images/d5f9c6155a7684f68376e90800deca31f3255bab4.jpg",
         "reverse_layout": true,
         "upper_title": "",
         "title": "Experience the ancient flower of breath. Feel clarity in every inhale!",
@@ -242,7 +242,7 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/gallery3.png",
+        "image": "shopify://shop_images/861efb49bad67676590bf7d8edb254c9d760b1c5.jpg",
         "reverse_layout": true,
         "upper_title": "",
         "title": "Purify your blood with Sarsaparilla Root!",
