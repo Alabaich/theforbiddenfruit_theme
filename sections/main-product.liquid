@@ -51,7 +51,7 @@
 {%- if color_list.size > 1 -%}
   <style>
     .product-page-wrapper {
-      background-image: radial-gradient(circle, {{ color_list[0] }} 50%, {{ color_list[1] }} 100%);
+      background-image: radial-gradient(circle, {{ color_list[0] }} 3 0%, {{ color_list[1] }} 100%);
     }
     
   </style>
@@ -86,9 +86,39 @@
     <div class="splide product-images-splide">
       <div class="splide__track">
         <div class="splide__list">
+{% comment %}
+  Assign the file object from the metafield's .value to a variable.
+  This makes the code much cleaner and easier to read.
+{% endcomment %}
+{%- assign bg_image_file = product.metafields.custom.background_image.value -%}
+
+{% comment %}
+  Check if the variable actually contains a file.
+{% endcomment %}
+{%- if bg_image_file -%}
+  <style>
+    .product-background-image {
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+      height: 100%; /* Use height instead of max-height for absolute positioning */
+      object-fit: contain;
+      object-position: center; /* Good to add for object-fit */
+    }
+  </style>
+
+  {% comment %}
+    Use the 'image_tag' filter. It's the best practice.
+    - It creates the full <img> tag.
+    - It automatically adds width, height, and loading="lazy".
+    - We add the required class and a descriptive alt tag.
+  {% endcomment %}
+  {{ bg_image_file | image_tag: class: 'product-background-image', alt: product.title, widths: '300, 500, 750, 1000' }}
+
+{%- endif -%}
           {% for image in product.images %}
             <div class="splide__slide">
-              <img src="{{ image | img_url: '750x' }}" alt="{{ image.alt | escape }}" class="product-image">
+              <img src="{{ image | img_url: '750x' }}" alt="{{ image.alt | escape }}" class="product-image" style="z-index: 1;">
             </div>
           {% endfor %}
         </div>
