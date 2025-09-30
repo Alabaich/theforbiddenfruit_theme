@@ -83,18 +83,8 @@
   </div>
 
   <div class="product-image-container">
-    <div class="splide product-images-splide">
-      <div class="splide__track">
-        <div class="splide__list">
-{% comment %}
-  Assign the file object from the metafield's .value to a variable.
-  This makes the code much cleaner and easier to read.
-{% endcomment %}
-{%- assign bg_image_file = product.metafields.custom.background_image -%}
+    {%- assign bg_image_file = product.metafields.custom.background_image -%}
 
-{% comment %}
-  Check if the variable actually contains a file.
-{% endcomment %}
 {%- if bg_image_file -%}
   <style>
     .product-background-image {
@@ -107,15 +97,13 @@
     }
   </style>
 
-  {% comment %}
-    Use the 'image_tag' filter. It's the best practice.
-    - It creates the full <img> tag.
-    - It automatically adds width, height, and loading="lazy".
-    - We add the required class and a descriptive alt tag.
-  {% endcomment %}
   {{ bg_image_file | image_tag: class: 'product-background-image', alt: product.title, widths: '300, 500, 750, 1000' }}
 
 {%- endif -%}
+    <div class="splide product-images-splide">
+      <div class="splide__track">
+        <div class="splide__list">
+
           {% for image in product.images %}
             <div class="splide__slide">
               <img src="{{ image | img_url: '750x' }}" alt="{{ image.alt | escape }}" class="product-image" style="z-index: 1;">
