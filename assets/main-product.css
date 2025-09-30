@@ -238,6 +238,12 @@
           .product-image-container {
          top: 16%;
      }
+
+     .quantity-form-section{
+        right: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+     }
  }
 
  .quantity-selector {
