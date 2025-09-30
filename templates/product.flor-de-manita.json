@@ -55,20 +55,20 @@
       "name": "Problem Statement",
       "settings": {
         "sub_heading": "The Problem",
-        "heading": "Do you struggle  with breathing freely?",
-        "tagline": "Your lungs deserve comfort, not constant irritation.",
-        "image": "shopify://shop_images/df4afce495271bdfc4ad0a44ab8612fcbfb25ca2.jpg",
-        "problems_list": "Struggling With Stamina & Sexual Performance\nLow Libido Or Premature Exhaustion\nScattered Focus & Sluggish Mood"
+        "heading": "Is Your Heart Feeling Out of Balance?",
+        "tagline": "Support your cardiovascular health with nature's aid.",
+        "image": "shopify://shop_images/30ca6ef523283ae40e03d83cb8b7246902527bec.jpg",
+        "problems_list": "Dizziness, headaches & nerve tension\nRestless nights, insomnia & unsettling nerves\nElevated blood pressure & cholesterol concerns"
       }
     },
     "switch_side_image_QQzE9E": {
       "type": "switchSideImage",
       "name": "Switch Side Image",
       "settings": {
-        "image": "shopify://shop_images/Promise_Image.png",
+        "image": "shopify://shop_images/florasdaqe.png",
         "reverse_layout": false,
         "upper_title": "The Promise",
-        "title": "Mullein Flower, enriched with nature’s minerals. Clears your lungs, soothes your body, restores your balance.",
+        "title": "Flor De Manita - nature’s calming hand. Promotes cardiovascular harmony, supports nerves, soothes tension, and welcomes peaceful sleep.",
         "subtitle": "",
         "button_text": "",
         "button_link": ""
@@ -192,7 +192,7 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/18c5424584f47849c28aefa3dd1d611740b2a185_1.jpg",
+        "image": "shopify://shop_images/1fd80931f79eac012a9543cfd52b26c8b952fc67.jpg",
         "reverse_layout": true,
         "upper_title": "",
         "title": "Experience the ancient flower of breath. Feel clarity in every inhale!",
@@ -241,7 +241,7 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/12e63dc94c678675fcb5c0b3c0064f99e21a61ed.jpg",
+        "image": "shopify://shop_images/490ba1667704fd08805900b8f9d5478ba0ab1806.jpg",
         "reverse_layout": true,
         "upper_title": "",
         "title": "Discover the healing power of Mullein Flower!",
