@@ -1,5 +1,14 @@
 {% assign current_variant = product.selected_or_first_available_variant %}
+
 {% assign background_color = product.metafields.custom.background_color %}
+
+{%- if color_list.size > 1 -%}
+  <style>
+    .add-to-cart-button {
+      background: radial-gradient(50% 45% at 50% 50%, {{ color_list[0] }} 40%, {{ color_list[1] }} 100%);
+    }
+  </style>
+{%- endif -%}
 
 {{ 'main-product.css' | asset_url | stylesheet_tag }}
 
@@ -39,6 +48,14 @@
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   }
 </style>
+
+{%- if color_list.size > 1 -%}
+  <style>
+    .add-to-cart-button {
+      background: radial-gradient(50% 45% at 50% 50%, {{ color_list[0] }} 40%, {{ color_list[1] }} 100%);
+    }
+  </style>
+{%- endif -%}
 
 <div class="product-page-wrapper pageWidth js-hero-section" style="background-image: radial-gradient(circle at 50% 120%, {{ background_color }} 0%, rgb(150, 0, 0) 100%);">
   <div class="header-section">
@@ -105,12 +122,12 @@
   <div class="footer-container pageWidth">
     <h2 class="product-title-bottom-footer">{{ product.title }}</h2>
     <div class="footer-menu">
-      <a href="#" class="footer-link">Science</a>
-      <a href="#" class="footer-link">Reviews</a>
-      <a href="#" class="footer-link">Ingredients</a>
-      <a href="#" class="footer-link">Dosage</a>
-      <a href="#" class="footer-link">FAQ</a>
-      <a href="#" class="footer-link">Subscription</a>
+      <a href="#science" class="footer-link">Science</a>
+      <a href="#reviews" class="footer-link">Reviews</a>
+      <a href="#ingredients" class="footer-link">Ingredients</a>
+      <a href="#dosage" class="footer-link">Dosage</a>
+      <a href="#faq" class="footer-link">FAQ</a>
+      <a href="#subscription" class="footer-link">Subscription</a>
     </div>
     <div class="footer-actions">
       <div class="footer-price-section">

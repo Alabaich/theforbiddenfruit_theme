@@ -1,0 +1,20 @@
+  <div class="footer-container pageWidth">
+    <h2 class="product-title-bottom-footer">{{ product.title }}</h2>
+    <div class="footer-menu">
+      <a href="#" class="footer-link">Science</a>
+      <a href="#" class="footer-link">Reviews</a>
+      <a href="#" class="footer-link">Ingredients</a>
+      <a href="#" class="footer-link">Dosage</a>
+      <a href="#" class="footer-link">FAQ</a>
+      <a href="#" class="footer-link">Subscription</a>
+    </div>
+    <div class="footer-actions">
+      <div class="footer-price-section">
+        {% if current_variant.compare_at_price %}
+          <span class="footer-price-old">{{ current_variant.compare_at_price | money }}</span>
+        {% endif %}
+        <span class="footer-price-current">{{ current_variant.price | money }}</span>
+      </div>
+      <button type="submit" form="product-form" class="add-to-cart-button">Add To Cart</button>
+    </div>
+  </div>
