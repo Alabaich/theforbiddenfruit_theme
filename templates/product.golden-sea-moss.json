@@ -55,10 +55,10 @@
       "name": "Problem Statement",
       "settings": {
         "sub_heading": "The Problem",
-        "heading": "Lacking Energy and Detox Support?",
-        "tagline": "Revitalize your body with a cleansing boost.",
-        "image": "shopify://shop_images/b9a6c74ac5b704362e77440e8a1f9d2c974fdc89.jpg",
-        "problems_list": "Fatigue and low energy levels\nToxin buildup and sluggish metabolism\nWeakened immune system"
+        "heading": "Seeking Nutrient-Rich Superfoods?",
+        "tagline": "Enhance your diet with nature's multivitamin.",
+        "image": "shopify://shop_images/d31ab50f3c5595147c90f70134b060a4e58c1985.jpg",
+        "problems_list": "Low immunity or lackluster energy\nGut issues, irregular digestion & sluggish metabolism\nThyroid concerns, dull skin tone, or sluggish recovery"
       }
     },
     "switch_side_image_QQzE9E": {
@@ -66,10 +66,10 @@
       "custom_css": [],
       "name": "Switch Side Image",
       "settings": {
-        "image": "shopify://shop_images/miraclebrew.png",
+        "image": "shopify://shop_images/2213125wre5243523432.png",
         "reverse_layout": false,
         "upper_title": "The Promise",
-        "title": "Miracle Brew, a potent detoxifier. Boosts energy, clears toxins, and strengthens immunity.",
+        "title": "Golden Sea Moss,  a mineral-rich powerhouse. Provides essential nutrients, supports digestion, and boosts immunity.",
         "subtitle": "",
         "button_text": "",
         "button_link": ""
@@ -186,20 +186,20 @@
         "title": "How to Use?",
         "subtitle": "Add a small amount to your hands, warm it up, and lightly rub until absorbed. As a result, you'll get shiny and hydrated hair. The oil is made by hand, and this raw extraction process preserves all the beneficial properties in the final product.",
         "button_text": "Order Now",
-        "button_link": "shopify://products/flor-de-manita-copy"
+        "button_link": "shopify://products/golden-sea-moss"
       }
     },
     "switch_side_image_product_kcGP3a": {
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/d5f9c6155a7684f68376e90800deca31f3255bab4.jpg",
+        "image": "shopify://shop_images/947e634e46dfbe352065989b46427afb4fe4231b.jpg",
         "reverse_layout": true,
         "upper_title": "",
-        "title": "Experience the ancient flower of breath. Feel clarity in every inhale!",
-        "subtitle": "The Forbidden Fruit is inspired by the wisdom of native cultures who believed nature holds the key to true transformation.",
+        "title": "Strengthen your body, balance your life!",
+        "subtitle": "Golden Sea Moss fuels immunity, supports bone strength,  \nand nourishes thyroid function - nature’s ultimate ocean-grown superfood.",
         "button_text": "Order Now",
-        "button_link": "shopify://products/flor-de-manita-copy"
+        "button_link": "shopify://products/golden-sea-moss"
       }
     },
     "faq_BM9egA": {
@@ -242,13 +242,13 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/861efb49bad67676590bf7d8edb254c9d760b1c5.jpg",
+        "image": "shopify://shop_images/72425a4e20cd822520425d9e3bf98ead4df1307a.jpg",
         "reverse_layout": true,
         "upper_title": "",
-        "title": "Purify your blood with Sarsaparilla Root!",
+        "title": "Thrive with the power of Golden Sea Moss!",
         "subtitle": "",
         "button_text": "Order Now",
-        "button_link": "shopify://products/flor-de-manita-copy"
+        "button_link": "shopify://products/golden-sea-moss"
       }
     }
   },
