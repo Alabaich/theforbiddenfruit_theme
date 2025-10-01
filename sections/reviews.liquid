@@ -205,7 +205,7 @@
     {% endif %}
   </div>
 
-  <div class="reviews-container">
+  <div class="reviews-container" id="reviews">
     {% for block in section.blocks limit: 5 %}
       {% if block.settings.review_type == 'video' %}
         <div class="review-card video-review" {{ block.shopify_attributes }}>
