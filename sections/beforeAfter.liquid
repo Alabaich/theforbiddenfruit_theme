@@ -1,0 +1,141 @@
+<style>
+  .before-after-section {
+    max-width: 100%;
+  }
+
+  .before-after-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .before-after-container.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .before-after-images {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+  }
+
+  .before-after-image {
+    flex: 1;
+  }
+
+  .before-after-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .image-placeholder {
+    background: #f0f0f0;
+    height: 400px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #717171;
+  }
+
+  @media (max-width: 968px) {
+    .before-after-container {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .before-after-container.reverse {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 769px) {
+    .before-after-section .before-after-container {
+      gap: 25px;
+    }
+
+    .before-after-images {
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .before-after-container {
+      gap: 20px;
+    }
+
+    .before-after-images {
+      gap: 10px;
+    }
+  }
+</style>
+
+<section class="before-after-section pageWidth verticalPadding">
+  <div class="before-after-container {% if section.settings.reverse_layout %}reverse{% endif %}">
+    <div class="before-after-images">
+
+      <div class="before-after-image">
+        {% if section.settings.image_before != blank %}
+          {{ section.settings.image_before | image_url: width: 800 | image_tag: 
+ loading: 'lazy', 
+ alt: section.settings.image_before.alt | default: 'Before image',
+ class: 'before-after-img-before'
+          }}
+        {% else %}
+          <div class="image-placeholder">
+            Before Image
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="before-after-image">
+        {% if section.settings.image_after != blank %}
+          {{ section.settings.image_after | image_url: width: 800 | image_tag: 
+ loading: 'lazy', 
+ alt: section.settings.image_after.alt | default: 'After image',
+ class: 'before-after-img-after'
+          }}
+        {% else %}
+          <div class="image-placeholder">
+            After Image
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Before & After Images",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_before",
+        "label": "Before Image"
+      }, {
+        "type": "image_picker",
+        "id": "image_after",
+        "label": "After Image"
+      }, {
+        "type": "checkbox",
+        "id": "reverse_layout",
+        "label": "Reverse layout",
+        "default": false,
+        "info": "Swap image positions"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Before & After Images",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}
