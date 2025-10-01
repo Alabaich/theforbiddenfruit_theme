@@ -9,6 +9,15 @@
     the visibility of the clone when the original reaches the top of the viewport.
 {% endcomment %}
 
+{%- liquid
+  comment
+    'Assign the background color. It will try to use a product metafield with the key'
+    ' "second_accent_color" first. If that metafield is not set on the product,'
+    ' it will fall back to the color selected in the theme editor settings for this section.'
+  endcomment
+  assign bg_color = product.metafields.custom.second_accent_color | default: section.settings.background_color
+-%}
+
 <div class="custom-sticky-product-header-wrapper" data-section-id="{{ section.id }}">
   <div class="sticky-footer-container">
     <div class="sticky-footer-left">
@@ -42,8 +51,8 @@
 <style>
   /* This is the original section, which acts as the trigger/placeholder in the document flow */
   .custom-sticky-product-header-wrapper {
-    background-color: {{ section.settings.background_color }};
-    color: {{ section.settings.text_color }};
+    background-color: {{ bg_color }};
+    color: #fff;
   }
 
   /* This is the CLONED element that appears at the top */
@@ -126,7 +135,7 @@
   .sticky-footer-price-current {
     font-size: 1.1rem;
     font-weight: 700;
-    color: {{ section.settings.price_color }};
+    color: #fff;
   }
   
   .sticky-add-to-cart-button {
