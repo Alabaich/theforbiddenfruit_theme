@@ -1,10 +1,12 @@
 {% comment %}
-  This section creates a sticky product header that appears when the user
-  scrolls past the main "Add to Cart" button.
+  This section creates a header that is initially in the page flow and becomes
+  sticky when the user scrolls down to it.
 
-  - It uses JavaScript to move itself to the end of the <body> tag,
-    allowing it to be full-width and break out of any parent containers.
-  - It listens to the scroll event to toggle its visibility.
+  - It appears in the theme layout where it is placed.
+  - It uses JavaScript to create a "clone" of itself that is appended to
+    the end of the <body> tag. This clone is what becomes the sticky header.
+  - A scroll listener checks the position of the original section and toggles
+    the visibility of the clone when the original reaches the top of the viewport.
 {% endcomment %}
 
 <div class="custom-sticky-product-header-wrapper" data-section-id="{{ section.id }}">
@@ -38,24 +40,31 @@
 </div>
 
 <style>
+  /* This is the original section, which acts as the trigger/placeholder in the document flow */
   .custom-sticky-product-header-wrapper {
+    background-color: {{ section.settings.background_color }};
+    color: {{ section.settings.text_color }};
+  }
+
+  /* This is the CLONED element that appears at the top */
+  .custom-sticky-product-header-wrapper.is-sticky-clone {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 100;
-    background-color: {{ section.settings.background_color }};
-    color: {{ section.settings.text_color }};
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transform: translateY(-100%);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    display: none; /* Hidden by default to prevent flash of unstyled content */
+    display: none; /* Initially hidden until JS takes over */
   }
 
-  .custom-sticky-product-header-wrapper.is-visible {
+  /* This class makes the CLONE visible with a smooth animation */
+  .custom-sticky-product-header-wrapper.is-sticky-clone.is-visible {
     transform: translateY(0);
   }
 
+  /* Shared styles for both the original and the clone */
   .footer-container {
     display: flex;
     justify-content: space-between;
@@ -139,7 +148,7 @@
   /* Responsive Styles */
   @media (max-width: 768px) {
     .footer-menu, .product-title-bottom-footer {
-      display: none; /* Hide menu and title on smaller screens for simplicity */
+      display: none;
     }
     .footer-container {
       justify-content: center;
@@ -152,46 +161,45 @@
       justify-content: space-between;
     }
   }
-
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const sectionId = '{{ section.id }}';
-    const stickyHeaderWrapper = document.querySelector(`.custom-sticky-product-header-wrapper[data-section-id="${sectionId}"]`);
-    
-    // This is the trigger element. The sticky bar will appear when this element is scrolled past.
-    // We target the main product form, which is a reliable element on product pages.
-    const triggerForm = document.querySelector('form[action="/cart/add"]');
+    const originalWrapper = document.querySelector(`.custom-sticky-product-header-wrapper[data-section-id="${sectionId}"]`);
 
-    if (!stickyHeaderWrapper || !triggerForm) {
-      console.log('Sticky header or trigger form not found. Exiting.');
-      if(stickyHeaderWrapper) stickyHeaderWrapper.style.display = 'none';
+    if (!originalWrapper) {
+      console.log('Sticky header original wrapper not found. Exiting.');
       return;
     }
-    
-    // Challenge 1: Move the section outside of its parent container to be full-width.
-    // We append it to the body so it's not constrained by any theme wrappers.
-    document.body.appendChild(stickyHeaderWrapper);
-    stickyHeaderWrapper.style.display = 'block'; // Now we can make it visible
 
-    // Challenge 2: Show/hide the bar based on scroll position.
+    // 1. Clone the original element to create our sticky version
+    const stickyClone = originalWrapper.cloneNode(true);
+    stickyClone.classList.add('is-sticky-clone');
+    stickyClone.style.display = 'block'; // Make it visible for JS control
+    
+    // 2. Append the clone to the body to escape theme containers
+    document.body.appendChild(stickyClone);
+
+    // 3. Set up the scroll listener
     const handleScroll = () => {
-      // Get the position of the main product form's bottom edge.
-      const triggerFormBottom = triggerForm.getBoundingClientRect().bottom;
+      // Get the position of the ORIGINAL element which acts as our trigger
+      const triggerPoint = originalWrapper.getBoundingClientRect().top;
       
-      // If the bottom of the form is above the top of the viewport, it means we've scrolled past it.
-      if (triggerFormBottom < 0) {
-        stickyHeaderWrapper.classList.add('is-visible');
+      // When the top of the original element hits the top of the viewport...
+      if (triggerPoint <= 0) {
+        // ...show the clone.
+        stickyClone.classList.add('is-visible');
       } else {
-        stickyHeaderWrapper.classList.remove('is-visible');
+        // ...hide the clone.
+        stickyClone.classList.remove('is-visible');
       }
     };
     
     // Attach the scroll listener
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // Initial check in case the page is already scrolled down on load
+    // Run an initial check in case the page loads already scrolled down
     handleScroll();
   });
 </script>
@@ -242,3 +250,4 @@
   ]
 }
 {% endschema %}
+
