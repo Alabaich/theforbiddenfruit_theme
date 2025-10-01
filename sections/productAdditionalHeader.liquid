@@ -1,0 +1,244 @@
+{% comment %}
+  This section creates a sticky product header that appears when the user
+  scrolls past the main "Add to Cart" button.
+
+  - It uses JavaScript to move itself to the end of the <body> tag,
+    allowing it to be full-width and break out of any parent containers.
+  - It listens to the scroll event to toggle its visibility.
+{% endcomment %}
+
+<div class="custom-sticky-product-header-wrapper" data-section-id="{{ section.id }}">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2 class="product-title-bottom-footer">{{ product.title | truncate: 35 }}</h2>
+      <div class="footer-menu">
+        <a href="#science" class="footer-link">Science</a>
+        <a href="#reviews" class="footer-link">Reviews</a>
+        <a href="#ingredients" class="footer-link">Ingredients</a>
+        <a href="#dosage" class="footer-link">Dosage</a>
+        <a href="#faq" class="footer-link">FAQ</a>
+        <a href="#subscription" class="footer-link">Subscription</a>
+      </div>
+    </div>
+    <div class="footer-actions">
+      <div class="footer-price-section">
+        {% if product.compare_at_price > product.price %}
+          <span class="footer-price-old">{{ product.compare_at_price | money }}</span>
+        {% endif %}
+        <span class="footer-price-current">{{ product.price | money }}</span>
+      </div>
+      {%- form 'product', product, id: 'sticky-product-form', class: 'sticky-form' -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" name="add" class="add-to-cart-button">
+          <span>Add To Cart</span>
+        </button>
+      {%- endform -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .custom-sticky-product-header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: {{ section.settings.background_color }};
+    color: {{ section.settings.text_color }};
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: none; /* Hidden by default to prevent flash of unstyled content */
+  }
+
+  .custom-sticky-product-header-wrapper.is-visible {
+    transform: translateY(0);
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .product-title-bottom-footer {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+  }
+  
+  .footer-menu {
+    display: flex;
+    gap: 16px;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+  
+  .footer-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  .footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer-price-section {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .footer-price-old {
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+  
+  .footer-price-current {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: {{ section.settings.price_color }};
+  }
+  
+  .add-to-cart-button {
+    background-color: {{ section.settings.button_color }};
+    color: {{ section.settings.button_text_color }};
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .add-to-cart-button:hover {
+    filter: brightness(1.1);
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .footer-menu, .product-title-bottom-footer {
+      display: none; /* Hide menu and title on smaller screens for simplicity */
+    }
+    .footer-container {
+      justify-content: center;
+    }
+    .footer-left {
+       display: none;
+    }
+    .footer-actions {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sectionId = '{{ section.id }}';
+    const stickyHeaderWrapper = document.querySelector(`.custom-sticky-product-header-wrapper[data-section-id="${sectionId}"]`);
+    
+    // This is the trigger element. The sticky bar will appear when this element is scrolled past.
+    // We target the main product form, which is a reliable element on product pages.
+    const triggerForm = document.querySelector('form[action="/cart/add"]');
+
+    if (!stickyHeaderWrapper || !triggerForm) {
+      console.log('Sticky header or trigger form not found. Exiting.');
+      if(stickyHeaderWrapper) stickyHeaderWrapper.style.display = 'none';
+      return;
+    }
+    
+    // Challenge 1: Move the section outside of its parent container to be full-width.
+    // We append it to the body so it's not constrained by any theme wrappers.
+    document.body.appendChild(stickyHeaderWrapper);
+    stickyHeaderWrapper.style.display = 'block'; // Now we can make it visible
+
+    // Challenge 2: Show/hide the bar based on scroll position.
+    const handleScroll = () => {
+      // Get the position of the main product form's bottom edge.
+      const triggerFormBottom = triggerForm.getBoundingClientRect().bottom;
+      
+      // If the bottom of the form is above the top of the viewport, it means we've scrolled past it.
+      if (triggerFormBottom < 0) {
+        stickyHeaderWrapper.classList.add('is-visible');
+      } else {
+        stickyHeaderWrapper.classList.remove('is-visible');
+      }
+    };
+    
+    // Attach the scroll listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial check in case the page is already scrolled down on load
+    handleScroll();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Sticky Product Header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#1F2937"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price Color",
+      "default": "#1F2937"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Background",
+      "default": "#3B82F6"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky Product Header"
+    }
+  ]
+}
+{% endschema %}
