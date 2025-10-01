@@ -1,3 +1,12 @@
+{%- liquid
+  comment
+    'Assign the background color. It will try to use a product metafield with the key'
+    ' "second_accent_color" first. If that metafield is not set on the product,'
+    ' it will fall back to the color selected in the theme editor settings for this section.'
+  endcomment
+  assign bg_color = product.metafields.custom.second_accent_color | default: section.settings.background_color
+-%}
+
 {% comment %}
   This section creates a header that is initially in the page flow and becomes
   sticky when the user scrolls down to it.
@@ -10,28 +19,28 @@
 {% endcomment %}
 
 <div class="custom-sticky-product-header-wrapper" data-section-id="{{ section.id }}">
-  <div class="sticky-footer-container">
-    <div class="sticky-footer-left">
-      <h2 class="sticky-product-title-bottom-footer">{{ product.title | truncate: 35 }}</h2>
-      <div class="sticky-footer-menu">
-        <a href="#science" class="sticky-footer-link">Science</a>
-        <a href="#reviews" class="sticky-footer-link">Reviews</a>
-        <a href="#ingredients" class="sticky-footer-link">Ingredients</a>
-        <a href="#dosage" class="sticky-footer-link">Dosage</a>
-        <a href="#faq" class="sticky-footer-link">FAQ</a>
-        <a href="#subscription" class="sticky-footer-link">Subscription</a>
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2 class="product-title-bottom-footer">{{ product.title | truncate: 35 }}</h2>
+      <div class="footer-menu">
+        <a href="#science" class="footer-link">Science</a>
+        <a href="#reviews" class="footer-link">Reviews</a>
+        <a href="#ingredients" class="footer-link">Ingredients</a>
+        <a href="#dosage" class="footer-link">Dosage</a>
+        <a href="#faq" class="footer-link">FAQ</a>
+        <a href="#subscription" class="footer-link">Subscription</a>
       </div>
     </div>
-    <div class="sticky-footer-actions">
-      <div class="sticky-footer-price-section">
+    <div class="footer-actions">
+      <div class="footer-price-section">
         {% if product.compare_at_price > product.price %}
-          <span class="sticky-footer-price-old">{{ product.compare_at_price | money }}</span>
+          <span class="footer-price-old">{{ product.compare_at_price | money }}</span>
         {% endif %}
-        <span class="sticky-footer-price-current">{{ product.price | money }}</span>
+        <span class="footer-price-current">{{ product.price | money }}</span>
       </div>
       {%- form 'product', product, id: 'sticky-product-form', class: 'sticky-form' -%}
         <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-        <button type="submit" name="add" class="sticky-add-to-cart-button">
+        <button type="submit" name="add" class="add-to-cart-button">
           <span>Add To Cart</span>
         </button>
       {%- endform -%}
@@ -42,7 +51,7 @@
 <style>
   /* This is the original section, which acts as the trigger/placeholder in the document flow */
   .custom-sticky-product-header-wrapper {
-    background-color: {{ section.settings.background_color }};
+    background-color: {{ bg_color }};
     color: {{ section.settings.text_color }};
   }
 
@@ -65,7 +74,7 @@
   }
 
   /* Shared styles for both the original and the clone */
-  .sticky-footer-container {
+  .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -74,25 +83,25 @@
     margin: 0 auto;
   }
 
-  .sticky-footer-left {
+  .footer-left {
     display: flex;
     align-items: center;
     gap: 24px;
   }
   
-  .sticky-product-title-bottom-footer {
+  .product-title-bottom-footer {
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0;
     white-space: nowrap;
   }
   
-  .sticky-footer-menu {
+  .footer-menu {
     display: flex;
     gap: 16px;
   }
 
-  .sticky-footer-link {
+  .footer-link {
     font-size: 0.9rem;
     text-decoration: none;
     color: inherit;
@@ -100,36 +109,36 @@
     transition: opacity 0.2s ease;
   }
   
-  .sticky-footer-link:hover {
+  .footer-link:hover {
     opacity: 1;
     text-decoration: underline;
   }
 
-  .sticky-footer-actions {
+  .footer-actions {
     display: flex;
     align-items: center;
     gap: 16px;
   }
 
-  .sticky-footer-price-section {
+  .footer-price-section {
     display: flex;
     align-items: baseline;
     gap: 8px;
   }
 
-  .sticky-footer-price-old {
+  .footer-price-old {
     text-decoration: line-through;
     opacity: 0.7;
     font-size: 0.9rem;
   }
   
-  .sticky-footer-price-current {
+  .footer-price-current {
     font-size: 1.1rem;
     font-weight: 700;
     color: {{ section.settings.price_color }};
   }
   
-  .sticky-add-to-cart-button {
+  .add-to-cart-button {
     background-color: {{ section.settings.button_color }};
     color: {{ section.settings.button_text_color }};
     border: none;
@@ -141,22 +150,22 @@
     transition: background-color 0.2s ease;
   }
   
-  .sticky-add-to-cart-button:hover {
+  .add-to-cart-button:hover {
     filter: brightness(1.1);
   }
 
   /* Responsive Styles */
   @media (max-width: 768px) {
-    .sticky-footer-menu, .sticky-product-title-bottom-footer {
+    .footer-menu, .product-title-bottom-footer {
       display: none;
     }
-    .sticky-footer-container {
+    .footer-container {
       justify-content: center;
     }
-    .sticky-footer-left {
+    .footer-left {
        display: none;
     }
-    .sticky-footer-actions {
+    .footer-actions {
       width: 100%;
       justify-content: space-between;
     }
@@ -215,7 +224,8 @@
     {
       "type": "color",
       "id": "background_color",
-      "label": "Background Color",
+      "label": "Fallback Background Color",
+      "info": "Used if the product metafield 'Second Accent Color' is not set.",
       "default": "#FFFFFF"
     },
     {
