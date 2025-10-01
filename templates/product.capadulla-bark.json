@@ -13,6 +13,17 @@
       "type": "main-product",
       "settings": {}
     },
+    "product_additional_header_Ccnbke": {
+      "type": "productAdditionalHeader",
+      "name": "Sticky Product Header",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "text_color": "#1F2937",
+        "price_color": "#1F2937",
+        "button_color": "#3B82F6",
+        "button_text_color": "#FFFFFF"
+      }
+    },
     "product_info_section_rR7cr8": {
       "type": "productInfoSection",
       "blocks": {
@@ -253,6 +264,7 @@
   },
   "order": [
     "main",
+    "product_additional_header_Ccnbke",
     "product_info_section_rR7cr8",
     "problem_statement_fkjKzj",
     "switch_side_image_QQzE9E",
