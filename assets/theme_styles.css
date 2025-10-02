@@ -18,7 +18,7 @@
   --font-onest: "Onest", sans-serif;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -30,8 +30,8 @@ p {
   margin: 0;
 }
 
-*{
-    font-family: var(--font-manrope);
+* {
+  font-family: var(--font-manrope);
 }
 
 h1 {
@@ -73,7 +73,7 @@ h2 {
 
 .whiteButton {
   display: flex;
-  padding: 12px 32px;
+  padding: 15px 32px;
   flex-direction: column;
   justify-content: center;
   font-family: Manrope;
@@ -93,10 +93,10 @@ h2 {
 
 .whiteButton span {
   color: var(--color-dark);
-  font-family: var(--font-onest);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
+  font-family: var(--font-manrope);
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
 .whiteButton:hover span {
@@ -106,7 +106,7 @@ h2 {
 
 .greenButton {
   display: flex;
-  padding: 15px 40px;
+  padding: 15px 32px;
   font-family: Manrope;
   flex-direction: column;
   justify-content: center;
