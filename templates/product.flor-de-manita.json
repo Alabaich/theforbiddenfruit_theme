@@ -19,22 +19,22 @@
         "benefit_item_UUCiXp": {
           "type": "benefit_item",
           "settings": {
-            "heading": "Deep Conditioning & Moisturizing",
-            "text": "Batana Oil is a powerful treatment that deeply conditions hair and moisturizes the scalp, supporting healthy hair growth."
+            "heading": "Heart Support & Nervous System Balance",
+            "text": "Flor de Manita is a caffeine-free herbal infusion traditionally used to support cardiovascular health, regulate blood pressure, and calm the nervous system."
           }
         },
         "benefit_item_jkzCTE": {
           "type": "benefit_item",
           "settings": {
-            "heading": "A Centuries-Old Tradition",
-            "text": "Used for generations by the Native Tawira people of Honduras, known as \"the people of beautiful hair,\" Batana Oil has a rich history in hair care."
+            "heading": "A Sacred Tree of Healing",
+            "text": "Known as The Devil’s Hand Tree (Chiranthodendron pentadactylon), this ancient botanical has been used in traditional medicine for centuries to treat heart and nerve conditions."
           }
         },
         "benefit_item_tbg6iU": {
           "type": "benefit_item",
           "settings": {
-            "heading": "Honduran Liquid Gold",
-            "text": "Harvested from the heart of the rainforest, Batana Oil (Elaeis oleifera), also known as Ojon Oil, is prized for its restorative properties. The Ojon brand, later acquired by Estee Lauder, helped bring this luxurious oil to the world."
+            "heading": "Nature’s Heart Regulator",
+            "text": "Rich in essential minerals such as iron, magnesium, calcium, and copper, Flor de Manita nourishes the body and helps maintain steady blood flow and circulation."
           }
         }
       },
@@ -43,11 +43,11 @@
         "benefit_item_jkzCTE",
         "benefit_item_tbg6iU"
       ],
-      "disabled": true,
       "name": "Image and Text Info Block",
       "settings": {
-        "tagline": "Learn more about Batana Oil",
-        "title": "What Is Batana Oil"
+        "main_image": "shopify://shop_images/image_35.png",
+        "tagline": "Learn more about Flor de Manita",
+        "title": "What is Flor de Manita"
       }
     },
     "problem_statement_fkjKzj": {
@@ -80,25 +80,25 @@
         "feature_mrTjeK": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/12311231.png",
-            "heading": "Strengthens Hair",
-            "text": "Batana Oil is rich in fatty acids and Vitamin E, which fortify the hair structure to create strong, healthy hair without breakage or split ends."
+            "feature_image": "shopify://shop_images/Step_Image.png",
+            "heading": "Supports Cardiovascular Function",
+            "text": "The herb’s natural compounds act as a gentle heart tonic, helping regulate blood pressure and promoting healthy cardiac rhythm."
           }
         },
         "feature_DCKidD": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/3123412.png",
-            "heading": "Smooths Frizz",
-            "text": "It smoothes the hair follicle, eliminating frizz and leaving hair soft, shiny, and manageable."
+            "feature_image": "shopify://shop_images/3123sdadasd.png",
+            "heading": "Calms the Nervous System",
+            "text": "Flor de Manita soothes stress-related symptoms such as headaches, dizziness, insomnia, and nervous tension through its balancing and anti-inflammatory effects."
           }
         },
         "feature_CwEKjf": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/1235453.png",
-            "heading": "Nourishes Scalp & Protects Skin",
-            "text": "Batana Oil is rich in fatty acids and Vitamin E, which fortify the hair structure to create strong, healthy hair without breakage or split ends."
+            "feature_image": "shopify://shop_images/123qsaxcaxczxvngfhjty.png",
+            "heading": "Restores Internal Harmony",
+            "text": "With antimicrobial, antibacterial, and antioxidant properties, it promotes inner balance while supporting the body’s natural healing processes."
           }
         }
       },
@@ -110,7 +110,7 @@
       "name": "Three Column Features",
       "settings": {
         "tagline": "Features",
-        "title": "How Batana Oil Works"
+        "title": "How Flor de Manita Works"
       }
     },
     "reviews_G66YdT": {
@@ -179,11 +179,11 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/5c9d7175e5a4685fcd8569d4a85a406998afa394.png",
+        "image": "shopify://shop_images/21315rerju_iou876.png",
         "reverse_layout": false,
         "upper_title": "",
         "title": "How to Use?",
-        "subtitle": "Add a small amount to your hands, warm it up, and lightly rub until absorbed. As a result, you'll get shiny and hydrated hair. The oil is made by hand, and this raw extraction process preserves all the beneficial properties in the final product.",
+        "subtitle": "Boil a half gallon of spring water and add 1.5 tablespoons of Flor de Manita. Steep for 5–15 minutes, strain, and drink 1–2 times daily.\n\n<br><br>\n\nThis handmade herbal blend is safe to enjoy on an empty stomach or between meals and offers natural support for heart health, relaxation, and overall vitality.",
         "button_text": "Order Now",
         "button_link": "shopify://products/flor-de-manita"
       }
