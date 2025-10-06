@@ -73,7 +73,7 @@ h2 {
 
 .whiteButton {
   display: flex;
-  padding: 15px 32px;
+  padding: 10px 32px;
   flex-direction: column;
   justify-content: center;
   font-family: Manrope;
@@ -95,7 +95,7 @@ h2 {
   color: var(--color-dark);
   font-family: var(--font-manrope);
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
 }
 
@@ -106,7 +106,7 @@ h2 {
 
 .greenButton {
   display: flex;
-  padding: 15px 32px;
+  padding: 10px 32px;
   font-family: Manrope;
   flex-direction: column;
   justify-content: center;
@@ -125,7 +125,7 @@ a.greenButton span {
   color: #fff;
   font-family: var(--font-manrope);
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
 }
 
