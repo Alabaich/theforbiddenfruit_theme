@@ -19,22 +19,22 @@
         "benefit_item_UUCiXp": {
           "type": "benefit_item",
           "settings": {
-            "heading": "Deep Conditioning & Moisturizing",
-            "text": "Batana Oil is a powerful treatment that deeply conditions hair and moisturizes the scalp, supporting healthy hair growth."
+            "heading": "Breathe Freely & Naturally",
+            "text": "Mullein Flower is a natural herbal remedy that supports respiratory health, helps clear the lungs, and soothes irritation for easier, deeper breathing."
           }
         },
         "benefit_item_jkzCTE": {
           "type": "benefit_item",
           "settings": {
-            "heading": "A Centuries-Old Tradition",
-            "text": "Used for generations by the Native Tawira people of Honduras, known as \"the people of beautiful hair,\" Batana Oil has a rich history in hair care."
+            "heading": "An Ancient Herbal Healer",
+            "text": "Used for centuries across Europe and North America, Mullein has long been valued for its ability to treat coughs, bronchitis, and various lung conditions."
           }
         },
         "benefit_item_tbg6iU": {
           "type": "benefit_item",
           "settings": {
-            "heading": "Honduran Liquid Gold",
-            "text": "Harvested from the heart of the rainforest, Batana Oil (Elaeis oleifera), also known as Ojon Oil, is prized for its restorative properties. The Ojon brand, later acquired by Estee Lauder, helped bring this luxurious oil to the world."
+            "heading": "Nature’s Lungs Cleanser",
+            "text": "Made from Verbascum thapsus, this golden blossom is rich in minerals like zinc, copper, and magnesium that help cleanse, calm, and protect the respiratory system."
           }
         }
       },
@@ -43,11 +43,11 @@
         "benefit_item_jkzCTE",
         "benefit_item_tbg6iU"
       ],
-      "disabled": true,
       "name": "Image and Text Info Block",
       "settings": {
-        "tagline": "Learn more about Batana Oil",
-        "title": "What Is Batana Oil"
+        "main_image": "shopify://shop_images/1233634trfdevwe.png",
+        "tagline": "Learn more about Mullein Flower",
+        "title": "What is Mullein Flower"
       }
     },
     "problem_statement_fkjKzj": {
@@ -80,25 +80,25 @@
         "feature_mrTjeK": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/12311231.png",
-            "heading": "Strengthens Hair",
-            "text": "Batana Oil is rich in fatty acids and Vitamin E, which fortify the hair structure to create strong, healthy hair without breakage or split ends."
+            "feature_image": "shopify://shop_images/k78yujtnrf.png",
+            "heading": "Clears Airways",
+            "text": "Mullein helps expel mucus, tar, and phlegm from the lungs while easing spasms and opening airways to support comfortable breathing."
           }
         },
         "feature_DCKidD": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/3123412.png",
-            "heading": "Smooths Frizz",
-            "text": "It smoothes the hair follicle, eliminating frizz and leaving hair soft, shiny, and manageable."
+            "feature_image": "shopify://shop_images/f324gvd.png",
+            "heading": "Soothes Inflammation",
+            "text": "Its anti-inflammatory, antiviral, and antioxidant compounds relieve irritation, dryness, and discomfort caused by pollutants or illness."
           }
         },
         "feature_CwEKjf": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/1235453.png",
-            "heading": "Nourishes Scalp & Protects Skin",
-            "text": "Batana Oil is rich in fatty acids and Vitamin E, which fortify the hair structure to create strong, healthy hair without breakage or split ends."
+            "feature_image": "shopify://shop_images/123erfe4s12s.png",
+            "heading": "Protects & Heals",
+            "text": "The herb’s natural antimicrobial and antifungal properties aid in skin healing, detoxification, and overall respiratory wellness."
           }
         }
       },
