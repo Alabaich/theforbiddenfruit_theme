@@ -16,13 +16,7 @@
     "product_additional_header_Ccnbke": {
       "type": "productAdditionalHeader",
       "name": "Sticky Product Header",
-      "settings": {
-        "background_color": "#FFFFFF",
-        "text_color": "#1F2937",
-        "price_color": "#1F2937",
-        "button_color": "#3B82F6",
-        "button_text_color": "#FFFFFF"
-      }
+      "settings": {}
     },
     "product_info_section_rR7cr8": {
       "type": "productInfoSection",
@@ -30,22 +24,22 @@
         "benefit_item_UUCiXp": {
           "type": "benefit_item",
           "settings": {
-            "heading": "Deep Conditioning & Moisturizing",
-            "text": "Batana Oil is a powerful treatment that deeply conditions hair and moisturizes the scalp, supporting healthy hair growth."
+            "heading": "Natural Vitality & Endurance Tonic",
+            "text": "Capadulla Bark is a traditional herbal remedy celebrated for its aphrodisiac power, energy-boosting effects, and support for overall sexual health."
           }
         },
         "benefit_item_jkzCTE": {
           "type": "benefit_item",
           "settings": {
-            "heading": "A Centuries-Old Tradition",
-            "text": "Used for generations by the Native Tawira people of Honduras, known as \"the people of beautiful hair,\" Batana Oil has a rich history in hair care."
+            "heading": "An Ancient Symbol of Strength",
+            "text": "Known for generations throughout the Caribbean and Central America, Dolichocarpus dentatus has been used to enhance stamina and promote hormonal balance."
           }
         },
         "benefit_item_tbg6iU": {
           "type": "benefit_item",
           "settings": {
-            "heading": "Honduran Liquid Gold",
-            "text": "Harvested from the heart of the rainforest, Batana Oil (Elaeis oleifera), also known as Ojon Oil, is prized for its restorative properties. The Ojon brand, later acquired by Estee Lauder, helped bring this luxurious oil to the world."
+            "heading": "Nature’s Male Vitality Secret",
+            "text": "Rich in iron, zinc, and magnesium, Capadulla Bark nourishes the body, supports reproductive health, and helps restore natural energy levels."
           }
         }
       },
@@ -54,11 +48,11 @@
         "benefit_item_jkzCTE",
         "benefit_item_tbg6iU"
       ],
-      "disabled": true,
       "name": "Image and Text Info Block",
       "settings": {
-        "tagline": "Learn more about Batana Oil",
-        "title": "What Is Batana Oil"
+        "main_image": "shopify://shop_images/af04c75da7839ed74e52ffb8460e426485aa1392.png",
+        "tagline": "Learn more about Capadulla Bark",
+        "title": "What is Capadulla Bark"
       }
     },
     "problem_statement_fkjKzj": {
@@ -91,25 +85,25 @@
         "feature_mrTjeK": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/12311231.png",
-            "heading": "Strengthens Hair",
-            "text": "Batana Oil is rich in fatty acids and Vitamin E, which fortify the hair structure to create strong, healthy hair without breakage or split ends."
+            "feature_image": "shopify://shop_images/303f0c96e280c9ee5123a710c60fe70f55111c65.jpg",
+            "heading": "Boosts Libido & Performance",
+            "text": "Capadulla enhances blood circulation and vitality, helping address erectile dysfunction and premature ejaculation naturally."
           }
         },
         "feature_DCKidD": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/3123412.png",
-            "heading": "Smooths Frizz",
-            "text": "It smoothes the hair follicle, eliminating frizz and leaving hair soft, shiny, and manageable."
+            "feature_image": "shopify://shop_images/fb143096f31fe4027caee483d383273c6c5a745f.jpg",
+            "heading": "Energizes & Strengthens",
+            "text": "The bark’s natural compounds provide long-lasting energy and focus, while supporting brain and nervous system health."
           }
         },
         "feature_CwEKjf": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/1235453.png",
-            "heading": "Nourishes Scalp & Protects Skin",
-            "text": "Batana Oil is rich in fatty acids and Vitamin E, which fortify the hair structure to create strong, healthy hair without breakage or split ends."
+            "feature_image": "shopify://shop_images/f8dcbd42a4254a6107f1ecbb32e81678afff0708.jpg",
+            "heading": "Restores Balance & Detoxifies",
+            "text": "Its anti-inflammatory, antioxidant, and antimicrobial properties cleanse the body, boost sperm count, and enhance overall endurance."
           }
         }
       },
@@ -121,7 +115,7 @@
       "name": "Three Column Features",
       "settings": {
         "tagline": "Features",
-        "title": "How Batana Oil Works"
+        "title": "How Capadulla Bark Works"
       }
     },
     "reviews_G66YdT": {
@@ -190,11 +184,11 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/5c9d7175e5a4685fcd8569d4a85a406998afa394.png",
+        "image": "shopify://shop_images/2f270d3401188bb48e62020af4ca7a0f89d1df36.jpg",
         "reverse_layout": false,
         "upper_title": "",
         "title": "How to Use?",
-        "subtitle": "Add a small amount to your hands, warm it up, and lightly rub until absorbed. As a result, you'll get shiny and hydrated hair. The oil is made by hand, and this raw extraction process preserves all the beneficial properties in the final product.",
+        "subtitle": "Boil two cups of spring water and add two pieces of Capadulla Bark. Steep for 10–15 minutes, strain, and drink 1–3 times daily.<br><br>\nYou may re-boil the same bark up to 5–7 times until the tea no longer releases color. For sweetness, add agave or maple syrup if desired.\n<br><br>\nThis hand-harvested tonic preserves its raw potency, providing natural support for vitality, stamina, and reproductive health.",
         "button_text": "Order Now",
         "button_link": "shopify://products/capadulla-bark"
       }
