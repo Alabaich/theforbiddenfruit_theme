@@ -19,22 +19,22 @@
         "benefit_item_UUCiXp": {
           "type": "benefit_item",
           "settings": {
-            "heading": "Deep Conditioning & Moisturizing",
-            "text": "Batana Oil is a powerful treatment that deeply conditions hair and moisturizes the scalp, supporting healthy hair growth."
+            "heading": "World’s Richest Plant in Iron",
+            "text": "Sarsaparilla Root is a mineral-dense herbal supplement celebrated for its high iron content, blood-cleansing power, and natural energy-boosting properties."
           }
         },
         "benefit_item_jkzCTE": {
           "type": "benefit_item",
           "settings": {
-            "heading": "A Centuries-Old Tradition",
-            "text": "Used for generations by the Native Tawira people of Honduras, known as \"the people of beautiful hair,\" Batana Oil has a rich history in hair care."
+            "heading": "An Ancient Tonic of Vitality",
+            "text": "Used for generations in traditional medicine, Aralia nudicaulis is known for purifying the blood, nourishing the body, and supporting long-term wellness."
           }
         },
         "benefit_item_tbg6iU": {
           "type": "benefit_item",
           "settings": {
-            "heading": "Honduran Liquid Gold",
-            "text": "Harvested from the heart of the rainforest, Batana Oil (Elaeis oleifera), also known as Ojon Oil, is prized for its restorative properties. The Ojon brand, later acquired by Estee Lauder, helped bring this luxurious oil to the world."
+            "heading": "Nature’s Iron Builder",
+            "text": "Packed with iron, zinc, and magnesium, Sarsaparilla Root strengthens the blood, promotes circulation, and restores vitality from within."
           }
         }
       },
@@ -43,11 +43,11 @@
         "benefit_item_jkzCTE",
         "benefit_item_tbg6iU"
       ],
-      "disabled": true,
       "name": "Image and Text Info Block",
       "settings": {
-        "tagline": "Learn more about Batana Oil",
-        "title": "What Is Batana Oil"
+        "main_image": "shopify://shop_images/fe3b52a6c8a2d3ec26885e9c4cffbe8733bf4498.jpg",
+        "tagline": "Learn more about Sarsaparilla Root",
+        "title": "What is Sarsaparilla Root"
       }
     },
     "problem_statement_fkjKzj": {
@@ -81,25 +81,25 @@
         "feature_mrTjeK": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/12311231.png",
-            "heading": "Strengthens Hair",
-            "text": "Batana Oil is rich in fatty acids and Vitamin E, which fortify the hair structure to create strong, healthy hair without breakage or split ends."
+            "feature_image": "shopify://shop_images/d086fc709c445234de3dedabbaa5cd5905679156.jpg",
+            "heading": "Builds and Cleanses Blood",
+            "text": "Rich in minerals and antioxidants, Sarsaparilla Root helps cleanse impurities, enhance red blood cell production, and maintain balanced iron levels."
           }
         },
         "feature_DCKidD": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/3123412.png",
-            "heading": "Smooths Frizz",
-            "text": "It smoothes the hair follicle, eliminating frizz and leaving hair soft, shiny, and manageable."
+            "feature_image": "shopify://shop_images/b6099809219501472632f09609658d21fb067ebb.jpg",
+            "heading": "Supports Joints & Skin",
+            "text": "Its anti-inflammatory and antimicrobial properties assist in soothing joint pain, improving skin health, and relieving symptoms of chronic conditions."
           }
         },
         "feature_CwEKjf": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/1235453.png",
-            "heading": "Nourishes Scalp & Protects Skin",
-            "text": "Batana Oil is rich in fatty acids and Vitamin E, which fortify the hair structure to create strong, healthy hair without breakage or split ends."
+            "feature_image": "shopify://shop_images/23d98b393688501def7c8933f9feda2323758e25.jpg",
+            "heading": "Boosts Energy & Libido",
+            "text": "Traditionally used as a natural aphrodisiac, it helps increase stamina, enhance mood, and strengthen overall immune and reproductive health."
           }
         }
       },
@@ -180,11 +180,11 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/5c9d7175e5a4685fcd8569d4a85a406998afa394.png",
+        "image": "shopify://shop_images/1670f882c3ae0e4bbc78a8d1250dcf85e3c9a369.jpg",
         "reverse_layout": false,
         "upper_title": "",
         "title": "How to Use?",
-        "subtitle": "Add a small amount to your hands, warm it up, and lightly rub until absorbed. As a result, you'll get shiny and hydrated hair. The oil is made by hand, and this raw extraction process preserves all the beneficial properties in the final product.",
+        "subtitle": "Add one teaspoon of Sarsaparilla Root to your smoothie, tea, juice, or spring water. For added flavor, mix with agave or maple syrup if desired.\n\n<br> <br>\n\nThis pure, hand-prepared herbal supplement delivers iron-rich nourishment for strength, endurance, and overall vitality.",
         "button_text": "Order Now",
         "button_link": "shopify://products/flor-de-manita-copy"
       }
