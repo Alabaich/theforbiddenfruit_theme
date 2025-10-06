@@ -19,22 +19,22 @@
         "benefit_item_UUCiXp": {
           "type": "benefit_item",
           "settings": {
-            "heading": "Deep Conditioning & Moisturizing",
-            "text": "Batana Oil is a powerful treatment that deeply conditions hair and moisturizes the scalp, supporting healthy hair growth."
+            "heading": "The Roots of the Ocean",
+            "text": "Sea Moss is a mineral-rich superfood harvested from the ocean, known for its powerful ability to nourish, cleanse, and revitalize the body from within."
           }
         },
         "benefit_item_jkzCTE": {
           "type": "benefit_item",
           "settings": {
-            "heading": "A Centuries-Old Tradition",
-            "text": "Used for generations by the Native Tawira people of Honduras, known as \"the people of beautiful hair,\" Batana Oil has a rich history in hair care."
+            "heading": "An Ancient Ocean Remedy",
+            "text": "For centuries, coastal communities have used Genus Gracilaria to support immunity, digestion, and overall vitality—earning it the title “The Roots of the Ocean.”"
           }
         },
         "benefit_item_tbg6iU": {
           "type": "benefit_item",
           "settings": {
-            "heading": "Honduran Liquid Gold",
-            "text": "Harvested from the heart of the rainforest, Batana Oil (Elaeis oleifera), also known as Ojon Oil, is prized for its restorative properties. The Ojon brand, later acquired by Estee Lauder, helped bring this luxurious oil to the world."
+            "heading": "Packed with Essential Minerals",
+            "text": "Containing calcium, magnesium, iodine, zinc, and more, Sea Moss replenishes the body’s natural mineral stores for strength, balance, and energy."
           }
         }
       },
@@ -43,11 +43,11 @@
         "benefit_item_jkzCTE",
         "benefit_item_tbg6iU"
       ],
-      "disabled": true,
       "name": "Image and Text Info Block",
       "settings": {
-        "tagline": "Learn more about Batana Oil",
-        "title": "What Is Batana Oil"
+        "main_image": "shopify://shop_images/b6ce053ecfb6f49a0aceae89642b21357d5215f3.jpg",
+        "tagline": "Learn more about Sea Moss",
+        "title": "What is Sea Moss"
       }
     },
     "problem_statement_fkjKzj": {
@@ -81,25 +81,25 @@
         "feature_mrTjeK": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/12311231.png",
-            "heading": "Strengthens Hair",
-            "text": "Batana Oil is rich in fatty acids and Vitamin E, which fortify the hair structure to create strong, healthy hair without breakage or split ends."
+            "feature_image": "shopify://shop_images/1cdbd758cfb172e27d280740a428aa732befc156.jpg",
+            "heading": "Supports Whole-Body Wellness",
+            "text": "Sea Moss helps balance thyroid function, cleanse the blood, and promote healthy digestion through its unique combination of bioavailable nutrients."
           }
         },
         "feature_DCKidD": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/3123412.png",
-            "heading": "Smooths Frizz",
-            "text": "It smoothes the hair follicle, eliminating frizz and leaving hair soft, shiny, and manageable."
+            "feature_image": "shopify://shop_images/37f4649707ac669a778890e6bd736138c6ae60cf.jpg",
+            "heading": "Boosts Immunity & Detoxifies",
+            "text": "Its antiviral and antibacterial compounds protect the body while aiding in the removal of heavy metals and environmental toxins."
           }
         },
         "feature_CwEKjf": {
           "type": "feature",
           "settings": {
-            "feature_image": "shopify://shop_images/1235453.png",
-            "heading": "Nourishes Scalp & Protects Skin",
-            "text": "Batana Oil is rich in fatty acids and Vitamin E, which fortify the hair structure to create strong, healthy hair without breakage or split ends."
+            "feature_image": "shopify://shop_images/c247d5f3e1218eca6a68fcbfd7595f0d9873879c.jpg",
+            "heading": "Nourishes Skin & Joints",
+            "text": "Rich in collagen-promoting minerals, Sea Moss hydrates the skin, strengthens connective tissue, and supports bone and joint health."
           }
         }
       },
@@ -111,7 +111,7 @@
       "name": "Three Column Features",
       "settings": {
         "tagline": "Features",
-        "title": "How Batana Oil Works"
+        "title": "How Sea Moss Works"
       }
     },
     "reviews_G66YdT": {
@@ -180,11 +180,11 @@
       "type": "switchSideImageProduct",
       "name": "Product Feature",
       "settings": {
-        "image": "shopify://shop_images/5c9d7175e5a4685fcd8569d4a85a406998afa394.png",
+        "image": "shopify://shop_images/4402b0ae98c5594547dbf07464d186563b14f8ac.png",
         "reverse_layout": false,
         "upper_title": "",
         "title": "How to Use?",
-        "subtitle": "Add a small amount to your hands, warm it up, and lightly rub until absorbed. As a result, you'll get shiny and hydrated hair. The oil is made by hand, and this raw extraction process preserves all the beneficial properties in the final product.",
+        "subtitle": "Rinse thoroughly, then soak for 4–8 hours. Blend and store in a jar under refrigeration.<br><br>\nAdd to smoothies, teas, juices, soups, or jams for a natural mineral boost that enhances immunity, vitality, and digestive health.\n<br><br>\nThis handcrafted ocean remedy preserves the purity of nature’s most complete sea vegetable for everyday nourishment.",
         "button_text": "Order Now",
         "button_link": "shopify://products/golden-sea-moss"
       }
