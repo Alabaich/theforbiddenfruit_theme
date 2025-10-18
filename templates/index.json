@@ -208,7 +208,7 @@
           "settings": {
             "review_type": "text",
             "quote": "\"This product is a total game-changer, I absolutely love it!\"",
-            "author": "John Doe",
+            "author": "Angela kursev",
             "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
           }
         },
@@ -244,8 +244,8 @@
           "type": "review",
           "settings": {
             "review_type": "text",
-            "quote": "“cool”",
-            "author": "Jane Smith",
+            "quote": "“Very happy with my sea moss and batana, cant wait to try the Mullein tea.”",
+            "author": "Jane Acarthy",
             "video_url": "https://www.youtube.com/watch?v=abcdefghijk"
           }
         },
