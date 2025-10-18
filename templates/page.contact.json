@@ -31,6 +31,7 @@
     },
     "map_contact_HmLFKH": {
       "type": "mapContact",
+      "disabled": true,
       "name": "Contact Page Map",
       "settings": {
         "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.9377269625547!2d-79.49087518785461!3d43.83638914044239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2eb46403e055%3A0x41f58a3617d5083d!2s59%20Forecastle%20Rd%2C%20Concord%2C%20ON%20L4K%205H9%2C%20Canada!5e0!3m2!1sen!2spl!4v1758879767618!5m2!1sen!2spl"
