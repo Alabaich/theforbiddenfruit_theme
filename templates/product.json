@@ -56,9 +56,23 @@
         "button_text": "Shop Now",
         "button_link": ""
       }
+    },
+    "17647301440d91edee": {
+      "type": "apps",
+      "blocks": {
+        "products_app_rich_description_gJUUAh": {
+          "type": "shopify://apps/products-app/blocks/rich-description/019ae21c-38c9-7c9b-b979-af73428f4fcc",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "products_app_rich_description_gJUUAh"
+      ],
+      "settings": {}
     }
   },
   "order": [
+    "17647301440d91edee",
     "main",
     "reviews_D6NtzC",
     "switch_side_image_dxqbdh"
