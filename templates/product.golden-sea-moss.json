@@ -54,10 +54,10 @@
       "type": "problemStatement",
       "name": "Problem Statement",
       "settings": {
-        "sub_heading": "The Problem",
+        "sub_heading": "",
         "heading": "Seeking Nutrient-Rich Superfoods?",
         "tagline": "Enhance your diet with nature's multivitamin.",
-        "image": "shopify://shop_images/d31ab50f3c5595147c90f70134b060a4e58c1985.jpg",
+        "image": "shopify://shop_images/IMG_4633.jpg",
         "problems_list": "Low immunity or lackluster energy\nGut issues, irregular digestion & sluggish metabolism\nThyroid concerns, dull skin tone, or sluggish recovery"
       }
     },
@@ -68,7 +68,7 @@
       "settings": {
         "image": "shopify://shop_images/2213125wre5243523432.png",
         "reverse_layout": false,
-        "upper_title": "The Promise",
+        "upper_title": "",
         "title": "Golden Sea Moss,  a mineral-rich powerhouse. Provides essential nutrients, supports digestion, and boosts immunity.",
         "subtitle": "",
         "button_text": "",
