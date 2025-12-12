@@ -54,7 +54,7 @@
       "type": "problemStatement",
       "name": "Problem Statement",
       "settings": {
-        "sub_heading": "The Problem",
+        "sub_heading": "",
         "heading": "Is Your Heart Feeling Out of Balance?",
         "tagline": "Support your cardiovascular health with nature's aid.",
         "image": "shopify://shop_images/30ca6ef523283ae40e03d83cb8b7246902527bec.jpg",
@@ -67,7 +67,7 @@
       "settings": {
         "image": "shopify://shop_images/florasdaqe.png",
         "reverse_layout": false,
-        "upper_title": "The Promise",
+        "upper_title": "",
         "title": "Flor De Manita - nature’s calming hand. Promotes cardiovascular harmony, supports nerves, soothes tension, and welcomes peaceful sleep.",
         "subtitle": "",
         "button_text": "",
