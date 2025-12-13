@@ -54,7 +54,7 @@
       "type": "problemStatement",
       "name": "Problem Statement",
       "settings": {
-        "sub_heading": "The Problem",
+        "sub_heading": "",
         "heading": "Lacking Energy and Detox Support?",
         "tagline": "Revitalize your body with a cleansing boost.",
         "image": "shopify://shop_images/b9a6c74ac5b704362e77440e8a1f9d2c974fdc89.jpg",
@@ -68,7 +68,7 @@
       "settings": {
         "image": "shopify://shop_images/miraclebrew.png",
         "reverse_layout": false,
-        "upper_title": "The Promise",
+        "upper_title": "",
         "title": "Miracle Brew, a potent detoxifier. Boosts energy, clears toxins, and strengthens immunity.",
         "subtitle": "",
         "button_text": "",
