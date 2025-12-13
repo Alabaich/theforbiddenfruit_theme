@@ -54,7 +54,7 @@
       "type": "problemStatement",
       "name": "Problem Statement",
       "settings": {
-        "sub_heading": "The Problem",
+        "sub_heading": "",
         "heading": "Do you struggle  with breathing freely?",
         "tagline": "Your lungs deserve comfort, not constant irritation.",
         "image": "shopify://shop_images/df4afce495271bdfc4ad0a44ab8612fcbfb25ca2.jpg",
@@ -67,7 +67,7 @@
       "settings": {
         "image": "shopify://shop_images/Promise_Image.png",
         "reverse_layout": false,
-        "upper_title": "The Promise",
+        "upper_title": "",
         "title": "Mullein Flower, enriched with nature’s minerals. Clears your lungs, soothes your body, restores your balance.",
         "subtitle": "",
         "button_text": "",
