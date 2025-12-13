@@ -54,7 +54,7 @@
       "type": "problemStatement",
       "name": "Problem Statement",
       "settings": {
-        "sub_heading": "The Problem",
+        "sub_heading": "",
         "heading": "Struggling with Hair  or Skin Health?",
         "tagline": "Restore vitality with a natural solution.",
         "image": "shopify://shop_images/2853efea3eda2ceba5d098d2ccfc1c2e84ae2562.jpg",
@@ -68,7 +68,7 @@
       "settings": {
         "image": "shopify://shop_images/213124235r35ws.png",
         "reverse_layout": false,
-        "upper_title": "The Promise",
+        "upper_title": "",
         "title": "Honduran “liquid gold.” Deeply nourishes, restores hair strength, promotes regrowth, smooths scars, and boosts scalp health.",
         "subtitle": "",
         "button_text": "",
