@@ -149,9 +149,11 @@
     </div>
   </div>
 
-  <div class="product-description-section">
-    {{ product.description }}
-  </div>
+  {% if product.description != blank %}
+    <div class="product-description-section">
+      {{ product.description }}
+    </div>
+  {% endif %}
 
   <div class="price-section">
     <span class="current-price">{{ current_variant.price | money }}</span>
