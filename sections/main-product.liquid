@@ -53,20 +53,24 @@
   }
 
   .product-description-section {
-    background-color: transparent; /* Убираем фон */
-    backdrop-filter: none; /* Убираем размытие */
-    -webkit-backdrop-filter: none;
-    border-radius: 0;
+    background: transparent; /* Фон полностью прозрачный */
     box-shadow: none;
-    padding: 0;
+    padding: 10px 0; /* Небольшие отступы сверху и снизу */
     
-    color: #1a1a1a; /* Темный контрастный цвет текста */
-    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.7); /* Легкая светлая тень для объема и читаемости */
+    /* Максимальный контраст */
+    color: #000000; /* Абсолютно черный цвет */
+    font-weight: 600; /* Делаем шрифт полужирным (было скорее всего 400) */
+    
+    /* Улучшение читаемости */
+    line-height: 1.7; /* Немного увеличиваем расстояние между строками */
+    font-size: 16px; /* Убедимся, что размер достаточный */
+    letter-spacing: 0.3px; /* Чуть-чуть разрядим буквы */
     
     margin-top: 20px;
     margin-bottom: 20px;
-    line-height: 1.6;
-    font-size: 16px;
+    /* Опционально: супер-мягкая обводка, если фон очень пестрый. 
+       Если будет плохо, удалите эту строку: */
+   /* -webkit-text-stroke: 0.2px rgba(255,255,255,0.3); */
   }
 </style>
 
