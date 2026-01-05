@@ -1,31 +1,49 @@
-{% comment %}
-  This section creates a header that is initially in the page flow and becomes
-  sticky when the user scrolls down to it.
-
-  - It appears in the theme layout where it is placed.
-  - It uses JavaScript to create a "clone" of itself that is appended to
-    the end of the <body> tag. This clone is what becomes the sticky header.
-  - A scroll listener checks the position of the original section and toggles
-    the visibility of the clone when the original reaches the top of the viewport.
-{% endcomment %}
-
 {%- liquid
-  comment
-    'Assign the background color. It will try to use a product metafield with the key'
-    ' "second_accent_color" first. If that metafield is not set on the product,'
-    ' it will fall back to the color selected in the theme editor settings for this section.'
-  endcomment
-  assign bg_color = product.metafields.custom.second_accent_color | default: section.settings.background_color
+  assign selected_bg = product.metafields.custom.second_accent_color
+  
+  if selected_bg == blank
+    assign selected_bg = product.metafields.custom.background_color
+  endif
+  
+  if selected_bg == blank
+    assign selected_bg = section.settings.default_background_color | default: '#2c2d2c'
+  endif
 -%}
 
+<div class="custom-sticky-product-header-wrapper" data-section-id="{{ section.id }}">
+  <div class="sticky-footer-container pageWidth">
+    <div class="sticky-footer-left">
+      <h2 class="sticky-product-title-bottom-footer">{{ product.title | truncate: 35 }}</h2>
+      <div class="sticky-footer-menu">
+        <a href="#science" class="sticky-footer-link">Science</a>
+        <a href="#reviews" class="sticky-footer-link">Reviews</a>
+        <a href="#faq" class="sticky-footer-link">FAQ</a>
+        <a href="#subscription" class="sticky-footer-link">Subscription</a>
+      </div>
+    </div>
+    <div class="sticky-footer-actions">
+      <div class="sticky-footer-price-section">
+        {% if product.compare_at_price > product.price %}
+          <span class="sticky-footer-price-old">{{ product.compare_at_price | money }}</span>
+        {% endif %}
+        <span class="sticky-footer-price-current">{{ product.price | money }}</span>
+      </div>
+      {%- form 'product', product, id: 'sticky-product-form', class: 'sticky-form' -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" name="add" class="sticky-add-to-cart-button">
+          <span>Add To Cart</span>
+        </button>
+      {%- endform -%}
+    </div>
+  </div>
+</div>
+
 <style>
-  /* This is the original section, which acts as the trigger/placeholder in the document flow */
   .custom-sticky-product-header-wrapper {
-    background-color: {{ bg_color }};
+    background-color: {{ selected_bg }};
     color: #fff;
   }
 
-  /* This is the CLONED element that appears at the top */
   .custom-sticky-product-header-wrapper.is-sticky-clone {
     position: fixed;
     top: 0;
@@ -35,15 +53,13 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transform: translateY(-100%);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    display: none; /* Initially hidden until JS takes over */
+    display: none;
   }
 
-  /* This class makes the CLONE visible with a smooth animation */
   .custom-sticky-product-header-wrapper.is-sticky-clone.is-visible {
     transform: translateY(0);
   }
 
-  /* Shared styles for both the original and the clone */
   .sticky-footer-container {
     display: flex;
     justify-content: space-between;
@@ -56,7 +72,7 @@
     align-items: center;
     gap: 24px;
   }
-
+  
   .sticky-product-title-bottom-footer {
     font-size: 1.1rem;
     font-weight: 600;
@@ -64,7 +80,7 @@
     white-space: nowrap;
     color: #fff;
   }
-
+  
   .sticky-footer-menu {
     display: flex;
     gap: 16px;
@@ -77,7 +93,7 @@
     opacity: 0.8;
     transition: opacity 0.2s ease;
   }
-
+  
   .sticky-footer-link:hover {
     opacity: 1;
     text-decoration: underline;
@@ -100,13 +116,13 @@
     opacity: 0.7;
     font-size: 0.9rem;
   }
-
+  
   .sticky-footer-price-current {
     font-size: 1.1rem;
     font-weight: 700;
     color: #fff;
   }
-
+  
   .sticky-add-to-cart-button {
     background-color: #fff;
     color: #2c2d2c;
@@ -118,12 +134,11 @@
     font-size: 1rem;
     transition: background-color 0.2s ease;
   }
-
+  
   .sticky-add-to-cart-button:hover {
     filter: brightness(1.1);
   }
 
-  /* Responsive Styles */
   @media (max-width: 768px) {
     .sticky-footer-menu, .sticky-product-title-bottom-footer {
       display: none;
@@ -141,77 +156,34 @@
   }
 </style>
 
-<div class="custom-sticky-product-header-wrapper" data-section-id="{{ section.id }}">
-  <div class="sticky-footer-container pageWidth">
-    <div class="sticky-footer-left">
-      <h2 class="sticky-product-title-bottom-footer">{{ product.title | truncate: 35 }}</h2>
-      <div class="sticky-footer-menu">
-        <a href="#science" class="sticky-footer-link">Science</a>
-        <a href="#reviews" class="sticky-footer-link">Reviews</a>
-        {% comment %}
-          <a href="#ingredients" class="sticky-footer-link">Ingredients</a>
-          <a href="#dosage" class="sticky-footer-link">Dosage</a>
-        {% endcomment %}
-        <a href="#faq" class="sticky-footer-link">FAQ</a>
-        <a href="#subscription" class="sticky-footer-link">Subscription</a>
-      </div>
-    </div>
-    <div class="sticky-footer-actions">
-      <div class="sticky-footer-price-section">
-        {% if product.compare_at_price > product.price %}
-          <span class="sticky-footer-price-old">{{ product.compare_at_price | money }}</span>
-        {% endif %}
-        <span class="sticky-footer-price-current">{{ product.price | money }}</span>
-      </div>
-      {%- form 'product', product, id: 'sticky-product-form', class: 'sticky-form' -%}
-        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-        <button type="submit" name="add" class="sticky-add-to-cart-button">
-          <span>Add To Cart</span>
-        </button>
-      {%- endform -%}
-    </div>
-  </div>
-</div>
-
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const sectionId = '{{ section.id }}';
-    const originalWrapper = document.querySelector(
-      `.custom-sticky-product-header-wrapper[data-section-id="${sectionId}"]`
-    );
+    const originalWrapper = document.querySelector(`.custom-sticky-product-header-wrapper[data-section-id="${sectionId}"]`);
 
     if (!originalWrapper) {
       console.log('Sticky header original wrapper not found. Exiting.');
       return;
     }
 
-    // 1. Clone the original element to create our sticky version
     const stickyClone = originalWrapper.cloneNode(true);
     stickyClone.classList.add('is-sticky-clone');
-    stickyClone.style.display = 'block'; // Make it visible for JS control
-
-    // 2. Append the clone to the body to escape theme containers
+    stickyClone.style.display = 'block';
+    
     document.body.appendChild(stickyClone);
 
-    // 3. Set up the scroll listener
     const handleScroll = () => {
-      // Get the position of the ORIGINAL element which acts as our trigger
       const triggerPoint = originalWrapper.getBoundingClientRect().top;
-
-      // When the top of the original element hits the top of the viewport...
+      
       if (triggerPoint <= 0) {
-        // ...show the clone.
         stickyClone.classList.add('is-visible');
       } else {
-        // ...hide the clone.
         stickyClone.classList.remove('is-visible');
       }
     };
-
-    // Attach the scroll listener
+    
     window.addEventListener('scroll', handleScroll, { passive: true });
-
-    // Run an initial check in case the page loads already scrolled down
+    
     handleScroll();
   });
 </script>
@@ -223,6 +195,13 @@
     {
       "type": "header",
       "content": "Color Settings"
+    },
+    {
+      "type": "color",
+      "id": "default_background_color",
+      "label": "Fallback Background Color",
+      "default": "#2c2d2c",
+      "info": "Used if product metafields are empty"
     }
   ],
   "presets": [
