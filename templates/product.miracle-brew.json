@@ -13,6 +13,11 @@
       "type": "main-product",
       "settings": {}
     },
+    "product_additional_header_8iyy9p": {
+      "type": "productAdditionalHeader",
+      "name": "Sticky Product Header",
+      "settings": {}
+    },
     "product_info_section_rR7cr8": {
       "type": "productInfoSection",
       "blocks": {
@@ -254,6 +259,7 @@
   },
   "order": [
     "main",
+    "product_additional_header_8iyy9p",
     "product_info_section_rR7cr8",
     "problem_statement_fkjKzj",
     "switch_side_image_QQzE9E",
