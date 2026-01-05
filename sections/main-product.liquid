@@ -53,13 +53,16 @@
   }
 
   .product-description-section {
-    background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 24px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    color: #1a1a1a;
+    background-color: transparent; /* Убираем фон */
+    backdrop-filter: none; /* Убираем размытие */
+    -webkit-backdrop-filter: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    
+    color: #1a1a1a; /* Темный контрастный цвет текста */
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.7); /* Легкая светлая тень для объема и читаемости */
+    
     margin-top: 20px;
     margin-bottom: 20px;
     line-height: 1.6;
