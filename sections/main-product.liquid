@@ -69,7 +69,9 @@
   <div class="header-section" style="position: relative; z-index: 1;">
     <div class="product-title-section">
       <h1 class="product-title">{{ product.title }}</h1>
-      <span class="product-weight">{{ current_variant.title }}</span>
+      {% unless product.has_only_default_variant %}
+        <span class="product-weight">{{ current_variant.title }}</span>
+      {% endunless %}
     </div>
 
     <div class="variant-selector-section">
